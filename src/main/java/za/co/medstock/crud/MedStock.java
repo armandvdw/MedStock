@@ -1,13 +1,28 @@
 package za.co.medstock.crud;
 
-/**
- * Created with IntelliJ IDEA.
- * User: TheOnlyMonkey
- * Date: 10/2/14
- * Time: 10:39 PM
- * To change this template use File | Settings | File Templates.
- */
 public class MedStock {
 
+    public void getAllUsers(){
 
+    }
+
+    public void getAllClinics(){
+
+    }
+
+    public void getAllCountries(){
+
+    }
+
+    public void addNewEntity(Object entity){
+
+    }
+    public void updateEntity(Object entity){
+
+    }
+
+    public void deleteEntity(Object entity){
+
+    }
 }
+

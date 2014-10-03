@@ -1,11 +1,14 @@
 package za.co.medstock.service;
 
-/**
- * Created with IntelliJ IDEA.
- * User: TheOnlyMonkey
- * Date: 10/2/14
- * Time: 10:42 PM
- * To change this template use File | Settings | File Templates.
- */
+import za.co.medstock.crud.HibernateUtil;
+
+
 public class MedStockService {
+
+    public static final String HIBERNATE_CONFIG = "src/Hibernate.cfg.xml";
+
+    //TODO: this will change when the service is properly done
+    public static void main(String [] args){
+        HibernateUtil.createSessionFactory(HIBERNATE_CONFIG);
+    }
 }
