@@ -1,11 +1,19 @@
 package za.co.medstock.entities;
 
-/**
- * Created with IntelliJ IDEA.
- * User: TheOnlyMonkey
- * Date: 10/2/14
- * Time: 10:47 PM
- * To change this template use File | Settings | File Templates.
- */
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import javax.persistence.*;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
 public class Country {
+    @Id
+    public Integer countryId;
+    public String countryName;
 }
