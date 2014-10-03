@@ -9,6 +9,7 @@ public class MedStockService {
 
     //TODO: this will change when the service is properly done
     public static void main(String [] args){
+        // Instantiate the Hibernate session to be used in the service
         HibernateUtil.createSessionFactory(HIBERNATE_CONFIG);
     }
 }

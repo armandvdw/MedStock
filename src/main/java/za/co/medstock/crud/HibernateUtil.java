@@ -1,6 +1,7 @@
 package za.co.medstock.crud;
 
 import lombok.NoArgsConstructor;
+import org.hibernate.FlushMode;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -20,6 +21,7 @@ public class HibernateUtil {
 
     /**
      * Creates the Session factory for hibernate
+     *
      * @param hibernateConfigFile
      * @return
      */
@@ -29,11 +31,14 @@ public class HibernateUtil {
         serviceRegistry = new StandardServiceRegistryBuilder().applySettings(
                 configuration.getProperties()).build();
         sessionFactory = configuration.buildSessionFactory(serviceRegistry);
+        //Set the session to flush changes in memory to the db when commiting a Transaction.
+        sessionFactory.getCurrentSession().setFlushMode(FlushMode.COMMIT);
         return sessionFactory;
     }
 
     /**
      * Get the session factory for the currentSession.
+     *
      * @return
      */
     private static SessionFactory getSessionFactory() {
@@ -45,6 +50,7 @@ public class HibernateUtil {
 
     /**
      * This will return the current session object from HibernateUtil for CRUD operations and Queries.
+     *
      * @return
      */
     public static Session getCurrentSession() {
