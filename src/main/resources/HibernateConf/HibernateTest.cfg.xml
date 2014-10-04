@@ -10,14 +10,14 @@
         <property name="hibernate.connection.password">postgres;</property>
         <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/MedStockTest</property>
 
-        <property name="hbm2ddl.auto">update</property>
+        <property name="hbm2ddl.auto">create</property>
         <property name="connection_pool_size">1</property>
         <property name="hibernate.current_session_context_class">thread</property>
         <property name="show_sql">true</property>
 
         <mapping class="za.co.medstock.entities.Clinic"/>
         <mapping class="za.co.medstock.entities.Country"/>
-        <mapping class="za.co.medstock.entities.User"/>
+        <mapping class="za.co.medstock.entities.MedUser"/>
 
     </session-factory>
 </hibernate-configuration>

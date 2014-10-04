@@ -4,7 +4,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import za.co.medstock.entities.Clinic;
 import za.co.medstock.entities.Country;
-import za.co.medstock.entities.User;
+import za.co.medstock.entities.MedUser;
 
 import java.util.ArrayList;
 
@@ -23,8 +23,8 @@ public class MedStock {
      *
      * @return
      */
-    public ArrayList<User> getAllUsers() {
-        return (ArrayList<User>) session.createCriteria(User.class).list();
+    public ArrayList<MedUser> getAllUsers() {
+        return (ArrayList<MedUser>) session.createCriteria(MedUser.class).list();
     }
 
     /**
@@ -79,8 +79,8 @@ public class MedStock {
         session.getTransaction().commit();
     }
 
-    public User getUser(String userID) {
-        return (User) session.get(User.class, userID);
+    public MedUser getUser(String userID) {
+        return (MedUser) session.get(MedUser.class, userID);
     }
 
     public Clinic getClinic(String clinicID) {
