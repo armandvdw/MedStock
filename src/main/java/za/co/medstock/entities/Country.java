@@ -14,6 +14,6 @@ import javax.persistence.*;
 @Entity
 public class Country {
     @Id
-    public Integer countryId;
-    public String countryName;
+    private Integer countryId;
+    private String countryName;
 }

@@ -11,14 +11,14 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-
 @Entity
 public class Clinic {
     @Id
-    public Integer clinicId;
-    public String name;
-    public String countryId;
-    public Integer nevirapineStock;
-    public Integer stavudineStock;
-    public Integer zidotabine;
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private Integer clinicId;
+    private String name;
+    private String countryId;
+    private Integer nevirapineStock;
+    private Integer stavudineStock;
+    private Integer zidotabineStock;
 }

@@ -1,5 +1,6 @@
 package za.co.medstock.crud;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import za.co.medstock.entities.Clinic;
 import za.co.medstock.entities.Country;
@@ -9,7 +10,8 @@ import java.util.ArrayList;
 
 
 public class MedStock {
-    public Session session;
+    public static final Integer LOW_STOCK_VALUE = 5;
+    private Session session;
 
     public MedStock() {
         session = HibernateUtil.getCurrentSession();
@@ -87,6 +89,21 @@ public class MedStock {
 
     public Country getCountry(String countryID) {
         return (Country) session.get(Country.class, countryID);
+    }
+
+    /**
+     * This will get the Clinics with low stock levels. I would like to use an enum to iterate through all the medication
+     * for if the types of medications will increase. I will have to hard code it for now.
+     *
+     * @return
+     */
+    public ArrayList<Clinic> getLowStockClinics() {
+        Query q = session.createQuery("FROM Clinic WHERE " +
+                "nevirapineStock < :lowStock OR " +
+                "stavudineStock < :lowStock OR " +
+                "zidotabineStock < :lowStock");
+        q.setParameter("lowStock", LOW_STOCK_VALUE);
+        return (ArrayList<Clinic>) q.list();
     }
 }
 
