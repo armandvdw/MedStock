@@ -9,7 +9,7 @@ import static junit.framework.Assert.assertNotNull;
 import static org.junit.Assert.assertEquals;
 
 public class MedStockTest {
-    public static final String HIBERNATE_CONFIG_TEST = "HibernateConf/HibernateTest.cfg.xml";
+    public static final String HIBERNATE_CONFIG_TEST = "hibernateconf/HibernateTest.cfg.xml";
     @Before
     public void setUp(){
         HibernateUtil.createSessionFactory(HIBERNATE_CONFIG_TEST);

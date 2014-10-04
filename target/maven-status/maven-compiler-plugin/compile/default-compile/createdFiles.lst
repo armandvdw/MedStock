@@ -1,6 +1,5 @@
 za\co\medstock\service\MedStockService.class
-za\co\medstock\entities\Country.class
 za\co\medstock\entities\Clinic.class
-za\co\medstock\entities\User.class
 za\co\medstock\crud\HibernateUtil.class
+za\co\medstock\entities\Country.class
 za\co\medstock\crud\MedStock.class
