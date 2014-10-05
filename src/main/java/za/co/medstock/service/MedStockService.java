@@ -61,7 +61,7 @@ public class MedStockService {
     }
 
     public static void main(String[] args) {
-        setPort(8080);
+        setPort(80);
         MedStockService med = new MedStockService();
         staticFileLocation("/userinterface");
 
