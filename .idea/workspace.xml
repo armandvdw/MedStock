@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="09ec59e3-e4c3-453d-9e44-aebea3d906ff" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/userinterface/css/jquery-ui-1.8.16.custom.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/userinterface/js/jquery.event.drag-2.2.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/userinterface/css/slick-default-theme.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/userinterface/js/slick.core.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/userinterface/js/slick.grid.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/userinterface/css/leaflet.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/userinterface/js/leaflet.js" />
+      <change type="MODIFICATION" beforePath="C:\Dev\MedStock\src\main\resources\userinterface\main.html" afterPath="$PROJECT_DIR$/src/main/resources/userinterface/main.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MedStock.iws" />
@@ -28,11 +26,11 @@
     <file path="/Medication.java" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412370179380" ignored="false" />
     <file path="/HibernateTest.cfg.xml" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412381550079" ignored="false" />
     <file path="/index.html" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412660085745" ignored="false" />
-    <file path="/main.js" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412672058513" ignored="false" />
+    <file path="/main.js" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412673227851" ignored="false" />
     <file path="/main.css" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412541759693" ignored="false" />
     <file path="/login.js" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412636420557" ignored="false" />
     <file path="/clinic_form.html" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412522104051" ignored="false" />
-    <file path="/main.html" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412670158527" ignored="false" />
+    <file path="/main.html" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412673061625" ignored="false" />
     <file path="/script.js" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412536446128" ignored="false" />
     <file path="/login.html" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412534329741" ignored="false" />
     <file path="$PROJECT_DIR$/src/main/java/za/co/medstock/entities/Clinic.java" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412614085421" ignored="false" />
@@ -130,15 +128,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="63" selection-start="765" selection-end="765" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/index.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -160,34 +149,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="63" selection-start="304" selection-end="304" vertical-scroll-proportion="-6.12">
+            <state line="142" column="17" selection-start="4111" selection-end="4111" vertical-scroll-proportion="0.65504587">
               <folding>
-                <element signature="e#1189#1291#0" expanded="false" />
+                <element signature="e#2264#2366#0" expanded="false" />
                 <element signature="n#!!block;n#preparePropertyBox#0" expanded="false" />
                 <element signature="n#!!block;n#prepareChart#0" expanded="false" />
-                <element signature="e#3088#3665#0" expanded="false" />
+                <element signature="e#4181#4758#0" expanded="false" />
                 <element signature="n#!!block;n#barGraphDataPreparation#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="slick.grid.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/css/slick.grid.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="6" selection-start="855" selection-end="855" vertical-scroll-proportion="-17.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="56" selection-start="1452" selection-end="1452" vertical-scroll-proportion="0.65625">
+            <state line="8" column="48" selection-start="412" selection-end="412" vertical-scroll-proportion="-5.230769">
               <folding>
                 <element signature="n#style#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -196,25 +176,8 @@
                 <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="jquery-ui-1.8.16.custom.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/css/jquery-ui-1.8.16.custom.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="jquery.event.drag-2.2.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/js/jquery.event.drag-2.2.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -251,8 +214,8 @@
         <option value="$PROJECT_DIR$/src/main/resources/userinterface/index.html" />
         <option value="$PROJECT_DIR$/src/main/resources/userinterface/js/login.js" />
         <option value="$PROJECT_DIR$/src/main/resources/userinterface/css/slick.grid.css" />
-        <option value="$PROJECT_DIR$/src/main/resources/userinterface/js/main.js" />
         <option value="$PROJECT_DIR$/src/main/resources/userinterface/main.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/userinterface/js/main.js" />
       </list>
     </option>
   </component>
@@ -485,6 +448,36 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MedStock" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MedStock" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="userinterface" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -598,8 +591,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Dev\MedStock\src\main\resources\userinterface\js" />
       <recent name="C:\Dev\MedStock\src\main\resources\userinterface\css" />
+      <recent name="C:\Dev\MedStock\src\main\resources\userinterface\js" />
       <recent name="C:\Dev\MedStock\src\main\resources\userinterface" />
       <recent name="C:\Dev\MedStock\src\main\resources\userinterface\images" />
       <recent name="C:\Dev\MedStock\src" />
@@ -852,7 +845,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20437567" sideWeight="0.664437" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33556297" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33556297" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -927,26 +920,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/js/jquery.flot.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="269" column="64" selection-start="11188" selection-end="11188" vertical-scroll-proportion="3.5281954">
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <marker date="1412164841000" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1412164841000" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1412164841000" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1412164841000" expanded="false" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="63" selection-start="765" selection-end="765" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="66" selection-start="272" selection-end="272" vertical-scroll-proportion="0.0">
@@ -1055,22 +1028,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/js/main.js">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/js/leaflet.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="63" selection-start="304" selection-end="304" vertical-scroll-proportion="-6.12">
-          <folding>
-            <element signature="e#1189#1291#0" expanded="false" />
-            <element signature="n#!!block;n#preparePropertyBox#0" expanded="false" />
-            <element signature="n#!!block;n#prepareChart#0" expanded="false" />
-            <element signature="e#3088#3665#0" expanded="false" />
-            <element signature="n#!!block;n#barGraphDataPreparation#0" expanded="false" />
-          </folding>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/css/leaflet.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="133" selection-start="303" selection-end="303" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/main.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="56" selection-start="1452" selection-end="1452" vertical-scroll-proportion="0.65625">
+        <state line="8" column="48" selection-start="412" selection-end="412" vertical-scroll-proportion="-5.230769">
           <folding>
             <element signature="n#style#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1079,6 +1053,20 @@
             <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="142" column="17" selection-start="4111" selection-end="4111" vertical-scroll-proportion="0.65504587">
+          <folding>
+            <element signature="e#2264#2366#0" expanded="false" />
+            <element signature="n#!!block;n#preparePropertyBox#0" expanded="false" />
+            <element signature="n#!!block;n#prepareChart#0" expanded="false" />
+            <element signature="e#4181#4758#0" expanded="false" />
+            <element signature="n#!!block;n#barGraphDataPreparation#0" expanded="false" />
           </folding>
         </state>
       </provider>
