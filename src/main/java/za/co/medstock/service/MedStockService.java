@@ -65,15 +65,22 @@ public class MedStockService {
         MedStockService med = new MedStockService();
         staticFileLocation("/userinterface");
 
+
+
         get("/hello", (request, response) -> {
             return "Hello World!";
         });
 
-       /* get("/", (request, response) -> {
+        get("/", (request, response) -> {
             set("title", "MedStock Stock Management ");
             set("count", String.valueOf(settings.size()));
             return med.render("userinterface/index.html", settings);
-        });*/
+        });
+        get("/home", (request, response) -> {
+            set("title", "MedStock Stock Management ");
+            set("count", String.valueOf(settings.size()));
+            return med.render("userinterface/main.html", settings);
+        });
     }
 }
 

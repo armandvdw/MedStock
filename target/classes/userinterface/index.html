@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app='medStockApp'>
+<html ng-app='medStockApp' style='height:100%'>
 <head>
 
     <title>Login Form</title>
@@ -11,25 +11,20 @@
     <link rel="stylesheet" href="css/main.css">
 
 </head>
-<body ng-controller="mainController">
-
-<div id="main">
-
-    <!-- angular templating -->
-    <!-- this is where content will be injected -->
-    <div ng-view></div>
-
+<body ng-controller="mainController" style='height:100%'>
+<div class="form-bg">
+    <form ng-submit='login()'>
+        <h2>Login</h2>
+        <p><input id="login-username" type="text" placeholder="Username"></p>
+        <p><input id="login-password" type="password" placeholder="Password"></p>
+        <a ng-route='#' id='tempSolution' href="#"></a>
+        <button type="submit" onclick="login()"></button>
+    </form>
 </div>
 <!-- JS  -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
-<script>window.jQuery || document.write("<script src='js/jquery-1.5.1.min.js'>\x3C/script>")</script>
-<script src='js/main.js'></script>
-<script src='js/angular.js'></script>
-<script src='js/angular-route.js'></script>
-<script src='js/script.js'></script>
-<script src='js/main.js'></script>
+<script>window.jQuery || document.write("<script src='js/jquery.js'>\x3C/script>")</script>
 <script src="js/login.js"></script>
-
 <!-- End Document -->
 </body>
 </html>
