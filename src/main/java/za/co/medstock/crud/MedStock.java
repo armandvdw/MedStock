@@ -1,7 +1,6 @@
 package za.co.medstock.crud;
 
 import org.hibernate.Query;
-import org.hibernate.Session;
 import za.co.medstock.entities.Clinic;
 import za.co.medstock.entities.Country;
 import za.co.medstock.entities.MedUser;
@@ -11,10 +10,8 @@ import java.util.ArrayList;
 
 public class MedStock {
     public static final Integer LOW_STOCK_VALUE = 5;
-    private Session session;
 
     public MedStock() {
-        session = HibernateUtil.getCurrentSession();
     }
 
     /**
@@ -24,7 +21,7 @@ public class MedStock {
      * @return
      */
     public ArrayList<MedUser> getAllUsers() {
-        return (ArrayList<MedUser>) session.createCriteria(MedUser.class).list();
+        return (ArrayList<MedUser>) HibernateUtil.getCurrentSession().createCriteria(MedUser.class).list();
     }
 
     /**
@@ -33,7 +30,10 @@ public class MedStock {
      * @return
      */
     public ArrayList<Clinic> getAllClinics() {
-        return (ArrayList<Clinic>) session.createCriteria(Clinic.class).list();
+        HibernateUtil.getCurrentSession().beginTransaction();
+        ArrayList<Clinic> result = (ArrayList<Clinic>) HibernateUtil.getCurrentSession().createCriteria(Clinic.class).list();
+        HibernateUtil.getCurrentSession().getTransaction().commit();
+        return result;
     }
 
     /**
@@ -42,7 +42,7 @@ public class MedStock {
      * @return
      */
     public ArrayList<Country> getAllCountries() {
-        return (ArrayList<Country>) session.createCriteria(Country.class).list();
+        return (ArrayList<Country>) HibernateUtil.getCurrentSession().createCriteria(Country.class).list();
     }
 
     /**
@@ -52,9 +52,9 @@ public class MedStock {
      * @param entity
      */
     public void addNewEntity(Object entity) {
-        session.beginTransaction();
-        session.save(entity);
-        session.getTransaction().commit();
+        HibernateUtil.getCurrentSession().beginTransaction();
+        HibernateUtil.getCurrentSession().save(entity);
+        HibernateUtil.getCurrentSession().getTransaction().commit();
     }
 
     /**
@@ -63,9 +63,9 @@ public class MedStock {
      * @param entity
      */
     public void updateEntity(Object entity) {
-        session.beginTransaction();
-        session.update(entity);
-        session.getTransaction().commit();
+        HibernateUtil.getCurrentSession().beginTransaction();
+        HibernateUtil.getCurrentSession().update(entity);
+        HibernateUtil.getCurrentSession().getTransaction().commit();
     }
 
     /**
@@ -74,21 +74,21 @@ public class MedStock {
      * @param entity
      */
     public void deleteEntity(Object entity) {
-        session.beginTransaction();
-        session.delete(entity);
-        session.getTransaction().commit();
+        HibernateUtil.getCurrentSession().beginTransaction();
+        HibernateUtil.getCurrentSession().delete(entity);
+        HibernateUtil.getCurrentSession().getTransaction().commit();
     }
 
     public MedUser getUser(String userID) {
-        return (MedUser) session.get(MedUser.class, userID);
+        return (MedUser) HibernateUtil.getCurrentSession().get(MedUser.class, userID);
     }
 
     public Clinic getClinic(String clinicID) {
-        return (Clinic) session.get(Clinic.class, clinicID);
+        return (Clinic) HibernateUtil.getCurrentSession().get(Clinic.class, clinicID);
     }
 
     public Country getCountry(String countryID) {
-        return (Country) session.get(Country.class, countryID);
+        return (Country) HibernateUtil.getCurrentSession().get(Country.class, countryID);
     }
 
     /**
@@ -98,7 +98,7 @@ public class MedStock {
      * @return
      */
     public ArrayList<Clinic> getLowStockClinics() {
-        Query q = session.createQuery("FROM Clinic WHERE " +
+        Query q = HibernateUtil.getCurrentSession().createQuery("FROM Clinic WHERE " +
                 "nevirapineStock < :lowStock OR " +
                 "stavudineStock < :lowStock OR " +
                 "zidotabineStock < :lowStock");

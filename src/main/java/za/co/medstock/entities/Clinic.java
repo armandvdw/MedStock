@@ -21,4 +21,6 @@ public class Clinic {
     private Integer nevirapineStock;
     private Integer stavudineStock;
     private Integer zidotabineStock;
+    private Double lattitude;
+    private Double longitude;
 }

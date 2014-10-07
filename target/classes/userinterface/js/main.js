@@ -1,5 +1,16 @@
 //TODO: create a module of type main here, so that you can use global json with all clinic details
+function loadContent() {
+    //Do the initial
 
+    var clinicData = JSON.parse(getClinicData());
+
+    if(!clinicData){
+        alert("No data Received");
+    }
+    prepareChart("ms-grid", clinicData);
+    prepareGrid(clinicData);
+    prepareMap(clinicData);
+}
 function prepareMap() {
     var map = L.map('ms-map').setView([51.505, -0.09], 13);
 
@@ -40,15 +51,15 @@ function prepareMap() {
     map.on('click', onMapClick);
 }
 
-function prepareGrid() {
+function prepareGrid(cd) {
     var grid;
     var columns = [
-        {id: "ID", name: "ID", field: "id",maxWidth:30,width:25},
+        {id: "ID", name: "ID", field: "clinicId", maxWidth: 30, width: 25},
         {id: "Name", name: "Name", field: "name"},
-        {id: "Country", name: "Country", field: "country"},
-        {id: "Nevirapine", name: "Nevirapine", field: "nev"},
-        {id: "Stavudine", name: "Stavudine", field: "sta"},
-        {id: "Zidotabine", name: "Zidotabine", field: "zid"}
+        {id: "Country", name: "Country", field: "countryId"},
+        {id: "Nevirapine", name: "Nevirapine", field: "nevirapineStock"},
+        {id: "Stavudine", name: "Stavudine", field: "stavudineStock"},
+        {id: "Zidotabine", name: "Zidotabine", field: "zidotabineStock"}
     ];
 
     var options = {
@@ -58,21 +69,18 @@ function prepareGrid() {
 
     };
 
-
-    var data = [];
-    for (var i = 0; i < 10; i++) {
+    /*for (var i = 0; i < 10; i++) {
         data[i] = {
-            id: + i,
+            id: +i,
             name: "days",
             country: "ZA",
             nev: Math.round(Math.random() * 100),
             sta: Math.round(Math.random() * 100),
             zid: Math.round(Math.random() * 100)
         };
-    }
+    }  */
 
-    grid = new Slick.Grid("#ms-propbox", data, columns, options);
-
+    grid = new Slick.Grid("#ms-propbox", cd, columns, options);
 }
 //TODO: replace temp clinic with backend data.
 var tempClinic = {
@@ -108,7 +116,7 @@ function prepareChart(divId, clinicData) {
         series: {
             bars: {
                 show: true,
-                barWidth: 1 / chartData.ticks.length,
+                barWidth: 1 / chartData.ticks.length/2,
                 order: 1,
                 align: "center"
             }
@@ -136,49 +144,9 @@ function prepareChart(divId, clinicData) {
     $.plot($("#" + divId), chartData.data, settings);
 }
 
-function loadContent() {
-    //preparePropertyBox("ms-propbox", tempClinic);
-    prepareChart("ms-grid", mockedBarGraphData);
-    prepareGrid();
-    prepareMap();
-}
 //TODO: remove this after implementation!
-var mockedBarGraphData = [
-    {
-        "name": "Mezza",
-        "id": "001",
-        "country": "ZA",
-        "nev": "10",
-        "sta": "5",
-        "zid": "8"
-    },
-    {
-        "name": "Nine",
-        "id": "002",
-        "country": "UG",
-        "nev": "3",
-        "sta": "2",
-        "zid": "11"
-    },
-    {
-        "name": "Med",
-        "id": "002",
-        "country": "UG",
-        "nev": "4",
-        "sta": "5",
-        "zid": "1"
-    },
-    {
-        "name": "Supplies",
-        "id": "002",
-        "country": "UG",
-        "nev": "3",
-        "sta": "7",
-        "zid": "20"
-    }
-];
 function barGraphDataPreparation(sourceData) {
-    if (!sourceData) return;
+    if (!sourceData) return undefined;
 
     var chartData = {
         ticks: [],
@@ -190,27 +158,37 @@ function barGraphDataPreparation(sourceData) {
     for (var i = 0; i < sourceData.length; i++) {
         var clinic = sourceData[i];
         var clinName = clinic["name"];
-        nevirapine.push([i, clinic["nev"]]);
-        stavudine.push([i, clinic["sta"]]);
-        zidotabine.push([i, clinic["zid"]]);
+        nevirapine.push([i, clinic["nevirapineStock"]]);
+        stavudine.push([i, clinic["stavudineStock"]]);
+        zidotabine.push([i, clinic["zidotabineStock"]]);
         chartData.ticks.push([i, clinName]);
     }
     chartData.data.push({
         data: nevirapine,
-        label: "nevirapine"
+        label: "Nevirapine"
     });
     chartData.data.push({
         data: stavudine,
-        label: "stavudine"
+        label: "Stavudine"
     });
 
     chartData.data.push({
         data: zidotabine,
-        label: "zidotabine"
+        label: "Zidotabine"
     });
 
     return chartData;
 }
+
+function getClinicData() {
+    return $.ajax({
+        type: "GET",
+        url: "/clinicData",
+        async: false
+    }).responseText;
+}
+
+$(document).ready(loadContent());
 
 
 

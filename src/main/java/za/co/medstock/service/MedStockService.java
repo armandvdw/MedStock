@@ -1,20 +1,26 @@
 package za.co.medstock.service;
 
+import com.google.gson.Gson;
+import org.hibernate.Session;
+import za.co.medstock.crud.HibernateUtil;
+import za.co.medstock.crud.MedStock;
+import za.co.medstock.entities.Clinic;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static spark.Spark.get;
-import static spark.SparkBase.setPort;
-import static spark.SparkBase.staticFileLocation;
+import static spark.SparkBase.*;
 
 public class MedStockService {
 
-    public static final String HIBERNATE_CONFIG = "src/Hibernate.cfg.xml";
+    public static final String HIBERNATE_CONFIG = "hibernateconf/Hibernate.cfg.xml";
 
     private static final Map<String, Object> settings = new HashMap<String, Object>();
 
@@ -50,6 +56,12 @@ public class MedStockService {
         return layout(file, this.parseFile(file, "\\$\\{(\\w.*?)\\}", locals));
     }
 
+    public String convertToJSON(ArrayList<Clinic> list){
+        Gson gson = new Gson();
+        String response =  gson.toJson(list);
+        return response;
+    }
+
     public String layout(String file, String content) {
         HashMap<String, Object> layout = new HashMap<String, Object>();
         layout.put("content", content);
@@ -62,10 +74,12 @@ public class MedStockService {
 
     public static void main(String[] args) {
         setPort(80);
-        MedStockService med = new MedStockService();
+        HibernateUtil.createSessionFactory(HIBERNATE_CONFIG);
+        MedStockService medServ = new MedStockService();
+        Session session = HibernateUtil.getCurrentSession();
+        MedStock med = new MedStock();
+
         staticFileLocation("/userinterface");
-
-
 
         get("/hello", (request, response) -> {
             return "Hello World!";
@@ -74,12 +88,21 @@ public class MedStockService {
         get("/", (request, response) -> {
             set("title", "MedStock Stock Management ");
             set("count", String.valueOf(settings.size()));
-            return med.render("userinterface/index.html", settings);
+            return medServ.render("userinterface/index.html", settings);
         });
         get("/home", (request, response) -> {
             set("title", "MedStock Stock Management ");
             set("count", String.valueOf(settings.size()));
-            return med.render("userinterface/main.html", settings);
+            return medServ.render("userinterface/main.html", settings);
+        });
+        get("/clinicData", (request, response) -> {
+            ArrayList<Clinic> list = med.getAllClinics();
+            return medServ.convertToJSON(med.getAllClinics());
+        });
+        get("/logout", (request, response) -> {
+            HibernateUtil.closeSession();
+            stop();
+            return "";
         });
     }
 }
