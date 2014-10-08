@@ -15,16 +15,6 @@ public class MedStock {
     }
 
     /**
-     * It will never be necessary to get all the users from the database at once seeing as that only one user will be
-     * using the service independently. Thus I only have to check if the user exists and if his password matches.
-     *
-     * @return
-     */
-    public ArrayList<MedUser> getAllUsers() {
-        return (ArrayList<MedUser>) HibernateUtil.getCurrentSession().createCriteria(MedUser.class).list();
-    }
-
-    /**
      * This will get all of the clinics from the database.
      *
      * @return
@@ -42,7 +32,10 @@ public class MedStock {
      * @return
      */
     public ArrayList<Country> getAllCountries() {
-        return (ArrayList<Country>) HibernateUtil.getCurrentSession().createCriteria(Country.class).list();
+        HibernateUtil.getCurrentSession().beginTransaction();
+        ArrayList<Country> list = (ArrayList<Country>) HibernateUtil.getCurrentSession().createCriteria(Country.class).list();
+        HibernateUtil.getCurrentSession().getTransaction().commit();
+        return list;
     }
 
     /**
@@ -80,15 +73,24 @@ public class MedStock {
     }
 
     public MedUser getUser(String userID) {
-        return (MedUser) HibernateUtil.getCurrentSession().get(MedUser.class, userID);
+        HibernateUtil.getCurrentSession().beginTransaction();
+        MedUser user = (MedUser) HibernateUtil.getCurrentSession().get(MedUser.class, userID);
+        HibernateUtil.getCurrentSession().getTransaction().commit();
+        return user;
     }
 
-    public Clinic getClinic(String clinicID) {
-        return (Clinic) HibernateUtil.getCurrentSession().get(Clinic.class, clinicID);
+    public Clinic getClinic(Integer clinicID) {
+        HibernateUtil.getCurrentSession().beginTransaction();
+        Clinic clinic = (Clinic) HibernateUtil.getCurrentSession().get(Clinic.class, clinicID);
+        HibernateUtil.getCurrentSession().getTransaction().commit();
+        return clinic;
     }
 
     public Country getCountry(String countryID) {
-        return (Country) HibernateUtil.getCurrentSession().get(Country.class, countryID);
+        HibernateUtil.getCurrentSession().beginTransaction();
+        Country country = (Country) HibernateUtil.getCurrentSession().get(Country.class, countryID);
+        HibernateUtil.getCurrentSession().getTransaction().commit();
+        return country;
     }
 
     /**
@@ -98,11 +100,13 @@ public class MedStock {
      * @return
      */
     public ArrayList<Clinic> getLowStockClinics() {
+        HibernateUtil.getCurrentSession().beginTransaction();
         Query q = HibernateUtil.getCurrentSession().createQuery("FROM Clinic WHERE " +
                 "nevirapineStock < :lowStock OR " +
                 "stavudineStock < :lowStock OR " +
                 "zidotabineStock < :lowStock");
         q.setParameter("lowStock", LOW_STOCK_VALUE);
+        HibernateUtil.getCurrentSession().getTransaction().commit();
         return (ArrayList<Clinic>) q.list();
     }
 }

@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.io.Serializable;
 
 
 @Getter
@@ -17,7 +18,7 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class MedUser {
+public class MedUser implements Serializable {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer userId;

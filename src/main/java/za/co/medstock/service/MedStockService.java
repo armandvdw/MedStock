@@ -86,18 +86,14 @@ public class MedStockService {
         return new Clinic(1,name,country,nevirapine,stavudine,zidotabine,lat,lon);
     }
     public static void main(String[] args) {
-        setPort(12345);
-        // HibernateUtil.createSessionFactory(HIBERNATE_CONFIG);
+        setPort(80);
+        HibernateUtil.createSessionFactory(HIBERNATE_CONFIG);
         MedStockService medServ = new MedStockService();
         Gson gson = new Gson();
-        //Session session = HibernateUtil.getCurrentSession();
         MedStock med = new MedStock();
 
         staticFileLocation("/userinterface");
 
-        get("/hello", (request, response) -> {
-            return "Hello World!";
-        });
         //TODO: Remove these set methods.
         get("/", (request, response) -> {
             set("title", "MedStock Stock Management ");
@@ -134,7 +130,8 @@ public class MedStockService {
 
         // Gets the book resource for the provided id
         get("/clinic/:id", (request, response) -> {
-            Clinic clin = med.getClinic(request.params(":id"));
+            String id =request.params(":id");
+            Clinic clin = med.getClinic(Integer.parseInt(id));
             if (clin != null) {
                 return gson.toJson(clin);
             } else {
@@ -148,13 +145,26 @@ public class MedStockService {
         put("/clinic/:id", (Route) (request, response) -> {
             String id = request.params(":id");
             //TODO: this step can be removed depending what gets returned by hibernate after entity update ex. returns 1, updated records =  1
-            Clinic serverClinic = med.getClinic(id);
+            Clinic serverClinic = med.getClinic(Integer.parseInt(id));
             if (serverClinic != null) {
                 Clinic updatedClinic = medServ.mapRequestToClinic(request);
                 updatedClinic.setClinicId(Integer.parseInt(id));
                 med.updateEntity(updatedClinic);
                 response.status(200);
                 return "Clinic: " + updatedClinic.getName() + "updated successfully";
+            } else {
+                response.status(404); // 404 Not found
+                return "Clinic does not exist";
+            }
+        });
+        // Deletes the book resource for the provided id
+        delete("/clinic/:id", (request, response) -> {
+            String id = request.params(":id");
+            Clinic clin = med.getClinic(Integer.parseInt(id));
+            if (clin != null){
+                med.deleteEntity(clin);
+                response.status(200);
+                return "Clinic "+clin.getName()+" has been deleted successfully";
             } else {
                 response.status(404); // 404 Not found
                 return "Clinic does not exist";

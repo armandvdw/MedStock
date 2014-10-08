@@ -6,13 +6,14 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Clinic {
+public class Clinic implements Serializable {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer clinicId;
