@@ -8,6 +8,7 @@ function loadContent() {
     prepareGrid(clinicData);
     prepareMap(clinicData);
 }
+var createMode = true;
 function prepareMap(cd) {
     var map = L.map('ms-map').setView([51.505, -0.09], 13);
 
@@ -21,10 +22,9 @@ function prepareMap(cd) {
 
     for (var i = 0; i < cd.length; i++) {
         var clinic = cd[i];
-        var button = $("<button id='btn-dialog' type=submit>Update</button>").click(function (data) {
+        var buttonUpdate = $("<button id='btn-update' type=submit>Update</button>").click(function (data) {
             var form = $("#form-update");
             updateClinic(form.serialize());
-            alert(form.serialize());
         });
 
         var field = function (name, label, value) {
@@ -33,34 +33,55 @@ function prepareMap(cd) {
                 "<input name=" + name + " type='text' style='width: 204px;' value='" + value + "'/>" +
                 "</div>";
         };
-        var form = $("<form id='form-update'>");
-        form.append("<h1>Clinic: " + clinic.name + "</h1>");
-       // form.append("<form id='update-form'>");
-        form.append(field("clinicId","Clinic ID:", clinic.clinicId));
-        form.append(field("name", "Name:", clinic.name));
-        form.append(field("countryId", "Country:", clinic.countryId));
-        form.append(field("nevirapineStock", "Nevirapine:", clinic.nevirapineStock));
-        form.append(field("stavudineStock", "Stavudine:", clinic.stavudineStock));
-        form.append(field("zidotabineStock", "Zidotabine:", clinic.countryId));
-        form.append(field("latitude","Latitude:",clinic.latitude));
-        form.append(field("longitude","Longitude:",clinic.longitude));
-        form.append("</form>");
+        var formUpdate = $("<form id='form-update'>");
+        formUpdate.append("<h1>Clinic: " + clinic.name + "</h1>");
+        // form.append("<form id='update-form'>");
+        formUpdate.append(field("clinicId", "Clinic ID:", clinic.clinicId));
+        formUpdate.append(field("name", "Name:", clinic.name));
+        formUpdate.append(field("countryId", "Country:", clinic.countryId));
+        formUpdate.append(field("nevirapineStock", "Nevirapine:", clinic.nevirapineStock));
+        formUpdate.append(field("stavudineStock", "Stavudine:", clinic.stavudineStock));
+        formUpdate.append(field("zidotabineStock", "Zidotabine:", clinic.countryId));
+        formUpdate.append(field("latitude", "Latitude:", clinic.latitude));
+        formUpdate.append(field("longitude", "Longitude:", clinic.longitude));
+        formUpdate.append("</form>");
 
         L.marker([clinic.latitude, clinic.longitude], L.Icon({iconUrl: '/images/marker-icon.png'})).addTo(map)
-            .bindPopup(form.append(button)[0])
-            .openPopup();
+            .bindPopup(formUpdate.append(buttonUpdate)[0]);
     }
 
+    var formCreate1 = function (event) {
+        var buttonCreate = $("<button id='btn-create' type=submit>Update</button>").click(function () {
+            var form = $("#form-create");
+            createClinic(form.serialize());
+        });
+        var formCreate = $("<form id='form-create'>");
+        formCreate.append("<h1>Add Clinic</h1>");
+        // form.append("<form id='update-form'>");
+        formCreate.append(field("name", "Name:", ""));
+        formCreate.append(field("countryId", "Country:", ""));
+        formCreate.append(field("nevirapineStock", "Nevirapine:", ""));
+        formCreate.append(field("stavudineStock", "Stavudine:", ""));
+        formCreate.append(field("zidotabineStock", "Zidotabine:", ""));
+        formCreate.append(field("latitude", "Latitude:", event.latlng.lat ));
+        formCreate.append(field("longitude", "Longitude:", event.latlng.lng));
+        formCreate.append("</form>");
+        formCreate.append(buttonCreate);
+
+        return formCreate;
+    };
     var popup = L.popup();
+    if (createMode) {
 
-    function onMapClick(e) {
-        popup
-            .setLatLng(e.latlng)
-            .setContent("You clicked the map at " + e.latlng.toString())
-            .openOn(map);
+        function onMapClick(e) {
+            popup
+                .setLatLng(e.latlng)
+                .setContent(formCreate1(e)[0])
+                .openOn(map);
+        }
+
+        map.on('click', onMapClick);
     }
-
-    map.on('click', onMapClick);
 }
 
 function prepareGrid(cd) {
@@ -186,27 +207,40 @@ function getClinicData() {
         async: false
     }).responseText;
 }
-function deleteClinic(id){
+function deleteClinic(id) {
     return $.ajax({
         type: "DELETE",
         url: "/clinics/" + id,
         async: false
     }).responseText;
 }
-function updateClinic(clinic){
+function updateClinic(clinic) {
     return $.ajax({
         type: "PUT",
-        url: "/clinics/update?"+clinic,
+        url: "/clinics/update?" + clinic,
         async: false
     }).responseText;
 }
-function createClinic(clinic){
+function createClinic(clinic) {
     return $.ajax({
         type: "POST",
         url: "/clinics/add",
-        data:clinic,
+        data: clinic,
         async: false
     }).responseText;
+}
+
+function toggleCreate() {
+
+    if (createMode == true) {
+        createMode = false;
+        $("#buttonToggle").html("Off");
+        loadContent();
+    } else {
+        createMode = true;
+        $("#buttonToggle").html("On");
+        loadContent();
+    }
 }
 
 
