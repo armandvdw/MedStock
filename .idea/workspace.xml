@@ -3,10 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="09ec59e3-e4c3-453d-9e44-aebea3d906ff" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/za/co/medstock/entities/Clinic.java" afterPath="$PROJECT_DIR$/src/main/java/za/co/medstock/entities/Clinic.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/za/co/medstock/entities/Country.java" afterPath="$PROJECT_DIR$/src/main/java/za/co/medstock/entities/Country.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/za/co/medstock/crud/MedStock.java" afterPath="$PROJECT_DIR$/src/main/java/za/co/medstock/crud/MedStock.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/za/co/medstock/service/MedStockService.java" afterPath="$PROJECT_DIR$/src/main/java/za/co/medstock/service/MedStockService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/za/co/medstock/entities/MedUser.java" afterPath="$PROJECT_DIR$/src/main/java/za/co/medstock/entities/MedUser.java" />
+      <change type="MODIFICATION" beforePath="C:\Dev\MedStock\src\main\resources\userinterface\main.html" afterPath="$PROJECT_DIR$/src/main/resources/userinterface/main.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MedStock.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -15,9 +14,9 @@
     <file path="/fragment.java" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412365875705" ignored="false" />
     <file path="/User.java" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412378584000" ignored="false" />
     <file path="$USER_HOME$/.m2/settings.xml" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412286853738" ignored="false" />
-    <file path="/Hibernate.cfg.xml" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412381217966" ignored="false" />
+    <file path="/Hibernate.cfg.xml" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412793819250" ignored="false" />
     <file path="/Clinic.java" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412787964096" ignored="false" />
-    <file path="/Dummy.txt" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412783069156" ignored="false" />
+    <file path="/Dummy.txt" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412790248355" ignored="false" />
     <file path="/Country.java" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412788272667" ignored="false" />
     <file path="/MedStock.java" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412788114819" ignored="false" />
     <file path="/HibernateUtil.java" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412675295629" ignored="false" />
@@ -27,11 +26,11 @@
     <file path="/Medication.java" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412370179380" ignored="false" />
     <file path="/HibernateTest.cfg.xml" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412679601924" ignored="false" />
     <file path="/index.html" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412660085745" ignored="false" />
-    <file path="/main.js" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412711800150" ignored="false" />
+    <file path="/main.js" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412796441825" ignored="false" />
     <file path="/main.css" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412541759693" ignored="false" />
     <file path="/login.js" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412636420557" ignored="false" />
     <file path="/clinic_form.html" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412522104051" ignored="false" />
-    <file path="/main.html" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412716920896" ignored="false" />
+    <file path="/main.html" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412790611036" ignored="false" />
     <file path="/script.js" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412536446128" ignored="false" />
     <file path="/login.html" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412534329741" ignored="false" />
     <file path="/test.html" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412615962972" ignored="false" />
@@ -145,33 +144,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/main.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="105" selection-start="708" selection-end="708" vertical-scroll-proportion="13.269231">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="319" column="0" selection-start="10562" selection-end="10562" vertical-scroll-proportion="0.0">
+            <state line="9" column="0" selection-start="336" selection-end="336" vertical-scroll-proportion="0.11345219">
               <folding>
-                <marker date="1412783049270" expanded="false" signature="1947:1967" placeholder="..." />
-                <marker date="1412783049270" expanded="false" signature="2004:2039" placeholder="..." />
-                <marker date="1412783049270" expanded="false" signature="2285:2298" placeholder="..." />
+                <marker date="1412796589361" expanded="true" signature="1178:1198" placeholder="..." />
+                <marker date="1412796589361" expanded="true" signature="1235:1270" placeholder="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Clinic.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/za/co/medstock/entities/Clinic.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="43" selection-start="310" selection-end="310" vertical-scroll-proportion="0.0">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -179,34 +159,7 @@
       <file leaf-file-name="MedStockService.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/za/co/medstock/service/MedStockService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="164" column="29" selection-start="6535" selection-end="6535" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MatcherFilter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/com/sparkjava/spark-core/2.0.0/spark-core-2.0.0-sources.jar!/spark/webserver/MatcherFilter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="188" column="0" selection-start="7178" selection-end="7178" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MedStock.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/za/co/medstock/crud/MedStock.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="70" column="77" selection-start="2214" selection-end="2214" vertical-scroll-proportion="0.3873582">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="leaflet.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/css/leaflet.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="470" column="27" selection-start="9598" selection-end="9598" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -234,18 +187,18 @@
         <option value="$PROJECT_DIR$/src/main/resources/userinterface/js/login.js" />
         <option value="$PROJECT_DIR$/src/main/resources/userinterface/css/slick.grid.css" />
         <option value="$PROJECT_DIR$/src/main/java/za/co/medstock/crud/HibernateUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/hibernateconf/Hibernate.cfg.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/test/java/MedStockTest.java" />
         <option value="$PROJECT_DIR$/src/main/resources/hibernateconf/HibernateTest.cfg.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/userinterface/css/leaflet.css" />
-        <option value="$PROJECT_DIR$/src/main/resources/userinterface/main.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/userinterface/js/main.js" />
-        <option value="$PROJECT_DIR$/src/main/java/za/co/medstock/entities/Clinic.java" />
         <option value="$PROJECT_DIR$/src/main/java/za/co/medstock/crud/MedStock.java" />
         <option value="$PROJECT_DIR$/src/main/java/za/co/medstock/entities/MedUser.java" />
         <option value="$PROJECT_DIR$/src/main/java/za/co/medstock/entities/Country.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/userinterface/main.html" />
+        <option value="$PROJECT_DIR$/src/main/java/za/co/medstock/entities/Clinic.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/hibernateconf/Hibernate.cfg.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/MedStockTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/za/co/medstock/service/MedStockService.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/userinterface/js/main.js" />
       </list>
     </option>
   </component>
@@ -359,7 +312,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -395,30 +347,12 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="MedStock" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MedStock" />
+              <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="userinterface" />
+              <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -441,14 +375,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="userinterface" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -474,37 +400,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="userinterface" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MedStock" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MedStock" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
+              <option name="myItemId" value="hibernateconf" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -567,6 +463,7 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -576,7 +473,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="reference.settings.ide.settings.web.browsers" />
+    <property name="options.lastSelected" value="liveEdit" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="last_opened_file_path" value="E:/Dropbox/TeleSpark2" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
@@ -584,14 +481,14 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="Repository.Attach.Sources" value="false" />
-    <property name="FullScreen" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
+    <property name="FullScreen" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="Downloaded.Files.Path" value="C:\Dev\MedStock\lib" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="dynamic.classpath" value="false" />
+    <property name="Downloaded.Files.Path" value="C:\Dev\MedStock\lib" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -735,6 +632,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -763,19 +673,6 @@
       <listeners />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" />
@@ -789,6 +686,13 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
       <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
       <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -810,13 +714,6 @@
       </option>
       <envs />
       <patterns />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
-      <JSDebuggerConfigurationSettings>
-        <option name="engineId" value="embedded" />
-        <option name="fileUrl" />
-      </JSDebuggerConfigurationSettings>
       <method />
     </configuration>
     <list size="3">
@@ -870,7 +767,6 @@
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998884" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39910814" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -882,15 +778,16 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998884" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.664437" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.7168339" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18943436" sideWeight="0.664437" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11846318" sideWeight="0.7168339" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.226254" sideWeight="0.7168339" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2831661" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998884" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -961,11 +858,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernateconf/Hibernate.cfg.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="104" selection-start="968" selection-end="968" vertical-scroll-proportion="0.50701755" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/js/login.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="7" selection-start="91" selection-end="91" vertical-scroll-proportion="0.0" />
@@ -974,11 +866,6 @@
     <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.0/junit-4.0-sources.jar!/org/junit/internal/runners/TestMethodRunner.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="84" column="0" selection-start="2530" selection-end="2530" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/MedStockTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="8" selection-start="1265" selection-end="1265" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/za/co/medstock/crud/HibernateUtil.java">
@@ -1000,23 +887,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="105" selection-start="708" selection-end="708" vertical-scroll-proportion="13.269231">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/css/leaflet.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="470" column="27" selection-start="9598" selection-end="9598" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/za/co/medstock/entities/MedUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="44" selection-start="429" selection-end="429" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1028,42 +901,76 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/js/main.js">
+    <entry file="jar://$MAVEN_REPOSITORY$/com/sparkjava/spark-core/2.0.0/spark-core-2.0.0-sources.jar!/spark/webserver/MatcherFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="319" column="0" selection-start="10562" selection-end="10562" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1412783049270" expanded="false" signature="1947:1967" placeholder="..." />
-            <marker date="1412783049270" expanded="false" signature="2004:2039" placeholder="..." />
-            <marker date="1412783049270" expanded="false" signature="2285:2298" placeholder="..." />
-          </folding>
+        <state line="188" column="0" selection-start="7178" selection-end="7178" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/za/co/medstock/crud/MedStock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="80" selection-start="740" selection-end="740" vertical-scroll-proportion="0.55105346">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/za/co/medstock/entities/MedUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="33" selection-start="573" selection-end="573" vertical-scroll-proportion="0.44084278">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/za/co/medstock/entities/Clinic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="43" selection-start="310" selection-end="310" vertical-scroll-proportion="0.0">
+        <state line="14" column="64" selection-start="266" selection-end="266" vertical-scroll-proportion="0.22042139">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/sparkjava/spark-core/2.0.0/spark-core-2.0.0-sources.jar!/spark/webserver/MatcherFilter.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/main.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="188" column="0" selection-start="7178" selection-end="7178" vertical-scroll-proportion="0.0">
+        <state line="23" column="85" selection-start="974" selection-end="974" vertical-scroll-proportion="-15.038462">
+          <folding>
+            <element signature="n#style#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernateconf/Hibernate.cfg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="44" selection-start="848" selection-end="848" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/MedStockTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="83" selection-start="501" selection-end="501" vertical-scroll-proportion="0.08265802">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/za/co/medstock/service/MedStockService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="164" column="29" selection-start="6535" selection-end="6535" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/za/co/medstock/crud/MedStock.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="77" selection-start="2214" selection-end="2214" vertical-scroll-proportion="0.3873582">
-          <folding />
+        <state line="9" column="0" selection-start="336" selection-end="336" vertical-scroll-proportion="0.11345219">
+          <folding>
+            <marker date="1412796589361" expanded="true" signature="1178:1198" placeholder="..." />
+            <marker date="1412796589361" expanded="true" signature="1235:1270" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

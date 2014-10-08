@@ -105,7 +105,7 @@ public class MedStockService {
             set("count", String.valueOf(settings.size()));
             return medServ.render("userinterface/main.html", settings);
         });
-        get("/clinics", (request, response) -> {
+        get("/clinics/all", (request, response) -> {
             response.status(200);
             return medServ.convertToJSON(med.getAllClinics());
         });
@@ -116,7 +116,7 @@ public class MedStockService {
         });
         // Creates a new book resource, will return the ID to the created resource
         // author and title are sent as query parameters e.g. /books?author=Foo&title=Bar
-        post("/clinic", (request, response) -> {
+        post("/clinics/", (request, response) -> {
             Clinic clin = medServ.mapRequestToClinic(request);
             if (clin !=null){
                 med.addNewEntity(clin);
@@ -129,7 +129,7 @@ public class MedStockService {
         });
 
         // Gets the book resource for the provided id
-        get("/clinic/:id", (request, response) -> {
+        get("/clinics/:id", (request, response) -> {
             String id =request.params(":id");
             Clinic clin = med.getClinic(Integer.parseInt(id));
             if (clin != null) {
@@ -142,7 +142,7 @@ public class MedStockService {
 
         // Updates the book resource for the provided id with new information
         // author and title are sent as query parameters e.g. /books/<id>?author=Foo&title=Bar
-        put("/clinic/:id", (Route) (request, response) -> {
+        put("/clinics/:id", (Route) (request, response) -> {
             String id = request.params(":id");
             //TODO: this step can be removed depending what gets returned by hibernate after entity update ex. returns 1, updated records =  1
             Clinic serverClinic = med.getClinic(Integer.parseInt(id));
@@ -158,7 +158,7 @@ public class MedStockService {
             }
         });
         // Deletes the book resource for the provided id
-        delete("/clinic/:id", (request, response) -> {
+        delete("/clinics/:id", (request, response) -> {
             String id = request.params(":id");
             Clinic clin = med.getClinic(Integer.parseInt(id));
             if (clin != null){

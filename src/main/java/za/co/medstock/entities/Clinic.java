@@ -22,6 +22,6 @@ public class Clinic implements Serializable {
     private Integer nevirapineStock;
     private Integer stavudineStock;
     private Integer zidotabineStock;
-    private Double lattitude;
+    private Double latitude;
     private Double longitude;
 }
