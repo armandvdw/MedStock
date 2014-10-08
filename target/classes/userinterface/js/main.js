@@ -7,7 +7,6 @@ function loadContent() {
     prepareChart("ms-grid", clinicData);
     prepareGrid(clinicData);
     prepareMap(clinicData);
-    openDialogBox();
 }
 function prepareMap(cd) {
     var map = L.map('ms-map').setView([51.505, -0.09], 13);
@@ -24,8 +23,8 @@ function prepareMap(cd) {
         var clinic = cd[i];
         var button = $("<button id='btn-dialog' type=submit>Update</button>").click(function (data) {
             var form = $("#form-update");
-
-            alert(formData);
+            updateClinic(form.serialize());
+            alert(form.serialize());
         });
 
         var field = function (name, label, value) {
@@ -34,7 +33,7 @@ function prepareMap(cd) {
                 "<input name=" + name + " type='text' style='width: 204px;' value='" + value + "'/>" +
                 "</div>";
         };
-        var form = $("<form id='form-update' action=''>");
+        var form = $("<form id='form-update'>");
         form.append("<h1>Clinic: " + clinic.name + "</h1>");
        // form.append("<form id='update-form'>");
         form.append(field("clinicId","Clinic ID:", clinic.clinicId));
@@ -62,10 +61,6 @@ function prepareMap(cd) {
     }
 
     map.on('click', onMapClick);
-}
-
-function updateClinic(clinic) {
-    alert("updated Clinic:" + clinic["name"]);
 }
 
 function prepareGrid(cd) {
@@ -201,14 +196,15 @@ function deleteClinic(id){
 function updateClinic(clinic){
     return $.ajax({
         type: "PUT",
-        url: "/clinics/" + clinic,
+        url: "/clinics/update?"+clinic,
         async: false
     }).responseText;
 }
 function createClinic(clinic){
     return $.ajax({
         type: "POST",
-        url: "/clinics/" + clinic,
+        url: "/clinics/add",
+        data:clinic,
         async: false
     }).responseText;
 }

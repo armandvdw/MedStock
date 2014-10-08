@@ -2,7 +2,6 @@ package za.co.medstock.service;
 
 import com.google.gson.Gson;
 import spark.Request;
-import spark.Route;
 import za.co.medstock.crud.HibernateUtil;
 import za.co.medstock.crud.MedStock;
 import za.co.medstock.entities.Clinic;
@@ -77,12 +76,12 @@ public class MedStockService {
 
     public Clinic mapRequestToClinic(Request request){
         String name = request.queryParams("name");
-        String country = request.queryParams("country");
-        Integer nevirapine =  Integer.valueOf(request.queryParams("nev"));
-        Integer stavudine= Integer.valueOf(request.queryParams("sta"));
-        Integer zidotabine= Integer.valueOf(request.queryParams("zid"));
-        Double lat = Double.parseDouble(request.queryParams("lat"));
-        Double lon = Double.parseDouble(request.queryParams("lon"));
+        String country = request.queryParams("countryId");
+        Integer nevirapine =  Integer.valueOf(request.queryParams("nevirapineStock"));
+        Integer stavudine= Integer.valueOf(request.queryParams("stavudineStock"));
+        Integer zidotabine= Integer.valueOf(request.queryParams("zidotabineStock"));
+        Double lat = Double.parseDouble(request.queryParams("latitude"));
+        Double lon = Double.parseDouble(request.queryParams("longitude"));
         return new Clinic(1,name,country,nevirapine,stavudine,zidotabine,lat,lon);
     }
     public static void main(String[] args) {
@@ -116,7 +115,7 @@ public class MedStockService {
         });
         // Creates a new book resource, will return the ID to the created resource
         // author and title are sent as query parameters e.g. /books?author=Foo&title=Bar
-        post("/clinics/", (request, response) -> {
+        post("/clinics/add", (request, response) -> {
             Clinic clin = medServ.mapRequestToClinic(request);
             if (clin !=null){
                 med.addNewEntity(clin);
@@ -140,10 +139,9 @@ public class MedStockService {
             }
         });
 
-        // Updates the book resource for the provided id with new information
-        // author and title are sent as query parameters e.g. /books/<id>?author=Foo&title=Bar
-        put("/clinics/:id", (Route) (request, response) -> {
-            String id = request.params(":id");
+        put("/clinics/update", (request, response) -> {
+
+            String id = request.queryParams("clinicId");
             //TODO: this step can be removed depending what gets returned by hibernate after entity update ex. returns 1, updated records =  1
             Clinic serverClinic = med.getClinic(Integer.parseInt(id));
             if (serverClinic != null) {
