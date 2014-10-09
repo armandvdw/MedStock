@@ -65,6 +65,15 @@ public class MedStockService {
             set("count", String.valueOf(settings.size()));
             return medServ.render("userinterface/main.html", settings);
         });
+        //Simple Login request
+        get("/login", (request, response) -> {
+            if (medServ.authenticate(request.queryParams("username"), request.queryParams("password"))) {
+                response.status(200);
+                return true;
+            } else {
+                return false;
+            }
+        });
 
         //Gets all the clinics
         get("/clinics/all", (request, response) -> {
@@ -192,6 +201,10 @@ public class MedStockService {
         Double lat = Double.parseDouble(request.queryParams("latitude"));
         Double lon = Double.parseDouble(request.queryParams("longitude"));
         return new Clinic(1, name, country, nevirapine, stavudine, zidotabine, lat, lon);
+    }
+
+    public boolean authenticate(String username, String password) {
+        return username.equals("demo") && password.equals("test");
     }
 }
 

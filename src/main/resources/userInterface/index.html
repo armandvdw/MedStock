@@ -9,22 +9,22 @@
     <link rel="stylesheet" href="css/login/skeleton.css">
     <link rel="stylesheet" href="css/login/layout.css">
     <link rel="stylesheet" href="css/main.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
+    <script>window.jQuery || document.write("<script src='js/jquery.js'>\x3C/script>")</script>
+    <script src="js/login.js"></script>
 
 </head>
-<body ng-controller="mainController" style='height:100%'>
+<body style='height:100%'>
 <div class="form-bg">
-    <form ng-submit='login()'>
+    <form id='form-login'>
         <h2>Login</h2>
-        <p><input id="login-username" type="text" placeholder="Username"></p>
-        <p><input id="login-password" type="password" placeholder="Password"></p>
-        <a ng-route='#' id='tempSolution' href="#"></a>
+
+        <p><input id="username" name='username' type="text" placeholder="Username"></p>
+
+        <p><input id="password" name='password' type="password" placeholder="Password"></p>
+        <a id='tempSolution' href="#"></a>
         <button type="submit" onclick="login()"></button>
     </form>
 </div>
-<!-- JS  -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
-<script>window.jQuery || document.write("<script src='js/jquery.js'>\x3C/script>")</script>
-<script src="js/login.js"></script>
-<!-- End Document -->
 </body>
 </html>

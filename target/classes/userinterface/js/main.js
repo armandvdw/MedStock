@@ -35,13 +35,13 @@ function lowStockClinic(clinic) {
 
 //This will do the setup for my map component
 function prepareMap(divId, cd) {
-   //basic map initializer
-    var map = L.map(divId,{
-        closePopupOnClick:true
+    //Basic map initializer
+    var map = L.map(divId, {
+        closePopupOnClick: true
     });
 
     map.setView([mapLat, mapLon], mapZoomLevel);
-       L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
+    L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
         maxZoom: 18,
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
             '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
@@ -62,22 +62,27 @@ function prepareMap(divId, cd) {
             var form = $("#form-update");
             updateClinic(form.serialize());
         });
+
         //Create the Delete button
         var buttonDelete = $("<button id='btn-delete' type=submit>Delete</button>").click(function (data) {
             var form = $("#form-update");
             if (confirm("Are you sure you want to delete this clinic?"))deleteClinic(form.serializeObject()["clinicId"]);
         });
+
         //Create the cancel button.
         var buttonCancel = $("<button id='btn-cancel'>Cancel</button>").click(function (data) {
             map.closePopup()
         });
 
+        //A reusable function to create fields.
         var field = function (name, label, value) {
             return "<div style='padding: 2px 0 2px 0'>" +
                 "<label style='width: 120px;display: inline-block;'>" + label + "</label>" +
                 "<input name=" + name + " type='text' style='width: 204px;' value='" + value + "'/>" +
                 "</div>";
         };
+
+        //Create the form to be displayed in the popup
         var formUpdate = $("<form id='form-update'>");
         formUpdate.append("<h1>Clinic: " + clinic.name + "</h1>");
         // form.append("<form id='update-form'>");
@@ -94,17 +99,18 @@ function prepareMap(divId, cd) {
         formUpdate.append(buttonDelete);
         formUpdate.append(buttonCancel);
 
+        //Add red markers to the map where stock is low
         var marker = L.marker([clinic.latitude, clinic.longitude], {title: clinic["name"]});
         if (lowStockClinic(clinic)) {
-            marker.setIcon = L.Icon({ iconUrl: 'images/marker-icon-red.png'});
+            marker.setIcon = L.Icon({ iconUrl: 'js/images/marker-icon-red.png'});
         }
         marker.addTo(markersLayer);
         marker.bindPopup(formUpdate[0]);
-
     }
-
+    //
     var formCreate = function (event) {
-        var buttonCreate = $("<button id='btn-create' type=submit>Update</button>").click(function () {
+
+        var buttonCreate = $("<button id='btn-create' type=submit>Create</button>").click(function () {
             var form = $("#form-create");
             createClinic(form.serialize());
         });
@@ -120,12 +126,10 @@ function prepareMap(divId, cd) {
         formCreate.append(field("longitude", "Longitude:", event.latlng.lng));
         formCreate.append("</form>");
         formCreate.append(buttonCreate);
-
         return formCreate;
     };
-
+    //Create the popup to add the new clinic
     var popup = L.popup();
-
     function onMapClick(e) {
         if (createMode) {
             popup
@@ -135,6 +139,7 @@ function prepareMap(divId, cd) {
         }
     }
 
+    //Create the markers list to add to the map
     var list = new L.Control.ListMarkers({layer: markersLayer, itemIcon: null});
     //TODO: see if you can fix this
     /*  list.on('item-mouseover',function (e) {
@@ -147,15 +152,24 @@ function prepareMap(divId, cd) {
      iconUrl: L.Icon.Default.imagePath+'/marker-icon.png'
      }))
      });  */
-
     map.addControl(list);
-
     map.on('click', onMapClick);
 }
 
+//This will toggle the stat of the button to create new clinics on map click
+function toggleCreate() {
+    if (createMode == true) {
+        createMode = false;
+        $("#buttonToggle").html("Add Mode Off");
+    } else {
+        createMode = true;
+        $("#buttonToggle").html("Add Mode On");
+    }
+}
+
+//This is the basic grid setup
 function prepareGrid(divId, cd) {
     var grid;
-
     var columns = [
         {id: "ID", name: "ID", field: "clinicId", maxWidth: 30, width: 25},
         {id: "Name", name: "Name", field: "name"},
@@ -173,41 +187,17 @@ function prepareGrid(divId, cd) {
     };
     grid = new Slick.Grid("#" + divId, cd, columns, options);
     grid.setSelectionModel(new Slick.RowSelectionModel());
-    //grid.onClick.subscribe(setSelectedGridRow);
     grid.onSelectedRowsChanged.subscribe(function () {
         selectedClinic = (grid.getData()[grid.getSelectedRows()]);
-        alert(selectedClinic["clinicId"]);
         setMapSelectedMarker(selectedClinic["clinicId"]);
     });
 }
 //TODO: this does not work yet
 function setMapSelectedMarker(id) {
-
+    //IF there is a way to click on the map, this would be the spot to add it to integrat grid and map
 }
 
-//TODO: replace temp clinic with backend data.
-var tempClinic = {
-    clinName: "Mezza",
-    id: "001",
-    country: "ZA",
-    nev: "10",
-    sta: "5",
-    zid: "8"
-};
-
-
-function preparePropertyBox(divId, clinic) {
-    var propboxHeading = "<h2>Clinic: " + clinic.clinName + "</h2>";
-    var propboxFields = "<ul>" +
-        "<li>Clinic ID: " + clinic.id + "</li>" +
-        "<li>Country: " + clinic.country + "</li>" +
-        "<li>Nevirapine: " + clinic.nev + "</li>" +
-        "<li>Stavudine: " + clinic.sta + "</li>" +
-        "<li>Zidotabine: " + clinic.zid + "</li>" +
-        "</ul>";
-
-
-}
+//This is the chart setup
 function prepareChart(divId, clinicData) {
     var chartData = barGraphDataPreparation(clinicData);
     var settings = {
@@ -246,7 +236,7 @@ function prepareChart(divId, clinicData) {
     $.plot($("#" + divId), chartData.data, settings);
 }
 
-//TODO: remove this after implementation!
+//This will setup the data for the graph
 function barGraphDataPreparation(sourceData) {
     if (!sourceData) return undefined;
 
@@ -282,6 +272,7 @@ function barGraphDataPreparation(sourceData) {
     return chartData;
 }
 
+//Here lies the ajax calls tot the backend for CRUD operations
 function getClinicData() {
     return $.ajax({
         type: "GET",
@@ -289,6 +280,7 @@ function getClinicData() {
         async: false
     }).responseText;
 }
+
 function getLowStockClinics() {
     return $.ajax({
         type: "GET",
@@ -296,6 +288,7 @@ function getLowStockClinics() {
         async: false
     }).responseText;
 }
+
 function deleteClinic(id) {
     return $.ajax({
         type: "DELETE",
@@ -303,6 +296,7 @@ function deleteClinic(id) {
         async: false
     }).responseText;
 }
+
 function updateClinic(clinic) {
     return $.ajax({
         type: "PUT",
@@ -310,6 +304,7 @@ function updateClinic(clinic) {
         async: false
     }).responseText;
 }
+
 function createClinic(clinic) {
     return $.ajax({
         type: "POST",
@@ -319,15 +314,7 @@ function createClinic(clinic) {
     }).responseText;
 }
 
-function toggleCreate() {
-    if (createMode == true) {
-        createMode = false;
-        $("#buttonToggle").html("Add Mode Off");
-    } else {
-        createMode = true;
-        $("#buttonToggle").html("Add Mode On");
-    }
-}
+//This is a function to convert Objects to a format that can be send through the requests to backend
 $.fn.serializeObject = function () {
     var o = {};
     var a = this.serializeArray();
