@@ -3,6 +3,7 @@ var clinicData = JSON.parse(getClinicData());
 var mapZoomLevel = 3;
 var mapLat = 0.56;
 var mapLon = 22.89;
+var selectedClinic = clinicData[0];
 
 function loadContent() {
     if (!clinicData) {
@@ -21,6 +22,13 @@ function setContentToLowStock() {
     clinicData = JSON.parse(getLowStockClinics());
     loadContent();
 }
+function lowStockClinic(clinic) {
+    if (clinic["stavudineStock"] < 5 || clinic["zidotabineStock"] < 5 || clinic["nevirapineStock"] < 5) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 var createMode = false;
 function prepareMap(cd) {
@@ -34,6 +42,12 @@ function prepareMap(cd) {
         id: 'examples.map-i875mjb7'
     }).addTo(map);
 
+    var markersLayer = new L.LayerGroup();	//layer contain searched elements
+    markersLayer.setIcon = function(param){
+        alert("hi");
+    };
+    map.addLayer(markersLayer);
+
     for (var i = 0; i < cd.length; i++) {
         var clinic = cd[i];
         var buttonUpdate = $("<button id='btn-update' type=submit>Update</button>").click(function (data) {
@@ -42,12 +56,11 @@ function prepareMap(cd) {
         });
         var buttonDelete = $("<button id='btn-delete' type=submit>Delete</button>").click(function (data) {
             var form = $("#form-update");
-            if(confirm("Are you sure you want to delete this clinic?"))deleteClinic(form.serializeObject()["clinicId"]);
+            if (confirm("Are you sure you want to delete this clinic?"))deleteClinic(form.serializeObject()["clinicId"]);
         });
         var buttonCancel = $("<button id='btn-cancel' type=submit>Cancel</button>").click(function (data) {
             map.closePopup()
         });
-
 
         var field = function (name, label, value) {
             return "<div style='padding: 2px 0 2px 0'>" +
@@ -71,12 +84,16 @@ function prepareMap(cd) {
         formUpdate.append(buttonDelete);
         formUpdate.append(buttonCancel);
 
+        var marker = L.marker([clinic.latitude, clinic.longitude], {title: clinic["name"]});
+        if (lowStockClinic(clinic)) {
+            marker.setIcon = L.Icon({ iconUrl: 'images/marker-icon-red.png'});
+        }
+        marker.addTo(markersLayer)
+        marker.bindPopup(formUpdate[0]);
 
-        L.marker([clinic.latitude, clinic.longitude], L.Icon({iconUrl: '/images/marker-icon.png'})).addTo(map)
-            .bindPopup(formUpdate[0]);
     }
 
-    var formCreate1 = function (event) {
+    var formCreate = function (event) {
         var buttonCreate = $("<button id='btn-create' type=submit>Update</button>").click(function () {
             var form = $("#form-create");
             createClinic(form.serialize());
@@ -98,19 +115,35 @@ function prepareMap(cd) {
     };
     var popup = L.popup();
 
-        function onMapClick(e) {
-            if (createMode) {
-                popup
-                    .setLatLng(e.latlng)
-                    .setContent(formCreate1(e)[0])
-                    .openOn(map);
-            }
+    function onMapClick(e) {
+        if (createMode) {
+            popup
+                .setLatLng(e.latlng)
+                .setContent(formCreate(e)[0])
+                .openOn(map);
         }
-        map.on('click', onMapClick);
+    }
+
+    var list = new L.Control.ListMarkers({layer: markersLayer, itemIcon: null});
+
+    list.on('item-mouseover',function (e) {
+        e.layer._icon.setIcon(L.icon({
+            iconUrl: L.Icon.Default.imagePath + 'marker-icon-green.png'
+        })                    );
+    }).on('item-mouseout', function (e) {
+            e.layer.setIcon(L.icon({
+                iconUrl: L.Icon.Default.imagePath+'/marker-icon.png'
+            }))
+        });
+
+    map.addControl(list);
+
+    map.on('click', onMapClick);
 }
 
 function prepareGrid(cd) {
     var grid;
+
     var columns = [
         {id: "ID", name: "ID", field: "clinicId", maxWidth: 30, width: 25},
         {id: "Name", name: "Name", field: "name"},
@@ -127,7 +160,19 @@ function prepareGrid(cd) {
 
     };
     grid = new Slick.Grid("#ms-propbox", cd, columns, options);
+    grid.setSelectionModel(new Slick.RowSelectionModel());
+    //grid.onClick.subscribe(setSelectedGridRow);
+    grid.onSelectedRowsChanged.subscribe(function () {
+        selectedClinic = (grid.getData()[grid.getSelectedRows()]);
+        alert(selectedClinic["clinicId"]);
+        setMapSelectedMarker(selectedClinic["clinicId"]);
+    });
 }
+
+function setMapSelectedMarker(id) {
+
+}
+
 //TODO: replace temp clinic with backend data.
 var tempClinic = {
     clinName: "Mezza",
