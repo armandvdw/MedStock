@@ -12,7 +12,7 @@ import org.hibernate.service.ServiceRegistry;
 /**
  * This Class is used to simplify the use of the Hibernate Session and the management of connections throughout the
  * lifespan of the service. It mimics a Singleton pattern by instantiating the class only once, and then be able to use
- * it throughout the entire project.
+ * it throughout the entire service.
  */
 public class HibernateUtil {
 

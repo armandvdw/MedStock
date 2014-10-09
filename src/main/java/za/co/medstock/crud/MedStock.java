@@ -2,12 +2,12 @@ package za.co.medstock.crud;
 
 import org.hibernate.Query;
 import za.co.medstock.entities.Clinic;
-import za.co.medstock.entities.Country;
-import za.co.medstock.entities.MedUser;
 
 import java.util.ArrayList;
 
-
+/**
+ * This is my database interaction class. Here I specify the queries to the DB.
+ */
 public class MedStock {
     public static final Integer LOW_STOCK_VALUE = 5;
 
@@ -17,7 +17,7 @@ public class MedStock {
     /**
      * This will get all of the clinics from the database.
      *
-     * @return
+     * @return A list of all clinics
      */
     public ArrayList<Clinic> getAllClinics() {
         HibernateUtil.getCurrentSession().beginTransaction();
@@ -27,22 +27,10 @@ public class MedStock {
     }
 
     /**
-     * This will get all of the countries from the database.
-     *
-     * @return
-     */
-    public ArrayList<Country> getAllCountries() {
-        HibernateUtil.getCurrentSession().beginTransaction();
-        ArrayList<Country> list = (ArrayList<Country>) HibernateUtil.getCurrentSession().createCriteria(Country.class).list();
-        HibernateUtil.getCurrentSession().getTransaction().commit();
-        return list;
-    }
-
-    /**
      * This will add an entity to the database. Hibernate will know by the entity mapping to which table the entity
      * must be added.
      *
-     * @param entity
+     * @param entity That needs to be added
      */
     public void addNewEntity(Object entity) {
         HibernateUtil.getCurrentSession().beginTransaction();
@@ -53,7 +41,7 @@ public class MedStock {
     /**
      * This will update and existing entity
      *
-     * @param entity
+     * @param entity that needs to be updated
      */
     public void updateEntity(Object entity) {
         HibernateUtil.getCurrentSession().beginTransaction();
@@ -64,7 +52,7 @@ public class MedStock {
     /**
      * This will simply delete the specified entity from the database
      *
-     * @param entity
+     * @param entity That needs to be deleted
      */
     public void deleteEntity(Object entity) {
         HibernateUtil.getCurrentSession().beginTransaction();
@@ -72,13 +60,11 @@ public class MedStock {
         HibernateUtil.getCurrentSession().getTransaction().commit();
     }
 
-    public MedUser getUser(String userID) {
-        HibernateUtil.getCurrentSession().beginTransaction();
-        MedUser user = (MedUser) HibernateUtil.getCurrentSession().get(MedUser.class, userID);
-        HibernateUtil.getCurrentSession().getTransaction().commit();
-        return user;
-    }
-
+    /**
+     * Returns a single clinic
+     * @param clinicID  The Id of the clinic
+     * @return Clinic Object
+     */
     public Clinic getClinic(Integer clinicID) {
         HibernateUtil.getCurrentSession().beginTransaction();
         Clinic clinic = (Clinic) HibernateUtil.getCurrentSession().get(Clinic.class, clinicID);
@@ -86,18 +72,11 @@ public class MedStock {
         return clinic;
     }
 
-    public Country getCountry(String countryID) {
-        HibernateUtil.getCurrentSession().beginTransaction();
-        Country country = (Country) HibernateUtil.getCurrentSession().get(Country.class, countryID);
-        HibernateUtil.getCurrentSession().getTransaction().commit();
-        return country;
-    }
-
     /**
      * This will get the Clinics with low stock levels. I would like to use an enum to iterate through all the medication
      * for if the types of medications will increase. I will have to hard code it for now.
      *
-     * @return
+     * @return A list of low stock clinics
      */
     public ArrayList<Clinic> getLowStockClinics() {
         HibernateUtil.getCurrentSession().beginTransaction();
