@@ -108,6 +108,10 @@ public class MedStockService {
             response.status(200);
             return medServ.convertToJSON(med.getAllClinics());
         });
+        get("/clinics/lowStock", (request, response) -> {
+            response.status(200);
+            return medServ.convertToJSON(med.getLowStockClinics());
+        });
         get("/logout", (request, response) -> {
             HibernateUtil.closeSession();
             stop();

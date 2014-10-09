@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html ng-app='medStockApp' style='height:100%'>
 <head>
@@ -23,7 +22,11 @@
 
 </head>
 <body style='height: 100%'>
-<div id='ms-header' style='width: 100%; height: 10%; background-color: purple;display:relative; top:0'><button id='buttonToggle' onclick="toggleCreate()">Toggle</button></div>
+<div id='ms-header' style='width: 100%; height: 10%; background-color: purple;display:relative; top:0'>
+    <button id='buttonToggle' onclick="toggleCreate()">Toggle</button>
+    <button id='lowStock' onclick="setContentToLowStock()">Low Stock</button>
+    <button id='allStock' onclick="setContentToAllStock()">All Clinics</button>
+</div>
 <div id='ms-data-container' style='width: 100%;height:90%;display: inline-flex'>
     <div id='ms-propbox' style='width: 30%; height: 100%; background-color: green; display:inline-block'>1</div>
     <div id='ms-mapgridcontainer' style='width: 70%; height: 100%; background-color: blue;display:inline-block'>

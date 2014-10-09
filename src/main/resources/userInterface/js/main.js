@@ -1,6 +1,7 @@
 //TODO: create a module of type main here, so that you can use global json with all clinic details
+var clinicData = JSON.parse(getClinicData());
+
 function loadContent() {
-    var clinicData = JSON.parse(getClinicData());
     if (!clinicData) {
         alert("No data Received");
     }
@@ -8,6 +9,16 @@ function loadContent() {
     prepareGrid(clinicData);
     prepareMap(clinicData);
 }
+function setContentToAllStock(){
+    clinicData = JSON.parse(getClinicData());
+    loadContent();
+}
+
+function setContentToLowStock(){
+    clinicData = JSON.parse(getLowStockClinics());
+    loadContent();
+}
+
 var createMode = true;
 function prepareMap(cd) {
     var map = L.map('ms-map').setView([51.505, -0.09], 13);
@@ -26,6 +37,15 @@ function prepareMap(cd) {
             var form = $("#form-update");
             updateClinic(form.serialize());
         });
+        var buttonDelete = $("<button id='btn-delete' type=submit>Delete</button>").click(function (data) {
+            var form = $("#form-update");
+            deleteClinic(form.serializeObject()["clinicId"]);
+        });
+        var buttonCancel = $("<button id='btn-cancel' type=submit>Cancel</button>").click(function (data) {
+            map.closePopup()
+        });
+
+
 
         var field = function (name, label, value) {
             return "<div style='padding: 2px 0 2px 0'>" +
@@ -45,9 +65,13 @@ function prepareMap(cd) {
         formUpdate.append(field("latitude", "Latitude:", clinic.latitude));
         formUpdate.append(field("longitude", "Longitude:", clinic.longitude));
         formUpdate.append("</form>");
+        formUpdate.append(buttonUpdate);
+        formUpdate.append(buttonDelete);
+        formUpdate.append(buttonCancel);
+
 
         L.marker([clinic.latitude, clinic.longitude], L.Icon({iconUrl: '/images/marker-icon.png'})).addTo(map)
-            .bindPopup(formUpdate.append(buttonUpdate)[0]);
+            .bindPopup(formUpdate[0]);
     }
 
     var formCreate1 = function (event) {
@@ -136,7 +160,7 @@ function prepareChart(divId, clinicData) {
         series: {
             bars: {
                 show: true,
-                barWidth: 1 / chartData.ticks.length / 2,
+                barWidth: 1 / chartData.ticks.length,
                 order: 1,
                 align: "center"
             }
@@ -207,6 +231,13 @@ function getClinicData() {
         async: false
     }).responseText;
 }
+function getLowStockClinics() {
+    return $.ajax({
+        type: "GET",
+        url: "/clinics/lowStock",
+        async: false
+    }).responseText;
+}
 function deleteClinic(id) {
     return $.ajax({
         type: "DELETE",
@@ -242,6 +273,22 @@ function toggleCreate() {
         loadContent();
     }
 }
+$.fn.serializeObject = function()
+{
+    var o = {};
+    var a = this.serializeArray();
+    $.each(a, function() {
+        if (o[this.name] !== undefined) {
+            if (!o[this.name].push) {
+                o[this.name] = [o[this.name]];
+            }
+            o[this.name].push(this.value || '');
+        } else {
+            o[this.name] = this.value || '';
+        }
+    });
+    return o;
+};
 
 
 

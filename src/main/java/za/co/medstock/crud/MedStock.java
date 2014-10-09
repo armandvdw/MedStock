@@ -106,8 +106,9 @@ public class MedStock {
                 "stavudineStock < :lowStock OR " +
                 "zidotabineStock < :lowStock");
         q.setParameter("lowStock", LOW_STOCK_VALUE);
+        ArrayList<Clinic> list = (ArrayList<Clinic>) q.list();
         HibernateUtil.getCurrentSession().getTransaction().commit();
-        return (ArrayList<Clinic>) q.list();
+        return list;
     }
 }
 
