@@ -1,36 +1,47 @@
-//TODO: create a module of type main here, so that you can use global json with all clinic details
+//Some Global variables needed to control some state of components
 var clinicData = JSON.parse(getClinicData());
-var mapZoomLevel = 3;
+var mapZoomLevel = 3;//This is the default setting for the leaflet map
 var mapLat = 0.56;
 var mapLon = 22.89;
 var selectedClinic = clinicData[0];
+var createMode = false; //The toggle button to add new clinics.
 
+//This is used to load the Components with data/ also used as a refresher.
 function loadContent() {
     if (!clinicData) {
         alert("No data Received");
     }
-    prepareChart("ms-grid", clinicData);
-    prepareGrid(clinicData);
-    prepareMap(clinicData);
+    prepareChart("ms-chart", clinicData);
+    prepareGrid("ms-grid", clinicData);
+    prepareMap("ms-map", clinicData);
 }
+
+//Set the global content to all stock
 function setContentToAllStock() {
     clinicData = JSON.parse(getClinicData());
     loadContent();
 }
 
+//Gets the low stock and updates the global content to show it.
 function setContentToLowStock() {
     clinicData = JSON.parse(getLowStockClinics());
     loadContent();
 }
+//TODO: check if this works
+//This checks if the Clinic object has stock levels less than 5
 function lowStockClinic(clinic) {
     return clinic["stavudineStock"] < 5 || clinic["zidotabineStock"] < 5 || clinic["nevirapineStock"] < 5;
 }
 
-var createMode = false;
-function prepareMap(cd) {
-    var map = L.map('ms-map').setView([mapLat, mapLon], mapZoomLevel);
+//This will do the setup for my map component
+function prepareMap(divId, cd) {
+   //basic map initializer
+    var map = L.map(divId,{
+        closePopupOnClick:true
+    });
 
-    L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
+    map.setView([mapLat, mapLon], mapZoomLevel);
+       L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
         maxZoom: 18,
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
             '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
@@ -38,20 +49,26 @@ function prepareMap(cd) {
         id: 'examples.map-i875mjb7'
     }).addTo(map);
 
+    //Add amrker layer to the map to enable marker shortcuts
     var markersLayer = new L.LayerGroup();	//layer contain searched elements
     map.addLayer(markersLayer);
 
+    //Create the map content
     for (var i = 0; i < cd.length; i++) {
         var clinic = cd[i];
+
+        //Create the update button
         var buttonUpdate = $("<button id='btn-update' type=submit>Update</button>").click(function (data) {
             var form = $("#form-update");
             updateClinic(form.serialize());
         });
+        //Create the Delete button
         var buttonDelete = $("<button id='btn-delete' type=submit>Delete</button>").click(function (data) {
             var form = $("#form-update");
             if (confirm("Are you sure you want to delete this clinic?"))deleteClinic(form.serializeObject()["clinicId"]);
         });
-        var buttonCancel = $("<button id='btn-cancel' type=submit>Cancel</button>").click(function (data) {
+        //Create the cancel button.
+        var buttonCancel = $("<button id='btn-cancel'>Cancel</button>").click(function (data) {
             map.closePopup()
         });
 
@@ -66,10 +83,10 @@ function prepareMap(cd) {
         // form.append("<form id='update-form'>");
         formUpdate.append(field("clinicId", "Clinic ID:", clinic.clinicId));
         formUpdate.append(field("name", "Name:", clinic.name));
-        formUpdate.append(field("countryId", "Country:", clinic.countryId));
+        formUpdate.append(field("countryName", "Country:", clinic.countryName));
         formUpdate.append(field("nevirapineStock", "Nevirapine:", clinic.nevirapineStock));
         formUpdate.append(field("stavudineStock", "Stavudine:", clinic.stavudineStock));
-        formUpdate.append(field("zidotabineStock", "Zidotabine:", clinic.countryId));
+        formUpdate.append(field("zidotabineStock", "Zidotabine:", clinic.zidotabineStock));
         formUpdate.append(field("latitude", "Latitude:", clinic.latitude));
         formUpdate.append(field("longitude", "Longitude:", clinic.longitude));
         formUpdate.append("</form>");
@@ -81,7 +98,7 @@ function prepareMap(cd) {
         if (lowStockClinic(clinic)) {
             marker.setIcon = L.Icon({ iconUrl: 'images/marker-icon-red.png'});
         }
-        marker.addTo(markersLayer)
+        marker.addTo(markersLayer);
         marker.bindPopup(formUpdate[0]);
 
     }
@@ -95,7 +112,7 @@ function prepareMap(cd) {
         formCreate.append("<h1>Add Clinic</h1>");
         // form.append("<form id='update-form'>");
         formCreate.append(field("name", "Name:", ""));
-        formCreate.append(field("countryId", "Country:", ""));
+        formCreate.append(field("countryName", "Country:", ""));
         formCreate.append(field("nevirapineStock", "Nevirapine:", ""));
         formCreate.append(field("stavudineStock", "Stavudine:", ""));
         formCreate.append(field("zidotabineStock", "Zidotabine:", ""));
@@ -108,6 +125,7 @@ function prepareMap(cd) {
     };
 
     var popup = L.popup();
+
     function onMapClick(e) {
         if (createMode) {
             popup
@@ -118,30 +136,30 @@ function prepareMap(cd) {
     }
 
     var list = new L.Control.ListMarkers({layer: markersLayer, itemIcon: null});
-  //TODO: see if you can fix this
-  /*  list.on('item-mouseover',function (e) {
-        e.layer.options.icon.options.iconUrl = L.Icon.Default.imagePath + 'marker-icon-green.png';
-            (L.icon({
-            iconUrl: L.Icon.Default.imagePath + 'marker-icon-green.png'
-        })                    );
-    }).on('item-mouseout', function (e) {
-            e.layer.setIcon(L.icon({
-                iconUrl: L.Icon.Default.imagePath+'/marker-icon.png'
-            }))
-        });  */
+    //TODO: see if you can fix this
+    /*  list.on('item-mouseover',function (e) {
+     e.layer.options.icon.options.iconUrl = L.Icon.Default.imagePath + 'marker-icon-green.png';
+     (L.icon({
+     iconUrl: L.Icon.Default.imagePath + 'marker-icon-green.png'
+     })                    );
+     }).on('item-mouseout', function (e) {
+     e.layer.setIcon(L.icon({
+     iconUrl: L.Icon.Default.imagePath+'/marker-icon.png'
+     }))
+     });  */
 
     map.addControl(list);
 
     map.on('click', onMapClick);
 }
 
-function prepareGrid(cd) {
+function prepareGrid(divId, cd) {
     var grid;
 
     var columns = [
         {id: "ID", name: "ID", field: "clinicId", maxWidth: 30, width: 25},
         {id: "Name", name: "Name", field: "name"},
-        {id: "Country", name: "Country", field: "countryId"},
+        {id: "Country", name: "Country", field: "countryName"},
         {id: "Nevirapine", name: "Nevirapine", field: "nevirapineStock"},
         {id: "Stavudine", name: "Stavudine", field: "stavudineStock"},
         {id: "Zidotabine", name: "Zidotabine", field: "zidotabineStock"}
@@ -153,7 +171,7 @@ function prepareGrid(cd) {
         forceFitColumns: true
 
     };
-    grid = new Slick.Grid("#ms-propbox", cd, columns, options);
+    grid = new Slick.Grid("#" + divId, cd, columns, options);
     grid.setSelectionModel(new Slick.RowSelectionModel());
     //grid.onClick.subscribe(setSelectedGridRow);
     grid.onSelectedRowsChanged.subscribe(function () {
@@ -162,7 +180,7 @@ function prepareGrid(cd) {
         setMapSelectedMarker(selectedClinic["clinicId"]);
     });
 }
-
+//TODO: this does not work yet
 function setMapSelectedMarker(id) {
 
 }
