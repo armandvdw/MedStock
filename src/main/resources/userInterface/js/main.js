@@ -23,11 +23,7 @@ function setContentToLowStock() {
     loadContent();
 }
 function lowStockClinic(clinic) {
-    if (clinic["stavudineStock"] < 5 || clinic["zidotabineStock"] < 5 || clinic["nevirapineStock"] < 5) {
-        return true;
-    } else {
-        return false;
-    }
+    return clinic["stavudineStock"] < 5 || clinic["zidotabineStock"] < 5 || clinic["nevirapineStock"] < 5;
 }
 
 var createMode = false;
@@ -43,9 +39,6 @@ function prepareMap(cd) {
     }).addTo(map);
 
     var markersLayer = new L.LayerGroup();	//layer contain searched elements
-    markersLayer.setIcon = function(param){
-        alert("hi");
-    };
     map.addLayer(markersLayer);
 
     for (var i = 0; i < cd.length; i++) {
@@ -113,8 +106,8 @@ function prepareMap(cd) {
 
         return formCreate;
     };
-    var popup = L.popup();
 
+    var popup = L.popup();
     function onMapClick(e) {
         if (createMode) {
             popup
@@ -125,16 +118,17 @@ function prepareMap(cd) {
     }
 
     var list = new L.Control.ListMarkers({layer: markersLayer, itemIcon: null});
-
-    list.on('item-mouseover',function (e) {
-        e.layer.setIcon(L.icon({
+  //TODO: see if you can fix this
+  /*  list.on('item-mouseover',function (e) {
+        e.layer.options.icon.options.iconUrl = L.Icon.Default.imagePath + 'marker-icon-green.png';
+            (L.icon({
             iconUrl: L.Icon.Default.imagePath + 'marker-icon-green.png'
         })                    );
     }).on('item-mouseout', function (e) {
             e.layer.setIcon(L.icon({
                 iconUrl: L.Icon.Default.imagePath+'/marker-icon.png'
             }))
-        });
+        });  */
 
     map.addControl(list);
 
