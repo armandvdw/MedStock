@@ -17,18 +17,17 @@ import org.hibernate.service.ServiceRegistry;
 public class HibernateUtil {
 
     private static SessionFactory sessionFactory;
-    private static ServiceRegistry serviceRegistry;
 
     /**
      * Creates the Session factory for hibernate
      *
-     * @param hibernateConfigFile
-     * @return
+     * @param hibernateConfigFile the config file to initiate the sessionFactory
+     * @return A sessionFactory
      */
     public static SessionFactory createSessionFactory(String hibernateConfigFile) {
         Configuration configuration = new Configuration();
         configuration.configure(hibernateConfigFile);
-        serviceRegistry = new StandardServiceRegistryBuilder().applySettings(
+        ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().applySettings(
                 configuration.getProperties()).build();
         sessionFactory = configuration.buildSessionFactory(serviceRegistry);
         //Set the session to flush changes in memory to the db when commiting a Transaction.
@@ -39,7 +38,7 @@ public class HibernateUtil {
     /**
      * Get the session factory for the currentSession.
      *
-     * @return
+     * @return The sessionFactory
      */
     private static SessionFactory getSessionFactory() {
         if (sessionFactory == null) {
@@ -51,7 +50,7 @@ public class HibernateUtil {
     /**
      * This will return the current session object from HibernateUtil for CRUD operations and Queries.
      *
-     * @return
+     * @return The current session for thread
      */
     public static Session getCurrentSession() {
         return getSessionFactory().getCurrentSession();

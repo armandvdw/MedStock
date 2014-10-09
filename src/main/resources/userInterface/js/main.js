@@ -66,10 +66,10 @@ function prepareMap(cd) {
         // form.append("<form id='update-form'>");
         formUpdate.append(field("clinicId", "Clinic ID:", clinic.clinicId));
         formUpdate.append(field("name", "Name:", clinic.name));
-        formUpdate.append(field("countryId", "Country:", clinic.countryId));
+        formUpdate.append(field("countryName", "Country:", clinic.countryName));
         formUpdate.append(field("nevirapineStock", "Nevirapine:", clinic.nevirapineStock));
         formUpdate.append(field("stavudineStock", "Stavudine:", clinic.stavudineStock));
-        formUpdate.append(field("zidotabineStock", "Zidotabine:", clinic.countryId));
+        formUpdate.append(field("zidotabineStock", "Zidotabine:", clinic.zidotabineStock));
         formUpdate.append(field("latitude", "Latitude:", clinic.latitude));
         formUpdate.append(field("longitude", "Longitude:", clinic.longitude));
         formUpdate.append("</form>");
@@ -81,7 +81,7 @@ function prepareMap(cd) {
         if (lowStockClinic(clinic)) {
             marker.setIcon = L.Icon({ iconUrl: 'images/marker-icon-red.png'});
         }
-        marker.addTo(markersLayer)
+        marker.addTo(markersLayer);
         marker.bindPopup(formUpdate[0]);
 
     }
@@ -95,7 +95,7 @@ function prepareMap(cd) {
         formCreate.append("<h1>Add Clinic</h1>");
         // form.append("<form id='update-form'>");
         formCreate.append(field("name", "Name:", ""));
-        formCreate.append(field("countryId", "Country:", ""));
+        formCreate.append(field("countryName", "Country:", ""));
         formCreate.append(field("nevirapineStock", "Nevirapine:", ""));
         formCreate.append(field("stavudineStock", "Stavudine:", ""));
         formCreate.append(field("zidotabineStock", "Zidotabine:", ""));
@@ -141,7 +141,7 @@ function prepareGrid(cd) {
     var columns = [
         {id: "ID", name: "ID", field: "clinicId", maxWidth: 30, width: 25},
         {id: "Name", name: "Name", field: "name"},
-        {id: "Country", name: "Country", field: "countryId"},
+        {id: "Country", name: "Country", field: "countryName"},
         {id: "Nevirapine", name: "Nevirapine", field: "nevirapineStock"},
         {id: "Stavudine", name: "Stavudine", field: "stavudineStock"},
         {id: "Zidotabine", name: "Zidotabine", field: "zidotabineStock"}

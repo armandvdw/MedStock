@@ -162,13 +162,12 @@ public class MedStockService {
     /**
      * This will convert a list of clinics to json to send it as a response
      *
-     * @param list
-     * @return
+     * @param list A list of Clinics
+     * @return The Json representation of the list
      */
     public String convertToJSON(ArrayList<Clinic> list) {
         Gson gson = new Gson();
-        String response = gson.toJson(list);
-        return response;
+        return gson.toJson(list);
     }
 
     //This is part of the parsing of static content processing
@@ -181,12 +180,12 @@ public class MedStockService {
     /**
      * This is a simple mapper to map the requests to clinic object for further processing in the backend.
      *
-     * @param request
-     * @return
+     * @param request the request object containing parameters
+     * @return A Clinic Object
      */
     public Clinic mapRequestToClinic(Request request) {
         String name = request.queryParams("name");
-        String country = request.queryParams("countryId");
+        String country = request.queryParams("countryName");
         Integer nevirapine = Integer.valueOf(request.queryParams("nevirapineStock"));
         Integer stavudine = Integer.valueOf(request.queryParams("stavudineStock"));
         Integer zidotabine = Integer.valueOf(request.queryParams("zidotabineStock"));

@@ -16,8 +16,5 @@
         <property name="show_sql">true</property>
 
         <mapping class="za.co.medstock.entities.Clinic"/>
-        <mapping class="za.co.medstock.entities.Country"/>
-        <mapping class="za.co.medstock.entities.MedUser"/>
-
     </session-factory>
 </hibernate-configuration>
