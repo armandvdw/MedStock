@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="09ec59e3-e4c3-453d-9e44-aebea3d906ff" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/za/co/medstock/crud/MedStock.java" afterPath="$PROJECT_DIR$/src/main/java/za/co/medstock/crud/MedStock.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/za/co/medstock/service/MedStockService.java" afterPath="$PROJECT_DIR$/src/main/java/za/co/medstock/service/MedStockService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-    </list>
+    <list default="true" id="09ec59e3-e4c3-453d-9e44-aebea3d906ff" name="Default" comment="" />
     <ignored path="MedStock.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/MedStockTest.java" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412679587409" ignored="false" />
@@ -25,11 +21,11 @@
     <file path="/Medication.java" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412370179380" ignored="false" />
     <file path="/HibernateTest.cfg.xml" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412679601924" ignored="false" />
     <file path="/index.html" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412660085745" ignored="false" />
-    <file path="/main.js" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412829791297" ignored="false" />
+    <file path="/main.js" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412832280720" ignored="false" />
     <file path="/main.css" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412541759693" ignored="false" />
     <file path="/login.js" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412636420557" ignored="false" />
     <file path="/clinic_form.html" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412522104051" ignored="false" />
-    <file path="/main.html" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412829820434" ignored="false" />
+    <file path="/main.html" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412832389987" ignored="false" />
     <file path="/script.js" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412536446128" ignored="false" />
     <file path="/login.html" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412534329741" ignored="false" />
     <file path="/test.html" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412615962972" ignored="false" />
@@ -173,13 +169,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="18" selection-start="432" selection-end="432" vertical-scroll-proportion="0.0">
+            <state line="78" column="14" selection-start="3338" selection-end="3339" vertical-scroll-proportion="0.33333334">
               <folding>
-                <marker date="1412829794336" expanded="true" signature="1800:1820" placeholder="..." />
-                <marker date="1412829794336" expanded="true" signature="1857:1892" placeholder="..." />
+                <marker date="1412832297877" expanded="true" signature="1933:1953" placeholder="..." />
+                <marker date="1412832297877" expanded="true" signature="1990:2025" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -188,7 +184,7 @@
       <file leaf-file-name="MedStockService.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/za/co/medstock/service/MedStockService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="112" column="57" selection-start="4306" selection-end="4306" vertical-scroll-proportion="0.0">
+            <state line="112" column="80" selection-start="4316" selection-end="4316" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -203,10 +199,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MedStock.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="MedStock.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/za/co/medstock/crud/MedStock.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="99" column="60" selection-start="3449" selection-end="3449" vertical-scroll-proportion="0.8316327">
+            <state line="76" column="95" selection-start="2491" selection-end="2491" vertical-scroll-proportion="-16.16">
               <folding />
             </state>
           </provider>
@@ -215,7 +211,7 @@
       <file leaf-file-name="main.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="57" selection-start="1312" selection-end="1312" vertical-scroll-proportion="-11.461538">
+            <state line="38" column="49" selection-start="1960" selection-end="1960" vertical-scroll-proportion="-18.653847">
               <folding>
                 <element signature="n#style#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -261,9 +257,9 @@
         <option value="$PROJECT_DIR$/src/main/resources/hibernateconf/Hibernate.cfg.xml" />
         <option value="$PROJECT_DIR$/src/test/java/MedStockTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/za/co/medstock/service/MedStockService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/za/co/medstock/crud/MedStock.java" />
         <option value="$PROJECT_DIR$/src/main/resources/userinterface/js/main.js" />
         <option value="$PROJECT_DIR$/src/main/resources/userinterface/main.html" />
-        <option value="$PROJECT_DIR$/src/main/java/za/co/medstock/crud/MedStock.java" />
       </list>
     </option>
   </component>
@@ -1037,19 +1033,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/js/main.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/za/co/medstock/crud/MedStock.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="18" selection-start="432" selection-end="432" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1412829794336" expanded="true" signature="1800:1820" placeholder="..." />
-            <marker date="1412829794336" expanded="true" signature="1857:1892" placeholder="..." />
-          </folding>
+        <state line="76" column="95" selection-start="2491" selection-end="2491" vertical-scroll-proportion="-16.16">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/za/co/medstock/service/MedStockService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="112" column="80" selection-start="4316" selection-end="4316" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/main.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="57" selection-start="1312" selection-end="1312" vertical-scroll-proportion="-11.461538">
+        <state line="38" column="49" selection-start="1960" selection-end="1960" vertical-scroll-proportion="-18.653847">
           <folding>
             <element signature="n#style#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1063,17 +1063,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/za/co/medstock/service/MedStockService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="112" column="57" selection-start="4306" selection-end="4306" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/za/co/medstock/crud/MedStock.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="99" column="60" selection-start="3449" selection-end="3449" vertical-scroll-proportion="0.8316327">
-          <folding />
+        <state line="78" column="14" selection-start="3338" selection-end="3339" vertical-scroll-proportion="0.33333334">
+          <folding>
+            <marker date="1412832297877" expanded="true" signature="1933:1953" placeholder="..." />
+            <marker date="1412832297877" expanded="true" signature="1990:2025" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

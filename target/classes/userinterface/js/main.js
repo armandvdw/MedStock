@@ -1,5 +1,8 @@
 //TODO: create a module of type main here, so that you can use global json with all clinic details
 var clinicData = JSON.parse(getClinicData());
+var mapZoomLevel = 3;
+var mapLat = 0.56;
+var mapLon = 22.89;
 
 function loadContent() {
     if (!clinicData) {
@@ -9,19 +12,19 @@ function loadContent() {
     prepareGrid(clinicData);
     prepareMap(clinicData);
 }
-function setContentToAllStock(){
+function setContentToAllStock() {
     clinicData = JSON.parse(getClinicData());
     loadContent();
 }
 
-function setContentToLowStock(){
+function setContentToLowStock() {
     clinicData = JSON.parse(getLowStockClinics());
     loadContent();
 }
 
-var createMode = true;
+var createMode = false;
 function prepareMap(cd) {
-    var map = L.map('ms-map').setView([51.505, -0.09], 13);
+    var map = L.map('ms-map').setView([mapLat, mapLon], mapZoomLevel);
 
     L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
         maxZoom: 18,
@@ -39,12 +42,11 @@ function prepareMap(cd) {
         });
         var buttonDelete = $("<button id='btn-delete' type=submit>Delete</button>").click(function (data) {
             var form = $("#form-update");
-            deleteClinic(form.serializeObject()["clinicId"]);
+            if(confirm("Are you sure you want to delete this clinic?"))deleteClinic(form.serializeObject()["clinicId"]);
         });
         var buttonCancel = $("<button id='btn-cancel' type=submit>Cancel</button>").click(function (data) {
             map.closePopup()
         });
-
 
 
         var field = function (name, label, value) {
@@ -87,7 +89,7 @@ function prepareMap(cd) {
         formCreate.append(field("nevirapineStock", "Nevirapine:", ""));
         formCreate.append(field("stavudineStock", "Stavudine:", ""));
         formCreate.append(field("zidotabineStock", "Zidotabine:", ""));
-        formCreate.append(field("latitude", "Latitude:", event.latlng.lat ));
+        formCreate.append(field("latitude", "Latitude:", event.latlng.lat));
         formCreate.append(field("longitude", "Longitude:", event.latlng.lng));
         formCreate.append("</form>");
         formCreate.append(buttonCreate);
@@ -95,17 +97,16 @@ function prepareMap(cd) {
         return formCreate;
     };
     var popup = L.popup();
-    if (createMode) {
 
         function onMapClick(e) {
-            popup
-                .setLatLng(e.latlng)
-                .setContent(formCreate1(e)[0])
-                .openOn(map);
+            if (createMode) {
+                popup
+                    .setLatLng(e.latlng)
+                    .setContent(formCreate1(e)[0])
+                    .openOn(map);
+            }
         }
-
         map.on('click', onMapClick);
-    }
 }
 
 function prepareGrid(cd) {
@@ -262,22 +263,18 @@ function createClinic(clinic) {
 }
 
 function toggleCreate() {
-
     if (createMode == true) {
         createMode = false;
-        $("#buttonToggle").html("Off");
-        loadContent();
+        $("#buttonToggle").html("Add Mode Off");
     } else {
         createMode = true;
-        $("#buttonToggle").html("On");
-        loadContent();
+        $("#buttonToggle").html("Add Mode On");
     }
 }
-$.fn.serializeObject = function()
-{
+$.fn.serializeObject = function () {
     var o = {};
     var a = this.serializeArray();
-    $.each(a, function() {
+    $.each(a, function () {
         if (o[this.name] !== undefined) {
             if (!o[this.name].push) {
                 o[this.name] = [o[this.name]];
