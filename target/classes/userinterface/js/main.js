@@ -5,12 +5,16 @@ var mapLat = 0.56;
 var mapLon = 22.89;
 var selectedClinic = clinicData[0];
 var createMode = false; //The toggle button to add new clinics.
+var displayedWarning = false;
 
 //This is used to load the Components with data/ also used as a refresher.
 function loadContent() {
     if (!clinicData) {
         alert("No data Received");
     }
+	if(!displayedWarning){
+		displayLowStockWarning(clinicData);
+	}
     prepareChart("ms-chart", clinicData);
     prepareGrid("ms-grid", clinicData);
     prepareMap("ms-map", clinicData);
@@ -19,12 +23,14 @@ function loadContent() {
 //Set the global content to all stock
 function setContentToAllStock() {
     clinicData = JSON.parse(getClinicData());
+	displayLowStockWarning(clinicData);
     loadContent();
 }
 
 //Gets the low stock and updates the global content to show it.
 function setContentToLowStock() {
     clinicData = JSON.parse(getLowStockClinics());
+	displayLowStockWarning(clinicData);
     loadContent();
 }
 //TODO: check if this works
@@ -208,7 +214,7 @@ function prepareChart(divId, clinicData) {
         series: {
             bars: {
                 show: true,
-                barWidth: 1 / chartData.ticks.length,
+                barWidth: 0.6 / chartData.ticks.length,
                 order: 1,
                 align: "center"
             }
@@ -330,10 +336,33 @@ $.fn.serializeObject = function () {
     });
     return o;
 };
+//This will display the warning for low stock clinics
 
+function displayLowStockWarning(clinics){
+	var alertOutput = "Warning! The Following Clinics are low on stock: \n";
+	for(var i in clinics){
+		var nev = clinics[i]["nevirapineStock"];
+		var sta = clinics[i]["stavudineStock"];
+		var zid = clinics[i]["zidotabineStock"];
+		var clinName = clinics[i]["name"];
+		var cls = "\t•"+clinName+ " is low on:";
 
-
-
+		if(nev < 5){
+			cls+= " Nevirapine;";
+		}else if(sta < 5){
+			cls+= " Stavudine;"
+		}else if(zid < 5){
+			cls+= " Zidotabine"
+		}else{
+			alertOutput+="";
+			continue;
+		}
+		cls+="\n";
+		alertOutput += cls;
+	}
+	alert(alertOutput);
+	displayedWarning = true;
+}
 
 
 

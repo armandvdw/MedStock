@@ -44,7 +44,7 @@ public class MedStockService {
 
     public static void main(String[] args) {
         //Set spark port to listen on.
-        setPort(80);
+        setPort(4000);
         //Instantiate the Hibernate session that will be used throughout the service life span.
         HibernateUtil.createSessionFactory(HIBERNATE_CONFIG);
 
