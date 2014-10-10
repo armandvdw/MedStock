@@ -1,0 +1,26 @@
+STATUS | wrapper  | 2014/10/10 04:37:16 | --> Wrapper Started as Console
+STATUS | wrapper  | 2014/10/10 04:37:16 | Launching a JVM...
+INFO   | jvm 1    | 2014/10/10 04:37:17 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2014/10/10 04:37:17 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2014/10/10 04:37:17 | 
+INFO   | jvm 1    | 2014/10/10 04:37:17 | 
+INFO   | jvm 1    | 2014/10/10 04:37:17 | WARNING - Unable to load the Wrapper's native library because none of the
+INFO   | jvm 1    | 2014/10/10 04:37:17 |           following files:
+INFO   | jvm 1    | 2014/10/10 04:37:17 |             wrapper-windows-x86-64.dll
+INFO   | jvm 1    | 2014/10/10 04:37:17 |             wrapper.dll
+INFO   | jvm 1    | 2014/10/10 04:37:17 |           could be located on the following java.library.path:
+INFO   | jvm 1    | 2014/10/10 04:37:17 |             C:\Dev\MedStock\target\generated-resources\appassembler\jsw\app1\lib
+INFO   | jvm 1    | 2014/10/10 04:37:17 |           Please see the documentation for the wrapper.java.library.path
+INFO   | jvm 1    | 2014/10/10 04:37:17 |           configuration property.
+INFO   | jvm 1    | 2014/10/10 04:37:17 |           System signals will not be handled correctly.
+INFO   | jvm 1    | 2014/10/10 04:37:17 | 
+INFO   | jvm 1    | 2014/10/10 04:37:17 | WrapperSimpleApp: Unable to locate the class org.codehaus.mojo.SomeMainClass: java.lang.ClassNotFoundException: org.codehaus.mojo.SomeMainClass
+INFO   | jvm 1    | 2014/10/10 04:37:17 | 
+INFO   | jvm 1    | 2014/10/10 04:37:17 | WrapperSimpleApp Usage:
+INFO   | jvm 1    | 2014/10/10 04:37:17 |   java org.tanukisoftware.wrapper.WrapperSimpleApp {app_class} [app_arguments]
+INFO   | jvm 1    | 2014/10/10 04:37:17 | 
+INFO   | jvm 1    | 2014/10/10 04:37:17 | Where:
+INFO   | jvm 1    | 2014/10/10 04:37:17 |   app_class:      The fully qualified class name of the application to run.
+INFO   | jvm 1    | 2014/10/10 04:37:17 |   app_arguments:  The arguments that would normally be passed to the
+INFO   | jvm 1    | 2014/10/10 04:37:17 |                   application.
+STATUS | wrapper  | 2014/10/10 04:37:19 | <-- Wrapper Stopped

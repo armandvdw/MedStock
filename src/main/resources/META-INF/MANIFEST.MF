@@ -1,0 +1,2 @@
+Manifest-Version: 1.0
+Main-Class: za.co.medstock.service.MedStockService
