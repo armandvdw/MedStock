@@ -64,7 +64,7 @@ public class MedStockService {
         get("/", new Route() {
             @Override
             public Object handle(Request request, Response response) {
-                return medServ.render("/userinterface/index.html", settings);
+                return medServ.render("/userinterface/pages/index.html", settings);
             }
         });
 
@@ -74,7 +74,25 @@ public class MedStockService {
             public Object handle(Request request, Response response) {
                 set("title", "MedStock Stock Management ");
                 set("count", String.valueOf(settings.size()));
-                return medServ.render("/userinterface/main.html", settings);
+                return medServ.render("/userinterface/pages/home.html", settings);
+            }
+        });
+
+        get("/reports", new Route() {
+            @Override
+            public Object handle(Request request, Response response) {
+                set("title", "MedStock Stock Management ");
+                set("count", String.valueOf(settings.size()));
+                return medServ.render("/userinterface/pages/reports.html", settings);
+            }
+        });
+
+        get("/map", new Route() {
+            @Override
+            public Object handle(Request request, Response response) {
+                set("title", "MedStock Stock Management ");
+                set("count", String.valueOf(settings.size()));
+                return medServ.render("/userinterface/pages/map.html", settings);
             }
         });
 

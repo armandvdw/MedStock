@@ -1,0 +1,30 @@
+<!doctype html>
+<html ng-app='medStockApp' style='height:100%'>
+<head>
+
+    <title>Login Form</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/login/base.css">
+    <link rel="stylesheet" href="../css/login/skeleton.css">
+    <link rel="stylesheet" href="../css/login/layout.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
+    <script>window.jQuery || document.write("<script src='../js/jquery.js'>\x3C/script>")</script>
+    <script src="../js/login.js"></script>
+
+</head>
+<body style='height:100%'>
+<div class="form-bg">
+    <form id='form-login'>
+        <h2>Login</h2>
+
+        <p><input id="username" name='username' type="text" placeholder="Username"></p>
+
+        <p><input id="password" name='password' type="password" placeholder="Password"></p>
+        <a id='tempSolution' href="#"></a>
+        <button type="submit" onclick="login()"></button>
+    </form>
+</div>
+</body>
+</html>
