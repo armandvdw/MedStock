@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/main.css">
+
 </head>
 
 <body>
@@ -19,6 +20,7 @@
                 <li><a href="/home">Home</a></li>
                 <li class="active"><a href="/reports">Reports</a></li>
                 <li><a href="/map">Map</a></li>
+                <li><a href="/management">Management</a></li>
             </ul>
         </div>
     </div>
@@ -27,17 +29,22 @@
 <div class="container">
     <div class="jumbotron">
         <h1>Med-Stock Management Software</h1>
+
         <p>Managing medicine stock since 2014 </p>
     </div>
 </div>
 
-<div class="container">
-    <div class="row">
-      <div class="jumbotron" id="ms-chart">
-      </div>
-    </div>
+<div class="jumbotron">
+        <h3>Clinic Stock Level Comparison</h3>
+        <div id='ms-chart' class='chart-container'></div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="../js/jquery.flot.js"></script>
+<script src="../js/jquery.flot.categories.js"></script>
+<script src="../js/jquery.flot.orderBars.js"></script>
+<script src="../js/jquery.flot.axislabels.js"></script>
+<script src="../js/main.js"></script>
+<script> $(document).onLoad(loadChart());</script>
 </body>
 </html>

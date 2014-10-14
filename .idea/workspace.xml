@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="09ec59e3-e4c3-453d-9e44-aebea3d906ff" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/userinterface/images/background.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/userinterface/images/map.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/userinterface/pages/home.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/userinterface/pages/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/userinterface/pages/main.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/userinterface/pages/reports.html" />
-      <change type="DELETED" beforePath="C:\Users\TheOnlyMonkey\Desktop\MedStock Final\MedStockApp\src\main\resources\userinterface\index.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\TheOnlyMonkey\Desktop\MedStock Final\MedStockApp\src\main\resources\userinterface\main.html" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/userinterface/images/table.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/za/co/medstock/service/MedStockService.java" afterPath="$PROJECT_DIR$/src/main/java/za/co/medstock/service/MedStockService.java" />
-      <change type="MODIFICATION" beforePath="C:\Users\TheOnlyMonkey\Desktop\MedStock Final\MedStockApp\src\main\resources\userinterface\css\login\base.css" afterPath="$PROJECT_DIR$/src/main/resources/userinterface/css/login/base.css" />
-      <change type="MODIFICATION" beforePath="C:\Users\TheOnlyMonkey\Desktop\MedStock Final\MedStockApp\src\main\resources\userinterface\css\main.css" afterPath="$PROJECT_DIR$/src/main/resources/userinterface/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/userinterface/pages/reports.html" afterPath="$PROJECT_DIR$/src/main/resources/userinterface/pages/reports.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MedStock.iws" />
@@ -34,8 +26,8 @@
     <file path="/Medication.java" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412370179380" ignored="false" />
     <file path="/HibernateTest.cfg.xml" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1413021015874" ignored="false" />
     <file path="/index.html" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412892210689" ignored="false" />
-    <file path="/main.js" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412930639414" ignored="false" />
-    <file path="/main.css" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1413313378211" ignored="false" />
+    <file path="/main.js" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1413319727351" ignored="false" />
+    <file path="/main.css" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1413319661242" ignored="false" />
     <file path="/login.js" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412892297185" ignored="false" />
     <file path="/clinic_form.html" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412522104051" ignored="false" />
     <file path="/main.html" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412903067033" ignored="false" />
@@ -46,11 +38,13 @@
     <file path="/leaflet.css" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412685910935" ignored="false" />
     <file path="/MedUser.java" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412788256270" ignored="false" />
     <file path="/MANIFEST.MF" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412897738444" ignored="false" />
-    <file path="/home.html" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1413314287943" ignored="false" />
+    <file path="/home.html" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1413315853346" ignored="false" />
     <file path="/reporting.html" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1413310569438" ignored="false" />
-    <file path="/map.html" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1413314496561" ignored="false" />
+    <file path="/map.html" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1413319377762" ignored="false" />
     <file path="/base.css" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1413312466019" ignored="false" />
-    <file path="/reports.html" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1413314228401" ignored="false" />
+    <file path="/reports.html" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1413319010245" ignored="false" />
+    <file path="/table.html" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1413315772749" ignored="false" />
+    <file path="/management.html" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1413319688490" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +60,7 @@
   </component>
   <component name="DebuggerManager">
     <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/src/main/java/za/co/medstock/service/MedStockService.java" line="257" class="za.co.medstock.service.MedStockService" package="za.co.medstock.service">
+      <breakpoint url="file://$PROJECT_DIR$/src/main/java/za/co/medstock/service/MedStockService.java" line="266" class="za.co.medstock.service.MedStockService" package="za.co.medstock.service">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -128,28 +122,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/js/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="42" column="32" selection-start="1197" selection-end="1197" vertical-scroll-proportion="-16.76">
+              <folding>
+                <marker date="1413319729517" expanded="true" signature="3598:3618" placeholder="..." />
+                <marker date="1413319729517" expanded="true" signature="3655:3690" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="MedStockService.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/za/co/medstock/service/MedStockService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="114" selection-start="3019" selection-end="3019" vertical-scroll-proportion="0.0">
+            <state line="78" column="110" selection-start="3018" selection-end="3018" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/pages/home.html">
+      <file leaf-file-name="management.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/pages/management.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="52" selection-start="864" selection-end="955" vertical-scroll-proportion="-4.5">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="map.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/pages/map.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="40" selection-start="1031" selection-end="1031" vertical-scroll-proportion="0.62731874">
+            <state line="42" column="0" selection-start="1512" selection-end="1512" vertical-scroll-proportion="0.72006744">
               <folding />
             </state>
           </provider>
@@ -158,16 +155,7 @@
       <file leaf-file-name="reports.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/pages/reports.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="44" selection-start="1063" selection-end="1063" vertical-scroll-proportion="-22.884615">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/pages/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="45" selection-start="350" selection-end="350" vertical-scroll-proportion="-6.5384617">
+            <state line="47" column="0" selection-start="1605" selection-end="1655" vertical-scroll-proportion="-17.576923">
               <folding />
             </state>
           </provider>
@@ -176,7 +164,16 @@
       <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="65" column="19" selection-start="1010" selection-end="1010" vertical-scroll-proportion="0.0">
+            <state line="78" column="5" selection-start="1162" selection-end="1162" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/pages/main.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="13" selection-start="857" selection-end="912" vertical-scroll-proportion="-11.115385">
               <folding />
             </state>
           </provider>
@@ -200,22 +197,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/za/co/medstock/entities/Clinic.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/userinterface/index.html" />
         <option value="$PROJECT_DIR$/src/main/resources/userinterface/js/login.js" />
         <option value="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" />
         <option value="$PROJECT_DIR$/src/main/resources/userinterface/main.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/userinterface/js/main.js" />
         <option value="$PROJECT_DIR$/src/main/resources/hibernateconf/Hibernate.cfg.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/hibernateconf/HibernateTest.cfg.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/userinterface/pages/reporting.html" />
-        <option value="$PROJECT_DIR$/src/main/java/za/co/medstock/service/MedStockService.java" />
         <option value="$PROJECT_DIR$/src/main/resources/userinterface/css/login/base.css" />
-        <option value="$PROJECT_DIR$/src/main/resources/userinterface/css/main.css" />
-        <option value="$PROJECT_DIR$/src/main/resources/userinterface/pages/reports.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/userinterface/pages/table.html" />
         <option value="$PROJECT_DIR$/src/main/resources/userinterface/pages/home.html" />
+        <option value="$PROJECT_DIR$/src/main/java/za/co/medstock/service/MedStockService.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/userinterface/pages/reports.html" />
         <option value="$PROJECT_DIR$/src/main/resources/userinterface/pages/map.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/userinterface/css/main.css" />
+        <option value="$PROJECT_DIR$/src/main/resources/userinterface/js/main.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/userinterface/pages/management.html" />
       </list>
     </option>
   </component>
@@ -403,10 +400,6 @@
               <option name="myItemId" value="userinterface" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -461,6 +454,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="userinterface" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -536,8 +533,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\TheOnlyMonkey\Desktop\MedStock Final\MedStockApp\src\main\resources\userinterface\images" />
       <recent name="C:\Users\TheOnlyMonkey\Desktop\MedStock Final\MedStockApp\src\main\resources\userinterface\pages" />
+      <recent name="C:\Users\TheOnlyMonkey\Desktop\MedStock Final\MedStockApp\src\main\resources\userinterface\images" />
       <recent name="C:\Dev\MedStock\src\main\resources\userinterface\images" />
       <recent name="C:\Dev\MedStock\src\main\resources\userinterface\css" />
       <recent name="C:\Dev\MedStock\src\main\resources\userinterface\js" />
@@ -847,7 +844,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22732124" sideWeight="0.7190635" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28093645" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28093645" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -922,20 +919,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="334" column="63" selection-start="11431" selection-end="11431" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernateconf/Hibernate.cfg.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="76" selection-start="557" selection-end="557" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/hibernateconf/HibernateTest.cfg.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="64" selection-start="546" selection-end="546" vertical-scroll-proportion="0.0">
@@ -964,20 +947,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/pages/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="139" selection-start="1898" selection-end="1898" vertical-scroll-proportion="0.62731874">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/za/co/medstock/service/MedStockService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="114" selection-start="3019" selection-end="3019" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/css/login/skeleton.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="27" column="103" selection-start="905" selection-end="905" vertical-scroll-proportion="0.41195476">
@@ -999,37 +968,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/css/main.css">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/pages/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="19" selection-start="1010" selection-end="1010" vertical-scroll-proportion="0.0">
+        <state line="22" column="78" selection-start="778" selection-end="778" vertical-scroll-proportion="0.6306914">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/pages/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="52" selection-start="864" selection-end="955" vertical-scroll-proportion="-4.5">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/pages/reports.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="44" selection-start="1063" selection-end="1063" vertical-scroll-proportion="-22.884615">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/pages/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="45" selection-start="350" selection-end="350" vertical-scroll-proportion="-6.5384617">
+        <state line="50" column="59" selection-start="1730" selection-end="1730" vertical-scroll-proportion="-9.730769">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/pages/map.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="40" selection-start="1031" selection-end="1031" vertical-scroll-proportion="0.62731874">
+        <state line="9" column="0" selection-start="390" selection-end="390" vertical-scroll-proportion="-5.8846154">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="32" selection-start="1197" selection-end="1197" vertical-scroll-proportion="-16.76">
+          <folding>
+            <marker date="1413319729517" expanded="true" signature="3598:3618" placeholder="..." />
+            <marker date="1413319729517" expanded="true" signature="3655:3690" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="78" column="5" selection-start="1162" selection-end="1162" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/pages/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="13" selection-start="857" selection-end="912" vertical-scroll-proportion="-11.115385">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/pages/reports.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="0" selection-start="1605" selection-end="1655" vertical-scroll-proportion="-17.576923">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/za/co/medstock/service/MedStockService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="78" column="110" selection-start="3018" selection-end="3018" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/pages/management.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="0" selection-start="1512" selection-end="1512" vertical-scroll-proportion="0.72006744">
           <folding />
         </state>
       </provider>

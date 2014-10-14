@@ -1,5 +1,5 @@
 //Some Global variables needed to control some state of components
-var clinicData = JSON.parse(getClinicData());
+var clinicData =[undefined]; //JSON.parse(getClinicData());
 var mapZoomLevel = 3;//This is the default setting for the leaflet map
 var mapLat = 0.56;
 var mapLon = 22.89;
@@ -9,7 +9,7 @@ var displayedWarning = false;
 
 //This is used to load the Components with data/ also used as a refresher.
 function loadContent() {
-    if (!clinicData) {
+ /*   if (!clinicData) {
         alert("No data Received");
     }
 	if(!displayedWarning){
@@ -17,7 +17,30 @@ function loadContent() {
 	}
     prepareChart("ms-chart", clinicData);
     prepareGrid("ms-grid", clinicData);
-    prepareMap("ms-map", clinicData);
+    prepareMap("ms-map", clinicData);*/
+}
+
+function loadChart(){
+
+    var data = JSON.parse(getClinicData());
+    if (!data) {
+        alert("No data Received");
+    }
+    prepareChart("ms-chart", data);
+}
+function loadMap(){
+    var data = JSON.parse(getClinicData());
+    if (!data) {
+        alert("No data Received");
+    }
+    prepareMap("ms-map",data);
+}
+function loadGrid(){
+    var data = JSON.parse(getClinicData());
+    if (!data) {
+        alert("No data Received");
+    }
+    prepareGrid("ms-grid",data);
 }
 
 //Set the global content to all stock
@@ -214,7 +237,7 @@ function prepareChart(divId, clinicData) {
         series: {
             bars: {
                 show: true,
-                barWidth: 0.6 / chartData.ticks.length,
+                barWidth: 0.8 / chartData.ticks.length,
                 order: 1,
                 align: "center"
             }
@@ -360,7 +383,7 @@ function displayLowStockWarning(clinics){
 		cls+="\n";
 		alertOutput += cls;
 	}
-	alert(alertOutput);
+	//alert(alertOutput);
 	displayedWarning = true;
 }
 

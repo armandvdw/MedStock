@@ -65,4 +65,24 @@ html, body {
 .thumb-header{
     font-size: 36px;
 }
+.thumbnail{
+    cursor: pointer;
+}
+.chart-container{
+    height: 400px;
+    width: 80%;
+}
+.map-container{
+    height: 400px;
+    width: 80%;
+}
+.grid-container{
+    height: 400px;
+    width: 80%;
+}
+.fill {
+    min-height: 30%;
+    height: 30%;
+}
+
 

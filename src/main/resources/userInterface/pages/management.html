@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/leaflet.css" type="text/css"/>
-    <link rel="stylesheet" href="../css/leaflet-list-markers.css">
+    <link rel="stylesheet" href="../css/slick.grid.css" type="text/css"/>
+    <link rel="stylesheet" href="../css/slick-default-theme.css" type="text/css"/>
 </head>
 
 <body>
@@ -20,8 +20,8 @@
             <ul class="nav navbar-nav">
                 <li><a href="/home">Home</a></li>
                 <li><a href="/reports">Reports</a></li>
-                <li class="active"><a href="/map">Map</a></li>
-                <li><a href="/management">Management</a></li>
+                <li><a href="/map">Map</a></li>
+                <li class="active"><a href="/management">Management</a></li>
             </ul>
         </div>
     </div>
@@ -35,14 +35,15 @@
 </div>
 
 <div class="jumbotron">
-    <div id='ms-map' class='map-container'></div>
+    <div id='ms-grid' class='grid-container'></div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script src="../js/leaflet.js"></script>
-<script src="../js/leaflet-list-markers.js"></script>
+<script src="../js/jquery.event.drag-2.2.js"></script>
+<script src="../js/slick.core.js"></script>
+<script src="../js/slick.grid.js"></script>
+<script src="../js/slick.rowselectionmodel.js"></script>
 <script src="../js/main.js"></script>
-
-<script> $(document).onLoad(loadMap());</script>
+<script> $(document).onLoad(loadGrid());</script>
 </body>
 </html>

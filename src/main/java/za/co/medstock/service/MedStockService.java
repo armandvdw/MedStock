@@ -87,6 +87,15 @@ public class MedStockService {
             }
         });
 
+        get("/management", new Route() {
+            @Override
+            public Object handle(Request request, Response response) {
+                set("title", "MedStock Stock Management ");
+                set("count", String.valueOf(settings.size()));
+                return medServ.render("/userinterface/pages/management.html", settings);
+            }
+        });
+
         get("/map", new Route() {
             @Override
             public Object handle(Request request, Response response) {
