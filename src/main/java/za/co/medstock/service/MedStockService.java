@@ -2,13 +2,15 @@ package za.co.medstock.service;
 
 import com.google.gson.Gson;
 import spark.Request;
+import spark.Response;
+import spark.Route;
 import za.co.medstock.crud.HibernateUtil;
 import za.co.medstock.crud.MedStock;
 import za.co.medstock.entities.Clinic;
 
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -44,100 +46,132 @@ public class MedStockService {
 
     public static void main(String[] args) {
         //Set spark port to listen on.
-        setPort(4000);
+        setPort(80);
         //Instantiate the Hibernate session that will be used throughout the service life span.
         HibernateUtil.createSessionFactory(HIBERNATE_CONFIG);
 
-        MedStockService medServ = new MedStockService();
-        Gson gson = new Gson();
-        MedStock med = new MedStock();
+        final MedStockService medServ = new MedStockService();
+        final Gson gson = new Gson();
+        final MedStock med = new MedStock();
         //this will make all static content available from the frontend, but only files included in this folder
         staticFileLocation("/userinterface");
 
+        if (med.getAllClinics().isEmpty()) {
+            Clinic init = new Clinic(1, "Mombaza", "South Africa", 5, 3, 10, -28.0, 27.0);
+            med.addNewEntity(init);
+        }
         //Serve up the index.html page. Login page
-        get("/", (request, response) -> {
-            return medServ.render("userinterface/index.html", settings);
+        get("/", new Route() {
+            @Override
+            public Object handle(Request request, Response response) {
+                return medServ.render("/userinterface/index.html", settings);
+            }
         });
 
         //This will serve the main.html page
-        get("/home", (request, response) -> {
-            set("title", "MedStock Stock Management ");
-            set("count", String.valueOf(settings.size()));
-            return medServ.render("userinterface/main.html", settings);
+        get("/home", new Route() {
+            @Override
+            public Object handle(Request request, Response response) {
+                set("title", "MedStock Stock Management ");
+                set("count", String.valueOf(settings.size()));
+                return medServ.render("/userinterface/main.html", settings);
+            }
         });
+
         //Simple Login request
-        get("/login", (request, response) -> {
-            if (medServ.authenticate(request.queryParams("username"), request.queryParams("password"))) {
-                response.status(200);
-                return true;
-            } else {
-                return false;
+        get("/login", new Route() {
+            @Override
+            public Object handle(Request request, Response response) {
+                if (medServ.authenticate(request.queryParams("username"), request.queryParams("password"))) {
+                    response.status(200);
+                    return true;
+                } else {
+                    return false;
+                }
             }
         });
 
         //Gets all the clinics
-        get("/clinics/all", (request, response) -> {
-            response.status(200);
-            return medServ.convertToJSON(med.getAllClinics());
+        get("/clinics/all", new Route() {
+            @Override
+            public Object handle(Request request, Response response) {
+                response.status(200);
+                return medServ.convertToJSON(med.getAllClinics());
+            }
         });
 
         //Gets only clinics who's stock is less than 5 units
-        get("/clinics/lowStock", (request, response) -> {
-            response.status(200);
-            return medServ.convertToJSON(med.getLowStockClinics());
+        get("/clinics/lowStock", new Route() {
+            @Override
+            public Object handle(Request request, Response response) {
+                response.status(200);
+                return medServ.convertToJSON(med.getLowStockClinics());
+            }
         });
 
         //Add a clinic object to the database
-        post("/clinics/add", (request, response) -> {
-            Clinic clinic = medServ.mapRequestToClinic(request);
-            if (clinic != null) {
-                med.addNewEntity(clinic);
-                response.status(201); // 201 Created
-                return true;
+        post("/clinics/add", new Route() {
+            @Override
+            public Object handle(Request request, Response response) {
+                Clinic clinic = medServ.mapRequestToClinic(request);
+                if (clinic != null) {
+                    med.addNewEntity(clinic);
+                    response.status(201); // 201 Created
+                    return true;
+                }
+                response.status(500); // Server Error
+                return false;
             }
-            response.status(500); // Server Error
-            return false;
         });
 
         // Gets the book resource for the provided id
-        get("/clinics/:id", (request, response) -> {
-            String id = request.params(":id");
-            Clinic clin = med.getClinic(Integer.parseInt(id));
-            if (clin != null) {
-                return gson.toJson(clin);
-            } else {
-                response.status(404); // 404 Not found
-                return "Clinic has not been found";
+        get("/clinics/:id", new Route() {
+            @Override
+            public Object handle(Request request, Response response) {
+                String id = request.params(":id");
+                Clinic clin = med.getClinic(Integer.parseInt(id));
+                if (clin != null) {
+                    return gson.toJson(clin);
+                } else {
+                    response.status(404); // 404 Not found
+                    return "Clinic has not been found";
+                }
             }
         });
 
         //This will update a clinic based on it's clinicId
-        put("/clinics/update", (request, response) -> {
-            String id = request.queryParams("clinicId");
-            Clinic serverClinic = med.getClinic(Integer.parseInt(id));
-            if (serverClinic != null) {
-                Clinic updatedClinic = medServ.mapRequestToClinic(request);
-                updatedClinic.setClinicId(Integer.parseInt(id));
-                med.updateEntity(updatedClinic);
-                response.status(200);
-                return "Clinic: " + updatedClinic.getName() + "updated successfully";
-            } else {
-                response.status(404); // 404 Not found
-                return "Clinic does not exist";
+        put("/clinics/update", new Route() {
+            @Override
+            public Object handle(Request request, Response response) {
+                String id = request.queryParams("clinicId");
+                Clinic serverClinic = med.getClinic(Integer.parseInt(id));
+                if (serverClinic != null) {
+                    Clinic updatedClinic = medServ.mapRequestToClinic(request);
+                    updatedClinic.setClinicId(Integer.parseInt(id));
+                    med.updateEntity(updatedClinic);
+                    response.status(200);
+                    return "Clinic: " + updatedClinic.getName() + "updated successfully";
+                } else {
+                    response.status(404); // 404 Not found
+                    return "Clinic does not exist";
+                }
             }
         });
 
         //This will remove the clinic from database based on its clinicId
-        delete("/clinics/:id", (request, response) -> {
-            String id = request.params(":id");
-            Clinic clin = med.getClinic(Integer.parseInt(id));
-            if (clin != null) {
-                med.deleteEntity(clin);
-                response.status(200);
-                return "Clinic " + clin.getName() + " has been deleted successfully";
-            } else {
-                response.status(404); // 404 Not found
-                return "Clinic does not exist";
+        delete("/clinics/:id", new Route() {
+            @Override
+            public Object handle(Request request, Response response) {
+                String id = request.params(":id");
+                Clinic clin = med.getClinic(Integer.parseInt(id));
+                if (clin != null) {
+                    med.deleteEntity(clin);
+                    response.status(200);
+                    return "Clinic " + clin.getName() + " has been deleted successfully";
+                } else {
+                    response.status(404); // 404 Not found
+                    return "Clinic does not exist";
+                }
             }
         });
     }
@@ -145,10 +179,9 @@ public class MedStockService {
     //This is used to parse the static files being served to the frontend
     public String parseFile(String fileName, String pattern, Map<String, Object> locals) {
         StringBuffer content = new StringBuffer("");
-        ClassLoader classLoader = getClass().getClassLoader();
-        File file = new File(classLoader.getResource(fileName).getFile());
+        InputStream is = this.getClass().getResourceAsStream(fileName);
         try {
-            BufferedReader buffer = new BufferedReader(new FileReader(file));
+            BufferedReader buffer = new BufferedReader(new InputStreamReader(is));
             String line = null;
 
             while ((line = buffer.readLine()) != null) {

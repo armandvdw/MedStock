@@ -25,6 +25,9 @@
         <module name="MedStock" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="MedStock" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>
 
