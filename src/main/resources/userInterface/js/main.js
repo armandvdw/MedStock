@@ -91,7 +91,7 @@ function prepareMap(divId, cd) {
             });
         }*/
 
-        var popupText = "<h4>Name: " + clinic["name"] + " </h4>" +
+        var popupText = "<h4>Name: " + clinic["clinicName"] + " </h4>" +
             "Nevirapine: " + clinic["nevirapineStock"] + "<br/>" +
             "Stavudine: " + clinic["stavudineStock"] + "<br/> " +
             "Zidotabine: " + clinic["zidotabineStock"];
@@ -119,7 +119,7 @@ function prepareGrid(divId, cd) {
     var grid;
     var columns = [
         {id: "ID", name: "ID", field: "clinicId", maxWidth: 30, width: 25},
-        {id: "Name", name: "Name", field: "name"},
+        {id: "Name", name: "Name", field: "clinicName"},
         {id: "Country", name: "Country", field: "countryName"},
         {id: "Nevirapine", name: "Nevirapine", field: "nevirapineStock"},
         {id: "Stavudine", name: "Stavudine", field: "stavudineStock"},
@@ -136,7 +136,6 @@ function prepareGrid(divId, cd) {
     grid.setSelectionModel(new Slick.RowSelectionModel());
     grid.onSelectedRowsChanged.subscribe(function () {
         selectedClinic = (grid.getData()[grid.getSelectedRows()]);
-        setMapSelectedMarker(selectedClinic["clinicId"]);
     });
 }
 
@@ -192,7 +191,7 @@ function barGraphDataPreparation(sourceData) {
     var zidotabine = [];
     for (var i = 0; i < sourceData.length; i++) {
         var clinic = sourceData[i];
-        var clinName = clinic["name"];
+        var clinName = clinic["clinicName"];
         nevirapine.push([i, clinic["nevirapineStock"]]);
         stavudine.push([i, clinic["stavudineStock"]]);
         zidotabine.push([i, clinic["zidotabineStock"]]);
@@ -281,7 +280,7 @@ function displayLowStockWarning(clinics) {
         var nev = clinics[i]["nevirapineStock"];
         var sta = clinics[i]["stavudineStock"];
         var zid = clinics[i]["zidotabineStock"];
-        var clinName = clinics[i]["name"];
+        var clinName = clinics[i]["clinicName"];
         var cls = "\t•" + clinName + " is low on:";
 
         if (nev < 5) {

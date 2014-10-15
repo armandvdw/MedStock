@@ -35,7 +35,7 @@ public class MedStockTest {
         Clinic result = (Clinic) HibernateUtil.getCurrentSession().get(Clinic.class, c.getClinicId());
         HibernateUtil.getCurrentSession().getTransaction().commit();
         assertNotNull(result);
-        assertEquals("Mobaza", result.getName());
+        assertEquals("Mobaza", result.getClinicName());
     }
 
     @Test

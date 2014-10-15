@@ -203,7 +203,7 @@ public class MedStockService {
                     updatedClinic.setClinicId(Integer.parseInt(id));
                     med.updateEntity(updatedClinic);
                     response.status(200);
-                    return "Clinic: " + updatedClinic.getName() + "updated successfully";
+                    return "Clinic: " + updatedClinic.getClinicName() + "updated successfully";
                 } else {
                     response.status(404); // 404 Not found
                     return "Clinic does not exist";
@@ -220,7 +220,7 @@ public class MedStockService {
                 if (clin != null) {
                     med.deleteEntity(clin);
                     response.status(200);
-                    return "Clinic " + clin.getName() + " has been deleted successfully";
+                    return "Clinic " + clin.getClinicName() + " has been deleted successfully";
                 } else {
                     response.status(404); // 404 Not found
                     return "Clinic does not exist";

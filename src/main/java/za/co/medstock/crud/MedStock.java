@@ -124,7 +124,7 @@ public class MedStock {
      * @return A Clinic Object
      */
     public Clinic mapRequestToClinic(Request request) {
-        String name = request.queryParams("name");
+        String name = request.queryParams("clinicName");
         String country = request.queryParams("countryName");
         Integer nevirapine = Integer.valueOf(request.queryParams("nevirapineStock"));
         Integer stavudine = Integer.valueOf(request.queryParams("stavudineStock"));

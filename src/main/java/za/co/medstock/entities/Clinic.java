@@ -17,7 +17,7 @@ public class Clinic implements Serializable {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer clinicId;
-    private String name;
+    private String clinicName;
     private String countryName;
     private Integer nevirapineStock;
     private Integer stavudineStock;
