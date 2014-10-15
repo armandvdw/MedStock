@@ -30,6 +30,8 @@ public class MedStockService {
     //Upon starting the service we need to set the hibernate configuration so that we can use the right database.
     public static final String HIBERNATE_CONFIG = "hibernateconf/Hibernate.cfg.xml";
     private static final Map<String, Object> settings = new HashMap<String, Object>();
+    //TODO: remove this
+    public static Integer userId = 1;
 
     //This is used to parse the static files being served to the frontend
     public static String parse(String pattern, String text, Map<String, Object> locals) {
@@ -145,6 +147,7 @@ public class MedStockService {
                 Clinic clinic = med.mapRequestToClinic(request);
                 if (clinic != null) {
                     med.addNewEntity(clinic);
+                    med.logTransaction(userId, clinic, "CREATED");
                     response.status(201); // 201 Created
                     return true;
                 }
@@ -202,6 +205,7 @@ public class MedStockService {
                     Clinic updatedClinic = med.mapRequestToClinic(request);
                     updatedClinic.setClinicId(Integer.parseInt(id));
                     med.updateEntity(updatedClinic);
+                    med.logTransaction(userId, updatedClinic, "UPDATED");
                     response.status(200);
                     return "Clinic: " + updatedClinic.getClinicName() + "updated successfully";
                 } else {
@@ -219,6 +223,7 @@ public class MedStockService {
                 Clinic clin = med.getClinic(Integer.parseInt(id));
                 if (clin != null) {
                     med.deleteEntity(clin);
+                    med.logTransaction(userId, clin, "DELETED");
                     response.status(200);
                     return "Clinic " + clin.getClinicName() + " has been deleted successfully";
                 } else {

@@ -27,4 +27,5 @@ public class ChangeLog implements Serializable {
     Integer nevirapine;
     Integer stavudine;
     Integer zidotabine;
+    String message;
 }
