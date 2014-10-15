@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/slick.grid.css" type="text/css"/>
     <link rel="stylesheet" href="../css/slick-default-theme.css" type="text/css"/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="../js/jquery.event.drag-2.2.js"></script>
+    <script src="../js/slick.core.js"></script>
+    <script src="../js/slick.grid.js"></script>
+    <script src="../js/slick.rowselectionmodel.js"></script>
 </head>
 
 <body>
@@ -30,19 +37,125 @@
 <div class="container">
     <div class="jumbotron">
         <h1>Med-Stock Management Software</h1>
+
         <p>Managing medicine stock since 2014 </p>
     </div>
 </div>
 
+<!--This is the forms needed for the crud operations-->
 <div class="jumbotron">
     <div id='ms-grid' class='grid-container'></div>
+
+    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#createForm">
+        Create New Clinic
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="createForm" tabindex="-1" role="dialog" aria-labelledby="createFormModal"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span
+                            aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Create New Clinic</h4>
+                </div>
+                <div class="modal-body">
+
+                    <!-- The form is placed inside the body of modal -->
+                    <form id="loginForm" class="form-horizontal">
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Clinic Name</label>
+
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" name="clinicName"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Country Name</label>
+
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" name="countryName"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Nevirapine</label>
+
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" name="nevirapine"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Stavudine</label>
+
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" name="stavudine"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Zidotabine</label>
+
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" name="zidotabine"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Latitude</label>
+
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" name="latitude"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Longitude</label>
+
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" name="longitude"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-5 col-sm-offset-3">
+                                <button type="submit" id="buttnLogin">Create</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" id="button-update">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script src="../js/jquery.event.drag-2.2.js"></script>
-<script src="../js/slick.core.js"></script>
-<script src="../js/slick.grid.js"></script>
-<script src="../js/slick.rowselectionmodel.js"></script>
+
+<script>
+
+    $(function () {
+        //twitter bootstrap script
+        $("#buttnLogin").click(function () {
+            alert($("#loginForm").serialize())
+        });
+
+
+        $("#button-update").click(function () {
+            alert("updated");
+            alert($("#loginForm").serialize())
+        });
+    });
+
+</script>
+
+
 <script src="../js/main.js"></script>
 <script> $(document).onLoad(loadGrid());</script>
 </body>
