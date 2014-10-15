@@ -4,7 +4,7 @@ import org.hibernate.Query;
 import spark.Request;
 import za.co.medstock.entities.ChangeLog;
 import za.co.medstock.entities.Clinic;
-import za.co.medstock.entities.User;
+import za.co.medstock.entities.MedStockUser;
 
 import java.util.ArrayList;
 
@@ -110,11 +110,11 @@ public class MedStock {
         return result;
     }
 
-    public User getUser(Integer userId) {
+    public MedStockUser getUser(Integer userId) {
         HibernateUtil.getCurrentSession().beginTransaction();
-        User user = (User) HibernateUtil.getCurrentSession().get(User.class, userId);
+        MedStockUser medStockUser = (MedStockUser) HibernateUtil.getCurrentSession().get(MedStockUser.class, userId);
         HibernateUtil.getCurrentSession().getTransaction().commit();
-        return user;
+        return medStockUser;
     }
 
     /**
@@ -134,11 +134,15 @@ public class MedStock {
         return new Clinic(1, name, country, nevirapine, stavudine, zidotabine, lat, lon);
     }
 
-    public User mapRequestToUser(Request request) {
+    public MedStockUser mapRequestToUser(Request request) {
         Integer userId = Integer.valueOf(request.queryParams("userId"));
         String username = request.queryParams("userName");
         String password = request.queryParams("password");
-        return new User(userId, username, password);
+        return new MedStockUser(userId, username, password);
+    }
+
+    public void logTransaction(String username, String message ){
+            //TODO: log to file from here;
     }
 }
 

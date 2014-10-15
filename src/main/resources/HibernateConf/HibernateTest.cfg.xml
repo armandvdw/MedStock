@@ -17,7 +17,7 @@
 
         <mapping class="za.co.medstock.entities.Clinic"/>
         <mapping class="za.co.medstock.entities.ChangeLog"/>
-        <mapping class="za.co.medstock.entities.User"/>
+        <mapping class="za.co.medstock.entities.MedStockUser"/>
     </session-factory>
 </hibernate-configuration>
 
