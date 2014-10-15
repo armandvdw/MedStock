@@ -69,16 +69,16 @@ html, body {
     cursor: pointer;
 }
 .chart-container{
-    height: 400px;
-    width: 80%;
-}
-.map-container{
     height: 550px;
     width: 100%;
 }
+.map-container{
+    height: 450px;
+    width: 100%;
+}
 .grid-container{
-    height: 400px;
-    width: 80%;
+    height: 550px;
+    width: 100%;
 }
 .fill {
     min-height: 30%;

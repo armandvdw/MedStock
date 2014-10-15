@@ -9,7 +9,7 @@
 
 </head>
 
-<body>
+<body style="height: 100%">
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -28,15 +28,26 @@
 
 <div class="container">
     <div class="jumbotron">
-        <h1>Med-Stock Management Software</h1>
+        <h1>Med-Stock Analytics</h1>
 
-        <p>Managing medicine stock since 2014 </p>
+        <p>Visualization of the Med-Stock data. . .</p>
     </div>
 </div>
 
-<div class="jumbotron">
-        <h3>Clinic Stock Level Comparison</h3>
-        <div id='ms-chart' class='chart-container'></div>
+<div class="container" style="background-color: floralwhite">
+
+    <div class="row">
+           <div class="span2">
+               <button>Reset</button>
+               <button>dropdownClinics</button>
+           </div>
+           <div class="span-10">
+               <h3>Clinic Stock Level Comparison</h3>
+               <div id='ms-chart' class='chart-container'></div>
+           </div>
+       </div>
+
+
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
@@ -44,6 +55,7 @@
 <script src="../js/jquery.flot.categories.js"></script>
 <script src="../js/jquery.flot.orderBars.js"></script>
 <script src="../js/jquery.flot.axislabels.js"></script>
+<script src="../js/jquery.flot.selection.js"></script>
 <script src="../js/main.js"></script>
 <script> $(document).onLoad(loadChart());</script>
 </body>

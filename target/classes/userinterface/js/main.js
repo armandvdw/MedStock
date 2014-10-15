@@ -77,7 +77,9 @@ function prepareMap(divId, cd) {
 
     for (var i = 0; i < cd.length; i++) {
         var clinic = cd[i];
-     /*   var icon = L.icon({
+        //TODO: implement this by setting the anchor  also add tooltip to marker by setting the title
+
+/*        var icon = L.icon({
             iconUrl: "images/marker-icon-green.png",
             shadowUrl: 'images/marker-shadow.png'
 
@@ -87,7 +89,7 @@ function prepareMap(divId, cd) {
                 iconUrl: "images/marker-icon-red.png",
                 shadowUrl: 'images/marker-shadow.png'
             });
-        }    */
+        }*/
 
         var popupText = "<h4>Name: " + clinic["name"] + " </h4>" +
             "Nevirapine: " + clinic["nevirapineStock"] + "<br/>" +
