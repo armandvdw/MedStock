@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/slick.grid.css" type="text/css"/>
     <link rel="stylesheet" href="../css/slick-default-theme.css" type="text/css"/>
+    <link rel="stylesheet" href="../css/leaflet.css" type="text/css"/>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
@@ -15,6 +16,8 @@
     <script src="../js/slick.core.js"></script>
     <script src="../js/slick.grid.js"></script>
     <script src="../js/slick.rowselectionmodel.js"></script>
+    <script src="../js/leaflet.js"></script>
+    <script src="../js/main.js"></script>
 </head>
 
 <body>
@@ -45,10 +48,7 @@
 <!--This is the forms needed for the crud operations-->
 <div class="jumbotron">
     <div id='ms-grid' class='grid-container'></div>
-
-    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#createForm">
-        Create New Clinic
-    </button>
+    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#createForm">Create Clinic</button>
 
     <!-- Modal -->
     <div class="modal fade" id="createForm" tabindex="-1" role="dialog" aria-labelledby="createFormModal"
@@ -109,24 +109,23 @@
                             <label class="col-sm-3 control-label">Latitude</label>
 
                             <div class="col-sm-5">
-                                <input type="text" class="form-control" name="latitude"/>
+                                <input type="text" class="form-control" name="latitude" id="lat"/>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="col-sm-3 control-label">Longitude</label>
-
                             <div class="col-sm-5">
-                                <input type="text" class="form-control" name="longitude"/>
+                                <input type="text" class="form-control" name="longitude" id="lon"/>
                             </div>
                         </div>
-
                         <div class="form-group">
                             <div class="col-sm-5 col-sm-offset-3">
                                 <button type="submit" id="buttnLogin">Create</button>
                             </div>
                         </div>
                     </form>
+                    <button class="btn btn-primary btn-lg" data-toggle="modal" href="#mapModal">Select On Map</button>
                 </div>
 
                 <div class="modal-footer">
@@ -136,27 +135,80 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="mapModal" tabindex="-1" role="dialog" aria-labelledby="mapModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="myMapModal">Create New Clinic</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="map" style="height: 600px"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#mapModal">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script>
 
-    $(function () {
+    $(function() {
         //twitter bootstrap script
-        $("#buttnLogin").click(function () {
+        $("#buttnLogin").click(function(){
             alert($("#loginForm").serialize())
         });
 
 
-        $("#button-update").click(function () {
+        $("#button-update").click(function(){
             alert("updated");
             alert($("#loginForm").serialize())
         });
+
+        var lat = $("#lat");
+        var lon = $("#lon");
+
+
+        var map = L.map('map').setView([51.505, -0.09], 13);
+
+        L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
+            maxZoom: 18,
+            attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+                    '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                    'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+            id: 'examples.map-i875mjb7'
+        }).addTo(map);
+
+        var popup = L.popup();
+
+
+        function onMapClick(e) {
+            popup
+                    .setLatLng(e.latlng)
+                    .setContent(e.latlng.lat +" , " + e.latlng.lng)
+                    .openOn(map);
+
+            lat.val(e.latlng.lat);
+            lon.val(e.latlng.lng);
+        }
+
+        map.on('click', onMapClick);
+
+        $('#mapModal').on('show.bs.modal', function(){
+            setTimeout(function() {
+                map.invalidateSize();
+            }, 500);
+        });
+
     });
 
 </script>
 
 
 <script src="../js/main.js"></script>
-<script> $(document).onLoad(loadGrid());</script>
+<script> //$(document).onLoad(loadGrid());</script>
 </body>
 </html>
