@@ -49,7 +49,6 @@ public class MedStockTest {
         m.addNewEntity(c2);
         ArrayList<Clinic> result = m.getAllClinics();
         Assert.assertNotNull(result);
-        String resp = serv.convertToJSON(result);
     }
 
 }

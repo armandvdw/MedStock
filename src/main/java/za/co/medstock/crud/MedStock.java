@@ -1,7 +1,10 @@
 package za.co.medstock.crud;
 
 import org.hibernate.Query;
+import spark.Request;
+import za.co.medstock.entities.ChangeLog;
 import za.co.medstock.entities.Clinic;
+import za.co.medstock.entities.User;
 
 import java.util.ArrayList;
 
@@ -62,7 +65,8 @@ public class MedStock {
 
     /**
      * Returns a single clinic
-     * @param clinicID  The Id of the clinic
+     *
+     * @param clinicID The Id of the clinic
      * @return Clinic Object
      */
     public Clinic getClinic(Integer clinicID) {
@@ -88,6 +92,53 @@ public class MedStock {
         ArrayList<Clinic> list = (ArrayList<Clinic>) q.list();
         HibernateUtil.getCurrentSession().getTransaction().commit();
         return list;
+    }
+
+    public ArrayList<ChangeLog> getAllLogs() {
+        HibernateUtil.getCurrentSession().beginTransaction();
+        ArrayList<ChangeLog> result = (ArrayList<ChangeLog>) HibernateUtil.getCurrentSession().createCriteria(ChangeLog.class).list();
+        HibernateUtil.getCurrentSession().getTransaction().commit();
+        return result;
+    }
+
+    public ArrayList<ChangeLog> getLogsForClinic(Integer clinicId) {
+        HibernateUtil.getCurrentSession().beginTransaction();
+        Query q = HibernateUtil.getCurrentSession().createQuery("FROM ChangeLog WHERE clinicId = : clinId");
+        q.setParameter("clinId", clinicId);
+        ArrayList<ChangeLog> result = (ArrayList<ChangeLog>) q.list();
+        HibernateUtil.getCurrentSession().getTransaction().commit();
+        return result;
+    }
+
+    public User getUser(Integer userId) {
+        HibernateUtil.getCurrentSession().beginTransaction();
+        User user = (User) HibernateUtil.getCurrentSession().get(User.class, userId);
+        HibernateUtil.getCurrentSession().getTransaction().commit();
+        return user;
+    }
+
+    /**
+     * This is a simple mapper to map the requests to clinic object for further processing in the backend.
+     *
+     * @param request the request object containing parameters
+     * @return A Clinic Object
+     */
+    public Clinic mapRequestToClinic(Request request) {
+        String name = request.queryParams("name");
+        String country = request.queryParams("countryName");
+        Integer nevirapine = Integer.valueOf(request.queryParams("nevirapineStock"));
+        Integer stavudine = Integer.valueOf(request.queryParams("stavudineStock"));
+        Integer zidotabine = Integer.valueOf(request.queryParams("zidotabineStock"));
+        Double lat = Double.parseDouble(request.queryParams("latitude"));
+        Double lon = Double.parseDouble(request.queryParams("longitude"));
+        return new Clinic(1, name, country, nevirapine, stavudine, zidotabine, lat, lon);
+    }
+
+    public User mapRequestToUser(Request request) {
+        Integer userId = Integer.valueOf(request.queryParams("userId"));
+        String username = request.queryParams("userName");
+        String password = request.queryParams("password");
+        return new User(userId, username, password);
     }
 }
 

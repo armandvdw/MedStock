@@ -6,6 +6,7 @@ import spark.Response;
 import spark.Route;
 import za.co.medstock.crud.HibernateUtil;
 import za.co.medstock.crud.MedStock;
+import za.co.medstock.entities.ChangeLog;
 import za.co.medstock.entities.Clinic;
 
 import java.io.BufferedReader;
@@ -123,7 +124,7 @@ public class MedStockService {
             @Override
             public Object handle(Request request, Response response) {
                 response.status(200);
-                return medServ.convertToJSON(med.getAllClinics());
+                return gson.toJson(med.getAllClinics());
             }
         });
 
@@ -132,7 +133,8 @@ public class MedStockService {
             @Override
             public Object handle(Request request, Response response) {
                 response.status(200);
-                return medServ.convertToJSON(med.getLowStockClinics());
+                gson.toJson(med.getLowStockClinics());
+                return gson.toJson(med.getLowStockClinics());
             }
         });
 
@@ -140,7 +142,7 @@ public class MedStockService {
         post("/clinics/add", new Route() {
             @Override
             public Object handle(Request request, Response response) {
-                Clinic clinic = medServ.mapRequestToClinic(request);
+                Clinic clinic = med.mapRequestToClinic(request);
                 if (clinic != null) {
                     med.addNewEntity(clinic);
                     response.status(201); // 201 Created
@@ -166,6 +168,30 @@ public class MedStockService {
             }
         });
 
+        //Gets all the logs
+        get("/logs/all", new Route() {
+            @Override
+            public Object handle(Request request, Response response) {
+                response.status(200);
+                return gson.toJson(med.getAllLogs());
+            }
+        });
+
+        // Gets the book resource for the provided id
+        get("/logs/:id", new Route() {
+            @Override
+            public Object handle(Request request, Response response) {
+                String id = request.params(":id");
+                ArrayList<ChangeLog> log = med.getLogsForClinic(Integer.parseInt(id));
+                if (log != null) {
+                    return gson.toJson(log);
+                } else {
+                    response.status(404); // 404 Not found
+                    return "No logs for clinic has been found";
+                }
+            }
+        });
+
         //This will update a clinic based on it's clinicId
         put("/clinics/update", new Route() {
             @Override
@@ -173,7 +199,7 @@ public class MedStockService {
                 String id = request.queryParams("clinicId");
                 Clinic serverClinic = med.getClinic(Integer.parseInt(id));
                 if (serverClinic != null) {
-                    Clinic updatedClinic = medServ.mapRequestToClinic(request);
+                    Clinic updatedClinic = med.mapRequestToClinic(request);
                     updatedClinic.setClinicId(Integer.parseInt(id));
                     med.updateEntity(updatedClinic);
                     response.status(200);
@@ -228,17 +254,6 @@ public class MedStockService {
         return layout(file, this.parseFile(file, "\\$\\{(\\w.*?)\\}", locals));
     }
 
-    /**
-     * This will convert a list of clinics to json to send it as a response
-     *
-     * @param list A list of Clinics
-     * @return The Json representation of the list
-     */
-    public String convertToJSON(ArrayList<Clinic> list) {
-        Gson gson = new Gson();
-        return gson.toJson(list);
-    }
-
     //This is part of the parsing of static content processing
     public String layout(String file, String content) {
         HashMap<String, Object> layout = new HashMap<String, Object>();
@@ -246,23 +261,7 @@ public class MedStockService {
         return parseFile(file, "@\\{(content)\\}", layout);
     }
 
-    /**
-     * This is a simple mapper to map the requests to clinic object for further processing in the backend.
-     *
-     * @param request the request object containing parameters
-     * @return A Clinic Object
-     */
-    public Clinic mapRequestToClinic(Request request) {
-        String name = request.queryParams("name");
-        String country = request.queryParams("countryName");
-        Integer nevirapine = Integer.valueOf(request.queryParams("nevirapineStock"));
-        Integer stavudine = Integer.valueOf(request.queryParams("stavudineStock"));
-        Integer zidotabine = Integer.valueOf(request.queryParams("zidotabineStock"));
-        Double lat = Double.parseDouble(request.queryParams("latitude"));
-        Double lon = Double.parseDouble(request.queryParams("longitude"));
-        return new Clinic(1, name, country, nevirapine, stavudine, zidotabine, lat, lon);
-    }
-
+    //TODO: remove this with proper checking
     public boolean authenticate(String username, String password) {
         return username.equals("demo") && password.equals("test");
     }
