@@ -6,16 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/slick.grid.css" type="text/css"/>
-    <link rel="stylesheet" href="../css/slick-default-theme.css" type="text/css"/>
     <link rel="stylesheet" href="../css/leaflet.css" type="text/css"/>
+    <link rel="stylesheet" href="../css/bootstrap-table.css"/>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap-table.js"></script>
     <script src="../js/jquery.event.drag-2.2.js"></script>
-    <script src="../js/slick.core.js"></script>
-    <script src="../js/slick.grid.js"></script>
-    <script src="../js/slick.rowselectionmodel.js"></script>
     <script src="../js/leaflet.js"></script>
     <script src="../js/main.js"></script>
 </head>
@@ -46,9 +43,20 @@
 </div>
 
 <!--This is the forms needed for the crud operations-->
-<div class="container">
-    <div id='ms-grid' class='grid-container'></div>
-    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#create-modal">Create Clinic</button>
+<div class="container" style="background-color: floralwhite">
+
+    <div class="container">
+        <table id="table-data"></table>
+    </div>
+
+    <div id="table-toolbar">
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#create-modal">Create</button>
+        <button type="button" class="btn btn-default" id="btn-update-clinic">Update</button>
+        <button type="button" class="btn btn-danger" id="btn-delete-clinic">Delete</button>
+        <button type="button" class="btn btn-default" id="btn-low-stock">Low Stock</button>
+        <button type="button" class="btn btn-default" id="btn-all-clinics">All Clinics</button>
+    </div>
+
 
     <!-- Modal -->
     <div class="modal fade" id="create-modal" tabindex="-1" role="dialog" aria-labelledby="createFormModal"

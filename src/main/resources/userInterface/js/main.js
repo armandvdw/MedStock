@@ -41,7 +41,7 @@ function loadGrid() {
     if (!data) {
         alert("No data Received");
     }
-    prepareGrid("ms-grid", data);
+    prepareGrid("table-data", data);
 }
 
 //Set the global content to all stock
@@ -119,39 +119,90 @@ function prepareMap(divId, cd) {
     }
 }
 
-//This will toggle the stat of the button to create new clinics on map click
-function toggleCreate() {
-    if (createMode == true) {
-        createMode = false;
-        $("#buttonToggle").html("Add Mode Off");
-    } else {
-        createMode = true;
-        $("#buttonToggle").html("Add Mode On");
-    }
-}
-
 //This is the basic grid setup
 function prepareGrid(divId, cd) {
-    var grid;
-    var columns = [
-        {id: "ID", name: "ID", field: "clinicId", maxWidth: 30, width: 25},
-        {id: "Name", name: "Name", field: "clinicName"},
-        {id: "Country", name: "Country", field: "countryName"},
-        {id: "Nevirapine", name: "Nevirapine", field: "nevirapineStock"},
-        {id: "Stavudine", name: "Stavudine", field: "stavudineStock"},
-        {id: "Zidotabine", name: "Zidotabine", field: "zidotabineStock"}
-    ];
+    var dataTable = $("#"+divId);
+    dataTable.bootstrapTable({
+        height: 400,
+        search: true,
+        showColumns: true,
+        clickToSelect: true,
+        striped: true,
+        toolbar: '#table-toolbar',
+        columns: [
+            {
+                field: 'state',
+                radio: true
+            },
+            {
+                field: 'clinicId',
+                title: 'Clinic ID'
+            },
+            {
+                field: 'clinicName',
+                title: 'Clinic Name'
 
-    var options = {
-        enableCellNavigation: true,
-        enableColumnReorder: false,
-        forceFitColumns: true
+            },             {
+                field: 'countryName',
+                title: 'Country'
 
+            },
+            {
+                field: 'nevirapineStock',
+                title: 'Nevirapine'
+            },
+            {
+                field: 'stavudineStock',
+                title: 'Stavudine'
+            },
+            {
+                field: 'zidotabineStock',
+                title: 'Zidotabine'
+            },
+            {
+                field: 'latitude',
+                title: 'Latitude'
+            },
+            {
+                field: 'longitude',
+                title: 'Longitude'
+            }
+        ]
+    });
+    dataTable.bootstrapTable('load', cd);
+    /*dataTable.bootstrapTable({}).on('click-row.bs.table', function (e, row) {
+        $("#btn-delete-clinic").toggleClass("active");
+    });*/
+    var getSelectedClinic = function () {
+        var selectedClinic = JSON.stringify(dataTable.bootstrapTable('getSelections'));
+        return JSON.parse(selectedClinic);
     };
-    grid = new Slick.Grid("#" + divId, cd, columns, options);
-    grid.setSelectionModel(new Slick.RowSelectionModel());
-    grid.onSelectedRowsChanged.subscribe(function () {
-        selectedClinic = (grid.getData()[grid.getSelectedRows()]);
+    var refreshTable = function(){
+        var refresh = JSON.parse(getLowStockClinics());
+        dataTable.bootstrapTable('load',refresh);
+        return refresh;
+    };
+    $("#btn-update-clinic").click(function(){
+        alert("Updating " + getSelectedClinic());
+
+    });
+    $("#btn-delete-clinic").click(function(){
+
+        var clinicId = getSelectedClinic()[0]["clinicId"];
+        alert("Deleting " + clinicId);
+        deleteClinic(clinicId);
+        refreshTable();
+    });
+    $("#btn-create-clinic").click(function(){
+        alert("Updating " + getSelectedClinic());
+    });
+    $("#btn-low-stock").click(function(){
+        var lsClinics = JSON.parse(getLowStockClinics());
+        dataTable.bootstrapTable('load',lsClinics);
+    });
+    $("#btn-all-clinics").click(function(){
+        var allClinics = JSON.parse(getClinicData());
+        dataTable.bootstrapTable('load',allClinics);
     });
 }
 
@@ -321,7 +372,7 @@ function preparePicker(divId, clinic) {
     for (var i = 0; i < clinic.length; i++) {
         var clin = clinic[i];
         var display = clin["clinicId"] + " - " + clin["clinicName"];
-        $("<option>" +display+ "</option>").appendTo($("clinPicker"));
+        $("<option>" + display + "</option>").appendTo($("clinPicker"));
     }
     //picker.append("</select>");
 }
