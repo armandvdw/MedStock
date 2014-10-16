@@ -14,7 +14,6 @@
     <script src="../js/bootstrap-table.js"></script>
     <script src="../js/jquery.event.drag-2.2.js"></script>
     <script src="../js/leaflet.js"></script>
-    <script src="../js/main.js"></script>
 </head>
 
 <body style="height: 100%">
@@ -50,8 +49,10 @@
     </div>
 
     <div id="table-toolbar">
-        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#create-modal">Create</button>
-        <button type="button" class="btn btn-default" id="btn-update-clinic" data-toggle="modal" data-target="#create-modal">Update</button>
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#create-modal">Create</button>
+        <button type="button" class="btn btn-warning" id="btn-update-clinic" data-toggle="modal"
+                data-target="#create-modal">Update
+        </button>
         <button type="button" class="btn btn-danger" id="btn-delete-clinic">Delete</button>
         <button type="button" class="btn btn-default" id="btn-low-stock">Low Stock</button>
         <button type="button" class="btn btn-default" id="btn-all-clinics">All Clinics</button>
@@ -69,13 +70,11 @@
                     <h4 class="modal-title" id="myModalLabel">Create New Clinic</h4>
                 </div>
                 <div class="modal-body">
-
                     <!-- The form is placed inside the body of modal -->
                     <form id="create-form" class="form-horizontal">
 
                         <div class="form-group">
                             <label class="col-sm-3 control-label">Clinic Name</label>
-
                             <div class="col-sm-4">
                                 <input type="text" class="form-control" name="clinicName" id="clinicName"/>
                             </div>
@@ -83,7 +82,6 @@
 
                         <div class="form-group">
                             <label class="col-sm-3 control-label">Country Name</label>
-
                             <div class="col-sm-4">
                                 <input type="text" class="form-control" name="countryName" id="countryName"/>
                             </div>
@@ -91,7 +89,6 @@
 
                         <div class="form-group">
                             <label class="col-sm-3 control-label">Nevirapine</label>
-
                             <div class="col-sm-4">
                                 <input type="text" class="form-control" name="nevirapineStock" id="nev"/>
                             </div>
@@ -99,7 +96,6 @@
 
                         <div class="form-group">
                             <label class="col-sm-3 control-label">Stavudine</label>
-
                             <div class="col-sm-4">
                                 <input type="text" class="form-control" name="stavudineStock" id="sta"/>
                             </div>
@@ -107,20 +103,19 @@
 
                         <div class="form-group">
                             <label class="col-sm-3 control-label">Zidotabine</label>
-
                             <div class="col-sm-4">
                                 <input type="text" class="form-control" name="zidotabineStock" id="zid"/>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <button type="button" class="btn btn-success btn-md col-sm-4 col-md-offset-3" data-toggle="modal" href="#mapModal">Select Lat/Lon from Map
+                            <button type="button" class="btn btn-success btn-md col-sm-4 col-md-offset-3"
+                                    data-toggle="modal" href="#mapModal">Select Lat/Lon from Map
                             </button>
                         </div>
 
                         <div class="form-group">
                             <label class="col-sm-3 control-label">Latitude</label>
-
                             <div class="col-sm-4">
                                 <input type="text" class="form-control" name="latitude" id="lat"/>
                             </div>
@@ -128,18 +123,18 @@
 
                         <div class="form-group">
                             <label class="col-sm-3 control-label">Longitude</label>
-
                             <div class="col-sm-4">
                                 <input type="text" class="form-control" name="longitude" id="lon"/>
                             </div>
                         </div>
 
-
                         <div class="form-group">
-                            <div class="col-sm-4 "style="float:right">
+                            <div class="col-sm-4 " style="float:right">
                                 <button type="submit" id="button-create" class="btn btn-primary">Create</button>
-                                <button type="submit" id="button-update" style="display: none" class="btn btn-primary">Update</button>
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="submit" id="button-update" style="display: none" class="btn btn-primary">
+                                    Update
+                                </button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal" id='modal-close'>Close</button>
                             </div>
                         </div>
                     </form>
@@ -154,7 +149,7 @@
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal"><span
                             aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                    <h4 class="modal-title" id="myMapModal">Create New Clinic</h4>
+                    <h4 class="modal-title" id="myMapModal">Get Map Coordinates</h4>
                 </div>
                 <div class="modal-body">
                     <div id="map" style="height: 600px"></div>
@@ -167,60 +162,6 @@
         </div>
     </div>
 </div>
-
-<script>
-
-    /*$(function () {
-        $("#button-create").click(function () {
-            var clinic = $("#create-form").serialize();
-            createClinic(clinic);
-        });
-
-
-        $("#button-update").click(function () {
-            alert("updated");
-            alert($("#loginForm").serialize())
-        });
-
-        var lat = $("#lat");
-        var lon = $("#lon");
-
-
-        var map = L.map('map').setView([51.505, -0.09], 13);
-
-        L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
-            maxZoom: 18,
-            attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-                    '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-                    'Imagery © <a href="http://mapbox.com">Mapbox</a>',
-            id: 'examples.map-i875mjb7'
-        }).addTo(map);
-
-        var popup = L.popup();
-
-
-        function onMapClick(e) {
-            popup
-                    .setLatLng(e.latlng)
-                    .setContent(e.latlng.lat + " , " + e.latlng.lng)
-                    .openOn(map);
-
-            lat.val(e.latlng.lat);
-            lon.val(e.latlng.lng);
-        }
-
-        map.on('click', onMapClick);
-
-        $('#mapModal').on('show.bs.modal', function () {
-            setTimeout(function () {
-                map.invalidateSize();
-            }, 500);
-        });
-        loadGrid();
-    });  */
-
-</script>
-
 
 <script src="../js/main.js"></script>
 <script> $(document).ready(loadGrid());</script>

@@ -89,7 +89,10 @@ function prepareMap(divId, cd) {
 
 //This is the basic grid setup
 function prepareGrid(divId, cd) {
-
+    var btnUpdate = $("#btn-update-clinic");
+    var btnDelete = $("#btn-delete-clinic");
+    btnUpdate.attr('disabled', 'disabled');
+    btnDelete.attr('disabled', 'disabled');
     var dataTable = $("#" + divId);
     dataTable.bootstrapTable({
         height: 450,
@@ -141,40 +144,57 @@ function prepareGrid(divId, cd) {
     });
 
     dataTable.bootstrapTable('load', cd);
+    dataTable.bootstrapTable({}).on('all.bs.table', function (e, name, args) {
+        btnUpdate.removeAttr('disabled');
+        btnDelete.removeAttr('disabled');
+    });
     var getSelectedClinic = function () {
         var selectedClinic = JSON.stringify(dataTable.bootstrapTable('getSelections'));
-        return JSON.parse(selectedClinic);
+        if (JSON.parse(selectedClinic).length === 0) {
+            alert("Please select a clinic first");
+            return undefined;
+        } else {
+            return JSON.parse(selectedClinic);
+        }
     };
 
     var refreshTable = function () {
         var refresh = JSON.parse(getClinicData());
         dataTable.bootstrapTable('load', refresh);
+        btnUpdate.attr('disabled', 'disabled');
+        btnDelete.attr('disabled', 'disabled');
     };
 
-    $("#btn-update-clinic").click(function () {
-        $("#button-update").show();
-        $("#button-create").hide();
+    btnUpdate.click(function () {
         var clinic = getSelectedClinic()[0];
-        $("#clinicName").val(clinic["clinicName"]);
-        $("#countryName").val(clinic["countryName"]);
-        $("#nev").val(clinic["nevirapineStock"]);
-        $("#sta").val(clinic["stavudineStock"]);
-        $("#zid").val(clinic["zidotabineStock"]);
-        $("#lat").val(clinic["latitude"]);
-        $("#lon").val(clinic["longitude"]);
-        $("#button-update").click(function () {
-            var updatedClinic = $("#create-form").serialize();
-            updatedClinic += "&clinicId=" + clinic["clinicId"];
-            $("#button-update").hide();
-            $("#button-create").show();
-            updateClinic(updatedClinic);
-        });
+        if (clinic) {
+            $("#button-update").show();
+            $("#button-create").hide();
+            $("#clinicName").val(clinic["clinicName"]);
+            $("#countryName").val(clinic["countryName"]);
+            $("#nev").val(clinic["nevirapineStock"]);
+            $("#sta").val(clinic["stavudineStock"]);
+            $("#zid").val(clinic["zidotabineStock"]);
+            $("#lat").val(clinic["latitude"]);
+            $("#lon").val(clinic["longitude"]);
+            $("#button-update").click(function () {
+                var updatedClinic = $("#create-form").serialize();
+                updatedClinic += "&clinicId=" + clinic["clinicId"];
+                $("#button-update").hide();
+                $("#button-create").show();
+                updateClinic(updatedClinic);
+            });
+        }
+        $("#create-modal").hide();
     });
     //Set the CRUD operations here, where the relevant button is pressed
     $("#btn-delete-clinic").click(function () {
         var clinicId = getSelectedClinic()[0]["clinicId"];
-        deleteClinic(clinicId);
-        refreshTable();
+        if (clinicId) {
+            deleteClinic(clinicId);
+            refreshTable();
+        }
+
     });
 
     $("#btn-low-stock").click(function () {
@@ -237,7 +257,7 @@ function prepareChart(divId, clinicData) {
         series: {
             bars: {
                 show: true,
-                barWidth: 0.8 / chartData.ticks.length,
+                barWidth: 0.9 / chartData.ticks.length,
                 order: 1,
                 align: "center"
             }
@@ -343,22 +363,6 @@ function createClinic(clinic) {
     }).responseText;
 }
 
-//This is a function to convert Objects to a format that can be send through the requests to backend
-$.fn.serializeObject = function () {
-    var o = {};
-    var a = this.serializeArray();
-    $.each(a, function () {
-        if (o[this.name] !== undefined) {
-            if (!o[this.name].push) {
-                o[this.name] = [o[this.name]];
-            }
-            o[this.name].push(this.value || '');
-        } else {
-            o[this.name] = this.value || '';
-        }
-    });
-    return o;
-};
 //This will display the warning for low stock clinics
 
 function displayLowStockWarning(clinics) {
@@ -383,7 +387,6 @@ function displayLowStockWarning(clinics) {
         cls += "\n";
         alertOutput += cls;
     }
-    displayedWarning = true;
 }
 
 
