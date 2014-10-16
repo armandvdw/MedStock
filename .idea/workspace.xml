@@ -4,7 +4,7 @@
     <list default="true" id="09ec59e3-e4c3-453d-9e44-aebea3d906ff" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/za/co/medstock/entities/ChangeLog.java" afterPath="$PROJECT_DIR$/src/main/java/za/co/medstock/entities/ChangeLog.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/za/co/medstock/crud/MedStock.java" afterPath="$PROJECT_DIR$/src/main/java/za/co/medstock/crud/MedStock.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/za/co/medstock/service/MedStockService.java" afterPath="$PROJECT_DIR$/src/main/java/za/co/medstock/service/MedStockService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MedStock.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -17,7 +17,7 @@
     <file path="/Clinic.java" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1413408103484" ignored="false" />
     <file path="/Dummy.txt" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1413395931394" ignored="false" />
     <file path="/Country.java" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412788272667" ignored="false" />
-    <file path="/MedStock.java" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1413409964681" ignored="false" />
+    <file path="/MedStock.java" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1413427338931" ignored="false" />
     <file path="/HibernateUtil.java" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412885554509" ignored="false" />
     <file path="/MedStockService.java" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1413409914324" ignored="false" />
     <file path="/a.dummy" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1413403736577" ignored="false" />
@@ -26,7 +26,7 @@
     <file path="/HibernateTest.cfg.xml" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1413345941945" ignored="false" />
     <file path="/index.html" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412892210689" ignored="false" />
     <file path="/main.js" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1413406987386" ignored="false" />
-    <file path="/main.css" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1413404463576" ignored="false" />
+    <file path="/main.css" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1413429209395" ignored="false" />
     <file path="/login.js" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412892297185" ignored="false" />
     <file path="/clinic_form.html" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412522104051" ignored="false" />
     <file path="/main.html" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412903067033" ignored="false" />
@@ -37,9 +37,9 @@
     <file path="/leaflet.css" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412685910935" ignored="false" />
     <file path="/MedUser.java" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412788256270" ignored="false" />
     <file path="/MANIFEST.MF" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412897738444" ignored="false" />
-    <file path="/home.html" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1413315853346" ignored="false" />
+    <file path="/home.html" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1413430616640" ignored="false" />
     <file path="/reporting.html" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1413310569438" ignored="false" />
-    <file path="/map.html" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1413402208475" ignored="false" />
+    <file path="/map.html" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1413430954934" ignored="false" />
     <file path="/base.css" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1413312466019" ignored="false" />
     <file path="/reports.html" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1413406187976" ignored="false" />
     <file path="/table.html" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1413315772749" ignored="false" />
@@ -90,7 +90,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/main/java/za/co/medstock/crud/MedStock.java" line="127" class="za.co.medstock.crud.MedStock" package="za.co.medstock.crud">
+      <breakpoint url="file://$PROJECT_DIR$/src/main/java/za/co/medstock/crud/MedStock.java" line="146" class="za.co.medstock.crud.MedStock" package="za.co.medstock.crud">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -146,85 +146,41 @@
     <breakpoint_rules />
     <ui_properties />
   </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file leaf-file-name="ChangeLog.java" pinned="false" current="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/src/main/java/za/co/medstock/entities/ChangeLog.java">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state line="29" column="19" selection-start="694" selection-end="694" vertical-scroll-proportion="0.62115383">
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="MedStock" />
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="management.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/pages/management.html">
+      <file leaf-file-name="map.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/pages/map.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="85" column="96" selection-start="3611" selection-end="3611" vertical-scroll-proportion="6.423077">
-              <folding>
-                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state line="44" column="67" selection-start="1608" selection-end="1608" vertical-scroll-proportion="-22.076923">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="33" selection-start="1116" selection-end="1116" vertical-scroll-proportion="0.0">
+            <state line="99" column="52" selection-start="3267" selection-end="3267" vertical-scroll-proportion="0.60777956">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MedStockService.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/za/co/medstock/service/MedStockService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="225" column="61" selection-start="8849" selection-end="8849" vertical-scroll-proportion="0.3547826">
-              <folding />
-            </state>
+      <file leaf-file-name="marker-shadow.png" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/js/images/marker-shadow.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MedStock.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/za/co/medstock/crud/MedStock.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="147" column="102" selection-start="6083" selection-end="6083" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/pages/main.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="78" selection-start="1053" selection-end="1053" vertical-scroll-proportion="0.65384614">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/css/main.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="87" column="28" selection-start="1263" selection-end="1263" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
+      <file leaf-file-name="marker-icon-green.png" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/js/images/marker-icon-green.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
           </provider>
         </entry>
       </file>
@@ -247,21 +203,21 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/src/main/resources/userinterface/pages/table.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/userinterface/pages/home.html" />
         <option value="$PROJECT_DIR$/src/main/resources/hibernateconf/HibernateTest.cfg.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/hibernateconf/Hibernate.cfg.xml" />
         <option value="$PROJECT_DIR$/src/main/java/za/co/medstock/entities/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/za/co/medstock/entities/MedStockUser.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/userinterface/pages/map.html" />
         <option value="$PROJECT_DIR$/src/main/resources/userinterface/pages/reports.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/userinterface/css/main.css" />
         <option value="$PROJECT_DIR$/src/main/resources/userinterface/pages/management.html" />
         <option value="$PROJECT_DIR$/src/main/java/za/co/medstock/entities/Clinic.java" />
         <option value="$PROJECT_DIR$/src/test/java/MedStockTest.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/userinterface/js/main.js" />
+        <option value="$PROJECT_DIR$/src/main/java/za/co/medstock/service/MedStockService.java" />
         <option value="$PROJECT_DIR$/src/main/java/za/co/medstock/entities/ChangeLog.java" />
         <option value="$PROJECT_DIR$/src/main/java/za/co/medstock/crud/MedStock.java" />
-        <option value="$PROJECT_DIR$/src/main/java/za/co/medstock/service/MedStockService.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/userinterface/pages/home.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/userinterface/css/main.css" />
+        <option value="$PROJECT_DIR$/src/main/resources/userinterface/pages/map.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/userinterface/js/main.js" />
       </list>
     </option>
   </component>
@@ -481,6 +437,10 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="images" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -508,10 +468,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="userinterface" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -680,9 +636,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\TheOnlyMonkey\Desktop\MedStock Final\MedStockApp\src\main\resources\userinterface\images" />
       <recent name="C:\Users\TheOnlyMonkey\Desktop\MedStock Final\MedStockApp\src\main\resources\userinterface\js" />
       <recent name="C:\Users\TheOnlyMonkey\Desktop\MedStock Final\MedStockApp\src\main\resources\userinterface\pages" />
-      <recent name="C:\Users\TheOnlyMonkey\Desktop\MedStock Final\MedStockApp\src\main\resources\userinterface\images" />
       <recent name="C:\Dev\MedStock\src\main\resources\userinterface\images" />
       <recent name="C:\Dev\MedStock\src\main\resources\userinterface\css" />
     </key>
@@ -975,7 +931,7 @@
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32998884" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998884" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39130434" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -991,8 +947,8 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28762007" sideWeight="0.71460426" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34471717" sideWeight="0.67001116" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2831661" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34471717" sideWeight="0.7168339" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2831661" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1066,51 +1022,9 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/pages/map.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="97" selection-start="932" selection-end="932" vertical-scroll-proportion="-12.423077">
-          <folding>
-            <element signature="n#style#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/js/images/marker-icon-red.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/js/images/marker-icon-green.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/js/images/marker-icon.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/js/jquery.flot.selection.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/pages/reports.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="68" selection-start="565" selection-end="565" vertical-scroll-proportion="-5.6666665">
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/sparkjava/spark-core/2.0.0/spark-core-2.0.0-sources.jar!/spark/webserver/MatcherFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="188" column="0" selection-start="7178" selection-end="7178" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1129,27 +1043,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="33" selection-start="1116" selection-end="1116" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/pages/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="78" selection-start="1053" selection-end="1053" vertical-scroll-proportion="0.65384614">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="28" selection-start="1263" selection-end="1263" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/pages/management.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="85" column="96" selection-start="3611" selection-end="3611" vertical-scroll-proportion="6.423077">
@@ -1160,23 +1053,82 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/za/co/medstock/service/MedStockService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="149" column="0" selection-start="5674" selection-end="5674" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/sparkjava/spark-core/2.0.0/spark-core-2.0.0-sources.jar!/spark/webserver/MatcherFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="194" column="53" selection-start="7537" selection-end="7537" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_20/src.zip!/java/sql/Date.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="73" column="11" selection-start="2089" selection-end="2089" vertical-scroll-proportion="0.3326923">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/za/co/medstock/entities/ChangeLog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="19" selection-start="694" selection-end="694" vertical-scroll-proportion="0.62115383">
+        <state line="26" column="28" selection-start="614" selection-end="614" vertical-scroll-proportion="0.52307695">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/za/co/medstock/crud/MedStock.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="147" column="102" selection-start="6083" selection-end="6083" vertical-scroll-proportion="0.0">
+        <state line="152" column="84" selection-start="6197" selection-end="6197" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/za/co/medstock/service/MedStockService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/pages/main.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="225" column="61" selection-start="8849" selection-end="8849" vertical-scroll-proportion="0.3547826">
+        <state line="24" column="48" selection-start="1215" selection-end="1215" vertical-scroll-proportion="0.25888324">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/pages/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="151" selection-start="1560" selection-end="1560" vertical-scroll-proportion="0.3248731">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="81" column="71" selection-start="1213" selection-end="1213" vertical-scroll-proportion="0.31118315">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/pages/map.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="67" selection-start="1608" selection-end="1608" vertical-scroll-proportion="-22.076923">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/js/images/marker-icon-green.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/js/images/marker-shadow.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="99" column="52" selection-start="3267" selection-end="3267" vertical-scroll-proportion="0.60777956">
           <folding />
         </state>
       </provider>

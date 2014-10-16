@@ -4,13 +4,13 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.joda.time.DateTime;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.io.Serializable;
+import java.sql.Date;
 
 @Getter
 @Setter
@@ -23,7 +23,7 @@ public class ChangeLog implements Serializable {
     Integer changeId;
     Integer useId;
     Integer clinicId;
-    DateTime date;
+    Date date;
     Integer nevirapine;
     Integer stavudine;
     Integer zidotabine;

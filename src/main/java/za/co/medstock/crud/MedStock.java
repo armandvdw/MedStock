@@ -1,12 +1,12 @@
 package za.co.medstock.crud;
 
 import org.hibernate.Query;
-import org.joda.time.DateTime;
 import spark.Request;
 import za.co.medstock.entities.ChangeLog;
 import za.co.medstock.entities.Clinic;
 import za.co.medstock.entities.MedStockUser;
 
+import java.sql.Date;
 import java.util.ArrayList;
 
 /**
@@ -14,6 +14,7 @@ import java.util.ArrayList;
  */
 public class MedStock {
     public static final Integer LOW_STOCK_VALUE = 5;
+
     public MedStock() {
     }
 
@@ -144,8 +145,9 @@ public class MedStock {
 
     public void logTransaction(Integer userid, Clinic clin, String message) {
         HibernateUtil.getCurrentSession().beginTransaction();
-        HibernateUtil.getCurrentSession().saveOrUpdate(new ChangeLog(0, userid, clin.getClinicId(), DateTime.now(),
-                clin.getNevirapineStock(), clin.getStavudineStock(), clin.getZidotabineStock(),message));
+        Date d = new Date(System.currentTimeMillis());
+        HibernateUtil.getCurrentSession().saveOrUpdate(new ChangeLog(0, userid, clin.getClinicId(), d,
+                clin.getNevirapineStock(), clin.getStavudineStock(), clin.getZidotabineStock(), message));
         HibernateUtil.getCurrentSession().getTransaction().commit();
 
     }

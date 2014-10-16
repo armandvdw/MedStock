@@ -79,17 +79,27 @@ function prepareMap(divId, cd) {
         var clinic = cd[i];
         //TODO: implement this by setting the anchor  also add tooltip to marker by setting the title
 
-/*        var icon = L.icon({
-            iconUrl: "images/marker-icon-green.png",
-            shadowUrl: 'images/marker-shadow.png'
+        var icon = L.icon({
+            iconUrl: 'js/images/marker-icon-green.png',
+            shadowUrl: 'js/images/marker-shadow.png',
+            iconSize: [25, 41],
+            iconAnchor: [11, 41],
+            popupAnchor: [0, -42],
+            shadowSize: [41, 41],
+            shadowAnchor: [11, 41]
 
         });
         if (lowStockClinic(clinic) === false){
             icon = L.icon({
-                iconUrl: "images/marker-icon-red.png",
-                shadowUrl: 'images/marker-shadow.png'
+                iconUrl: 'js/images/marker-icon-red.png',
+                shadowUrl: 'js/images/marker-shadow.png',
+                iconSize: [25, 41],
+                iconAnchor: [11, 41],
+                popupAnchor: [0, -42],
+                shadowSize: [41, 41],
+                shadowAnchor: [11, 41]
             });
-        }*/
+        }
 
         var popupText = "<h4>Name: " + clinic["clinicName"] + " </h4>" +
             "Nevirapine: " + clinic["nevirapineStock"] + "<br/>" +
@@ -97,7 +107,7 @@ function prepareMap(divId, cd) {
             "Zidotabine: " + clinic["zidotabineStock"];
 
         L.marker([clinic["latitude"], clinic["longitude"]])
-           // .setIcon(icon)
+            .setIcon(icon)
             .addTo(map)
             .bindPopup(popupText);
     }
