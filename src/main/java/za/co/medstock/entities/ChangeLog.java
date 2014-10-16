@@ -10,7 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.io.Serializable;
-import java.sql.Date;
+import java.sql.Timestamp;
 
 @Getter
 @Setter
@@ -23,7 +23,7 @@ public class ChangeLog implements Serializable {
     Integer changeId;
     Integer useId;
     Integer clinicId;
-    Date date;
+    Timestamp date;
     Integer nevirapine;
     Integer stavudine;
     Integer zidotabine;

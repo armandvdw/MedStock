@@ -6,7 +6,7 @@ import za.co.medstock.entities.ChangeLog;
 import za.co.medstock.entities.Clinic;
 import za.co.medstock.entities.MedStockUser;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 
 /**
@@ -145,9 +145,10 @@ public class MedStock {
 
     public void logTransaction(Integer userid, Clinic clin, String message) {
         HibernateUtil.getCurrentSession().beginTransaction();
-        Date d = new Date(System.currentTimeMillis());
-        HibernateUtil.getCurrentSession().saveOrUpdate(new ChangeLog(0, userid, clin.getClinicId(), d,
-                clin.getNevirapineStock(), clin.getStavudineStock(), clin.getZidotabineStock(), message));
+        Timestamp d = new Timestamp(System.currentTimeMillis());
+        ChangeLog log = new ChangeLog(5000, userid, clin.getClinicId(), d,
+                clin.getNevirapineStock(), clin.getStavudineStock(), clin.getZidotabineStock(), message);
+        HibernateUtil.getCurrentSession().save(log);
         HibernateUtil.getCurrentSession().getTransaction().commit();
 
     }

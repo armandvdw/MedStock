@@ -50,5 +50,14 @@ public class MedStockTest {
         ArrayList<Clinic> result = m.getAllClinics();
         Assert.assertNotNull(result);
     }
+    @Test
+    public void testSaveLog(){
+        MedStock m = new MedStock();
+        Clinic clin = new Clinic(1,"Clinic1","ZA",5,4,3,20.0,20.0);
+        Integer userid = 1;
+        String message = "CREATE";
+        m.logTransaction(userid,clin,message);
+        Assert.assertNotNull(m.getAllLogs());
+    }
 
 }

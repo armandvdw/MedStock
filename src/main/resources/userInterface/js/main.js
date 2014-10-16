@@ -170,31 +170,37 @@ function prepareGrid(divId, cd) {
         ]
     });
     dataTable.bootstrapTable('load', cd);
-    /*dataTable.bootstrapTable({}).on('click-row.bs.table', function (e, row) {
-        $("#btn-delete-clinic").toggleClass("active");
-    });*/
     var getSelectedClinic = function () {
         var selectedClinic = JSON.stringify(dataTable.bootstrapTable('getSelections'));
         return JSON.parse(selectedClinic);
     };
     var refreshTable = function(){
-        var refresh = JSON.parse(getLowStockClinics());
+        var refresh = JSON.parse(getClinicData());
         dataTable.bootstrapTable('load',refresh);
-        return refresh;
     };
     $("#btn-update-clinic").click(function(){
-        alert("Updating " + getSelectedClinic());
-
+        $("#button-update").show();
+        $("#button-create").hide();
+        var clinic = getSelectedClinic()[0];
+        $("#clinicName").val(clinic["clinicName"]);
+        $("#countryName").val(clinic["countryName"]);
+        $("#nev").val(clinic["nevirapineStock"]);
+        $("#sta").val(clinic["stavudineStock"]);
+        $("#zid").val(clinic["zidotabineStock"]);
+        $("#lat").val(clinic["latitude"]);
+        $("#lon").val(clinic["longitude"]);
+        $("#button-update").click(function(){
+            var updatedClinic = $("#create-form").serialize();
+            updatedClinic+="&clinicId=" +clinic["clinicId"];
+            $("#button-update").hide();
+            $("#button-create").show();
+            updateClinic(updatedClinic);
+        });
     });
     $("#btn-delete-clinic").click(function(){
-
         var clinicId = getSelectedClinic()[0]["clinicId"];
-        alert("Deleting " + clinicId);
         deleteClinic(clinicId);
         refreshTable();
-    });
-    $("#btn-create-clinic").click(function(){
-        alert("Updating " + getSelectedClinic());
     });
     $("#btn-low-stock").click(function(){
         var lsClinics = JSON.parse(getLowStockClinics());
@@ -203,6 +209,46 @@ function prepareGrid(divId, cd) {
     $("#btn-all-clinics").click(function(){
         var allClinics = JSON.parse(getClinicData());
         dataTable.bootstrapTable('load',allClinics);
+    });
+
+    $("#button-create").click(function () {
+        var clinic = $("#create-form").serialize();
+        createClinic(clinic);
+    });
+
+    var lat = $("#lat");
+    var lon = $("#lon");
+
+
+    var map = L.map('map').setView([-3.0, 23.0], 3);
+
+    L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
+        maxZoom: 18,
+        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+            '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+            'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+        id: 'examples.map-i875mjb7'
+    }).addTo(map);
+
+    var popup = L.popup();
+
+
+    function onMapClick(e) {
+        popup
+            .setLatLng(e.latlng)
+            .setContent(e.latlng.lat + " , " + e.latlng.lng)
+            .openOn(map);
+
+        lat.val(e.latlng.lat);
+        lon.val(e.latlng.lng);
+    }
+
+    map.on('click', onMapClick);
+
+    $('#mapModal').on('show.bs.modal', function () {
+        setTimeout(function () {
+            map.invalidateSize();
+        }, 300);
     });
 }
 
@@ -372,7 +418,7 @@ function preparePicker(divId, clinic) {
     for (var i = 0; i < clinic.length; i++) {
         var clin = clinic[i];
         var display = clin["clinicId"] + " - " + clin["clinicName"];
-        $("<option>" + display + "</option>").appendTo($("clinPicker"));
+        $("<option>" + display + "</option>").appendTo($("#clinPicker"));
     }
     //picker.append("</select>");
 }
