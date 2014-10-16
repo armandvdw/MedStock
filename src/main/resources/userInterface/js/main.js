@@ -1,25 +1,4 @@
 //Some Global variables needed to control some state of components
-var clinicData = [undefined]; //JSON.parse(getClinicData());
-var mapZoomLevel = 3;//This is the default setting for the leaflet map
-var mapLat = 0.56;
-var mapLon = 22.89;
-var selectedClinic = clinicData[0];
-var createMode = false; //The toggle button to add new clinics.
-var displayedWarning = false;
-
-//This is used to load the Components with data/ also used as a refresher.
-function loadContent() {
-    /*   if (!clinicData) {
-     alert("No data Received");
-     }
-     if(!displayedWarning){
-     displayLowStockWarning(clinicData);
-     }
-     prepareChart("ms-chart", clinicData);
-     prepareGrid("ms-grid", clinicData);
-     prepareMap("ms-map", clinicData);*/
-}
-
 function loadChart() {
 
     var data = JSON.parse(getClinicData());
@@ -27,16 +6,19 @@ function loadChart() {
         alert("No data Received");
     }
     prepareChart("ms-chart", data);
-    preparePicker("clinicPicker", data);
 }
+
 function loadMap() {
+
     var data = JSON.parse(getClinicData());
     if (!data) {
         alert("No data Received");
     }
     prepareMap("ms-map", data);
 }
+
 function loadGrid() {
+
     var data = JSON.parse(getClinicData());
     if (!data) {
         alert("No data Received");
@@ -44,20 +26,6 @@ function loadGrid() {
     prepareGrid("table-data", data);
 }
 
-//Set the global content to all stock
-function setContentToAllStock() {
-    clinicData = JSON.parse(getClinicData());
-    displayLowStockWarning(clinicData);
-    loadContent();
-}
-
-//Gets the low stock and updates the global content to show it.
-function setContentToLowStock() {
-    clinicData = JSON.parse(getLowStockClinics());
-    displayLowStockWarning(clinicData);
-    loadContent();
-}
-//TODO: check if this works
 //This checks if the Clinic object has stock levels less than 5
 function lowStockClinic(clinic) {
     return clinic["stavudineStock"] < 5 || clinic["zidotabineStock"] < 5 || clinic["nevirapineStock"] < 5;
@@ -66,6 +34,7 @@ function lowStockClinic(clinic) {
 //This will do the setup for my map component
 function prepareMap(divId, cd) {
 
+    //The map is set to the middle point of africa
     var map = L.map(divId).setView([-3.0, 23.0], 3);
 
     L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
@@ -75,10 +44,9 @@ function prepareMap(divId, cd) {
             'Imagery © <a href="http://mapbox.com">Mapbox</a>',
         id: 'examples.map-i875mjb7'
     }).addTo(map);
-
+    //Here we plot the markers on the map according to the stock level
     for (var i = 0; i < cd.length; i++) {
         var clinic = cd[i];
-        //TODO: implement this by setting the anchor  also add tooltip to marker by setting the title
 
         var icon = L.icon({
             iconUrl: 'js/images/marker-icon-green.png',
@@ -88,8 +56,8 @@ function prepareMap(divId, cd) {
             popupAnchor: [0, -42],
             shadowSize: [41, 41],
             shadowAnchor: [11, 41]
-
         });
+
         if (lowStockClinic(clinic) === false) {
             icon = L.icon({
                 iconUrl: 'js/images/marker-icon-red.png',
@@ -121,9 +89,10 @@ function prepareMap(divId, cd) {
 
 //This is the basic grid setup
 function prepareGrid(divId, cd) {
-    var dataTable = $("#"+divId);
+
+    var dataTable = $("#" + divId);
     dataTable.bootstrapTable({
-        height: 400,
+        height: 450,
         search: true,
         showColumns: true,
         clickToSelect: true,
@@ -142,7 +111,8 @@ function prepareGrid(divId, cd) {
                 field: 'clinicName',
                 title: 'Clinic Name'
 
-            },             {
+            },
+            {
                 field: 'countryName',
                 title: 'Country'
 
@@ -169,16 +139,19 @@ function prepareGrid(divId, cd) {
             }
         ]
     });
+
     dataTable.bootstrapTable('load', cd);
     var getSelectedClinic = function () {
         var selectedClinic = JSON.stringify(dataTable.bootstrapTable('getSelections'));
         return JSON.parse(selectedClinic);
     };
-    var refreshTable = function(){
+
+    var refreshTable = function () {
         var refresh = JSON.parse(getClinicData());
-        dataTable.bootstrapTable('load',refresh);
+        dataTable.bootstrapTable('load', refresh);
     };
-    $("#btn-update-clinic").click(function(){
+
+    $("#btn-update-clinic").click(function () {
         $("#button-update").show();
         $("#button-create").hide();
         var clinic = getSelectedClinic()[0];
@@ -189,36 +162,38 @@ function prepareGrid(divId, cd) {
         $("#zid").val(clinic["zidotabineStock"]);
         $("#lat").val(clinic["latitude"]);
         $("#lon").val(clinic["longitude"]);
-        $("#button-update").click(function(){
+        $("#button-update").click(function () {
             var updatedClinic = $("#create-form").serialize();
-            updatedClinic+="&clinicId=" +clinic["clinicId"];
+            updatedClinic += "&clinicId=" + clinic["clinicId"];
             $("#button-update").hide();
             $("#button-create").show();
             updateClinic(updatedClinic);
         });
     });
-    $("#btn-delete-clinic").click(function(){
+    //Set the CRUD operations here, where the relevant button is pressed
+    $("#btn-delete-clinic").click(function () {
         var clinicId = getSelectedClinic()[0]["clinicId"];
         deleteClinic(clinicId);
         refreshTable();
     });
-    $("#btn-low-stock").click(function(){
+
+    $("#btn-low-stock").click(function () {
         var lsClinics = JSON.parse(getLowStockClinics());
-        dataTable.bootstrapTable('load',lsClinics);
+        dataTable.bootstrapTable('load', lsClinics);
     });
-    $("#btn-all-clinics").click(function(){
+
+    $("#btn-all-clinics").click(function () {
         var allClinics = JSON.parse(getClinicData());
-        dataTable.bootstrapTable('load',allClinics);
+        dataTable.bootstrapTable('load', allClinics);
     });
 
     $("#button-create").click(function () {
         var clinic = $("#create-form").serialize();
         createClinic(clinic);
     });
-
+    //Set up the modal map for the selection lat lon values
     var lat = $("#lat");
     var lon = $("#lon");
-
 
     var map = L.map('map').setView([-3.0, 23.0], 3);
 
@@ -231,7 +206,6 @@ function prepareGrid(divId, cd) {
     }).addTo(map);
 
     var popup = L.popup();
-
 
     function onMapClick(e) {
         popup
@@ -369,22 +343,6 @@ function createClinic(clinic) {
     }).responseText;
 }
 
-//This is a function to convert Objects to a format that can be send through the requests to backend
-$.fn.serializeObject = function () {
-    var o = {};
-    var a = this.serializeArray();
-    $.each(a, function () {
-        if (o[this.name] !== undefined) {
-            if (!o[this.name].push) {
-                o[this.name] = [o[this.name]];
-            }
-            o[this.name].push(this.value || '');
-        } else {
-            o[this.name] = this.value || '';
-        }
-    });
-    return o;
-};
 //This will display the warning for low stock clinics
 
 function displayLowStockWarning(clinics) {
@@ -409,19 +367,8 @@ function displayLowStockWarning(clinics) {
         cls += "\n";
         alertOutput += cls;
     }
-    //alert(alertOutput);
-    displayedWarning = true;
 }
-function preparePicker(divId, clinic) {
-    //var picker = $("#clinicPicker");
-    //picker.append(" <select class='selectpicker' data-live-search='true' id='clinPicker'>");
-    for (var i = 0; i < clinic.length; i++) {
-        var clin = clinic[i];
-        var display = clin["clinicId"] + " - " + clin["clinicName"];
-        $("<option>" + display + "</option>").appendTo($("#clinPicker"));
-    }
-    //picker.append("</select>");
-}
+
 
 
 
