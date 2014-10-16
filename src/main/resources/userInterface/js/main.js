@@ -65,7 +65,7 @@ function lowStockClinic(clinic) {
 //This will do the setup for my map component
 function prepareMap(divId, cd) {
 
-    var map = L.map(divId).setView([-3.0, 23.0],3);
+    var map = L.map(divId).setView([-3.0, 23.0], 3);
 
     L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
         maxZoom: 18,
@@ -89,7 +89,7 @@ function prepareMap(divId, cd) {
             shadowAnchor: [11, 41]
 
         });
-        if (lowStockClinic(clinic) === false){
+        if (lowStockClinic(clinic) === false) {
             icon = L.icon({
                 iconUrl: 'js/images/marker-icon-red.png',
                 shadowUrl: 'js/images/marker-shadow.png',
@@ -106,10 +106,15 @@ function prepareMap(divId, cd) {
             "Stavudine: " + clinic["stavudineStock"] + "<br/> " +
             "Zidotabine: " + clinic["zidotabineStock"];
 
-        L.marker([clinic["latitude"], clinic["longitude"]])
-            .setIcon(icon)
-            .addTo(map)
-            .bindPopup(popupText);
+        var marker = L.marker([clinic["latitude"], clinic["longitude"]], {
+            icon: icon
+        });
+
+        marker.bindPopup(popupText);
+        marker.addTo(map);
+        marker.on('mouseover',marker.openPopup.bind(marker));
+        marker.on('mouseout',marker.closePopup.bind(marker));
+
     }
 }
 
