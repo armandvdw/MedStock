@@ -69,7 +69,7 @@ html, body {
     cursor: pointer;
 }
 .chart-container{
-    height: 550px;
+    height: 450px;
     width: 100%;
 }
 .map-container{

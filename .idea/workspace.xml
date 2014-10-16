@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="09ec59e3-e4c3-453d-9e44-aebea3d906ff" name="Default" comment="" />
+    <list default="true" id="09ec59e3-e4c3-453d-9e44-aebea3d906ff" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/userinterface/css/bootstrap-select.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/userinterface/css/bootstrap-select.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/userinterface/js/bootstrap-select.js" />
+      <change type="MODIFICATION" beforePath="C:\Users\TheOnlyMonkey\Desktop\MedStock Final\MedStockApp\src\main\resources\userinterface\css\main.css" afterPath="$PROJECT_DIR$/src/main/resources/userinterface/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="MedStock.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/MedStockTest.java" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1413408174178" ignored="false" />
@@ -21,7 +27,7 @@
     <file path="/Medication.java" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412370179380" ignored="false" />
     <file path="/HibernateTest.cfg.xml" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1413345941945" ignored="false" />
     <file path="/index.html" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412892210689" ignored="false" />
-    <file path="/main.js" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1413433091968" ignored="false" />
+    <file path="/main.js" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1413437462584" ignored="false" />
     <file path="/main.css" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1413429209395" ignored="false" />
     <file path="/login.js" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412892297185" ignored="false" />
     <file path="/clinic_form.html" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412522104051" ignored="false" />
@@ -37,7 +43,7 @@
     <file path="/reporting.html" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1413310569438" ignored="false" />
     <file path="/map.html" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1413430954934" ignored="false" />
     <file path="/base.css" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1413312466019" ignored="false" />
-    <file path="/reports.html" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1413406187976" ignored="false" />
+    <file path="/reports.html" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1413437425827" ignored="false" />
     <file path="/table.html" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1413315772749" ignored="false" />
     <file path="/management.html" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1413407965162" ignored="false" />
     <file path="/ChangeLog.java" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1413409951264" ignored="false" />
@@ -148,11 +154,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="map.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/pages/map.html">
+      <file leaf-file-name="management.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/pages/management.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="67" selection-start="1608" selection-end="1608" vertical-scroll-proportion="-22.076923">
-              <folding />
+            <state line="141" column="54" selection-start="6222" selection-end="6222" vertical-scroll-proportion="-11.961538">
+              <folding>
+                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -160,23 +169,54 @@
       <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="109" column="22" selection-start="3657" selection-end="3657" vertical-scroll-proportion="0.3873582">
+            <state line="323" column="29" selection-start="9644" selection-end="9644" vertical-scroll-proportion="0.7714749">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="marker-shadow.png" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/js/images/marker-shadow.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
+      <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/css/main.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="91" column="68" selection-start="1378" selection-end="1378" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="marker-icon-green.png" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/js/images/marker-icon-green.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
+      <file leaf-file-name="reports.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/pages/reports.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="46" column="93" selection-start="1527" selection-end="1527" vertical-scroll-proportion="-10.461538">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bootstrap-select.css.map" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/css/bootstrap-select.css.map">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="73" selection-start="73" selection-end="73" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bootstrap-select.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/css/bootstrap-select.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="60" selection-start="318" selection-end="318" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bootstrap-select.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/js/bootstrap-select.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
@@ -203,7 +243,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/hibernateconf/Hibernate.cfg.xml" />
         <option value="$PROJECT_DIR$/src/main/java/za/co/medstock/entities/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/za/co/medstock/entities/MedStockUser.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/userinterface/pages/reports.html" />
         <option value="$PROJECT_DIR$/src/main/resources/userinterface/pages/management.html" />
         <option value="$PROJECT_DIR$/src/main/java/za/co/medstock/entities/Clinic.java" />
         <option value="$PROJECT_DIR$/src/test/java/MedStockTest.java" />
@@ -211,8 +250,9 @@
         <option value="$PROJECT_DIR$/src/main/java/za/co/medstock/entities/ChangeLog.java" />
         <option value="$PROJECT_DIR$/src/main/java/za/co/medstock/crud/MedStock.java" />
         <option value="$PROJECT_DIR$/src/main/resources/userinterface/pages/home.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/userinterface/css/main.css" />
         <option value="$PROJECT_DIR$/src/main/resources/userinterface/pages/map.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/userinterface/css/main.css" />
+        <option value="$PROJECT_DIR$/src/main/resources/userinterface/pages/reports.html" />
         <option value="$PROJECT_DIR$/src/main/resources/userinterface/js/main.js" />
       </list>
     </option>
@@ -432,14 +472,6 @@
               <option name="myItemId" value="userinterface" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -464,6 +496,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="userinterface" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -632,11 +668,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\TheOnlyMonkey\Desktop\MedStock Final\MedStockApp\src\main\resources\userinterface\images" />
+      <recent name="C:\Users\TheOnlyMonkey\Desktop\MedStock Final\MedStockApp\src\main\resources\userinterface\css" />
       <recent name="C:\Users\TheOnlyMonkey\Desktop\MedStock Final\MedStockApp\src\main\resources\userinterface\js" />
+      <recent name="C:\Users\TheOnlyMonkey\Desktop\MedStock Final\MedStockApp\src\main\resources\userinterface\images" />
       <recent name="C:\Users\TheOnlyMonkey\Desktop\MedStock Final\MedStockApp\src\main\resources\userinterface\pages" />
       <recent name="C:\Dev\MedStock\src\main\resources\userinterface\images" />
-      <recent name="C:\Dev\MedStock\src\main\resources\userinterface\css" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\TheOnlyMonkey\Desktop\MedStock Final\MedStockApp\src\main\resources\userinterface\js\images" />
@@ -1018,51 +1054,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/pages/reports.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="68" selection-start="565" selection-end="565" vertical-scroll-proportion="-5.6666665">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/MedStockTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="118" selection-start="709" selection-end="709" vertical-scroll-proportion="0.4576923">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/za/co/medstock/entities/Clinic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="26" selection-start="427" selection-end="427" vertical-scroll-proportion="0.425">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/pages/management.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="96" selection-start="3611" selection-end="3611" vertical-scroll-proportion="6.423077">
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/za/co/medstock/service/MedStockService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="149" column="0" selection-start="5674" selection-end="5674" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/sparkjava/spark-core/2.0.0/spark-core-2.0.0-sources.jar!/spark/webserver/MatcherFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="194" column="53" selection-start="7537" selection-end="7537" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_20/src.zip!/java/sql/Date.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="73" column="11" selection-start="2089" selection-end="2089" vertical-scroll-proportion="0.3326923">
@@ -1098,20 +1089,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="81" column="71" selection-start="1213" selection-end="1213" vertical-scroll-proportion="0.31118315">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/pages/map.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="67" selection-start="1608" selection-end="1608" vertical-scroll-proportion="-22.076923">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/js/images/marker-icon-green.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1122,9 +1099,68 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/pages/map.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="67" selection-start="1608" selection-end="1608" vertical-scroll-proportion="0.9712352">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/pages/management.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="141" column="54" selection-start="6222" selection-end="6222" vertical-scroll-proportion="-11.961538">
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/js/bootstrap-select.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/css/bootstrap-select.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="60" selection-start="318" selection-end="318" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/css/bootstrap-select.css.map">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="73" selection-start="73" selection-end="73" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/js/jquery.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5110" column="4" selection-start="129975" selection-end="129975" vertical-scroll-proportion="0.33278146">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="91" column="68" selection-start="1378" selection-end="1378" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/pages/reports.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="93" selection-start="1527" selection-end="1527" vertical-scroll-proportion="-10.461538">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="109" column="22" selection-start="3657" selection-end="3657" vertical-scroll-proportion="0.3873582">
+        <state line="323" column="29" selection-start="9644" selection-end="9644" vertical-scroll-proportion="0.7714749">
           <folding />
         </state>
       </provider>

@@ -27,6 +27,7 @@ function loadChart() {
         alert("No data Received");
     }
     prepareChart("ms-chart", data);
+    preparePicker("clinicPicker", data);
 }
 function loadMap() {
     var data = JSON.parse(getClinicData());
@@ -112,8 +113,8 @@ function prepareMap(divId, cd) {
 
         marker.bindPopup(popupText);
         marker.addTo(map);
-        marker.on('mouseover',marker.openPopup.bind(marker));
-        marker.on('mouseout',marker.closePopup.bind(marker));
+        marker.on('mouseover', marker.openPopup.bind(marker));
+        marker.on('mouseout', marker.closePopup.bind(marker));
 
     }
 }
@@ -313,6 +314,16 @@ function displayLowStockWarning(clinics) {
     }
     //alert(alertOutput);
     displayedWarning = true;
+}
+function preparePicker(divId, clinic) {
+    //var picker = $("#clinicPicker");
+    //picker.append(" <select class='selectpicker' data-live-search='true' id='clinPicker'>");
+    for (var i = 0; i < clinic.length; i++) {
+        var clin = clinic[i];
+        var display = clin["clinicId"] + " - " + clin["clinicName"];
+        $("<option>" +display+ "</option>").appendTo($("clinPicker"));
+    }
+    //picker.append("</select>");
 }
 
 
