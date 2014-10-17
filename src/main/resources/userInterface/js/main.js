@@ -6,7 +6,6 @@ function loadChart() {
         alert("No data Received");
     }
     prepareChart("ms-chart", data);
-    displayLowStockWarning(data);
 }
 
 function loadMap() {
@@ -16,7 +15,6 @@ function loadMap() {
         alert("No data Received");
     }
     prepareMap("ms-map", data);
-    displayLowStockWarning(data)
 }
 
 function loadGrid() {
@@ -340,16 +338,16 @@ function prepareChart(divId, clinicData) {
             axisLabel: "Clinics",
             axisLabelUseCanvas: true,
             axisLabelFontFamily: "Verdana",
-            axisLabelFontSizePixels: 15,
+            axisLabelFontSizePixels: 20,
             axisLabelPadding: 20,
             mode: "categories",
             ticks: chartData.ticks
         },
         yaxis: {
-            axisLabel: "MedicineStock",
+            axisLabel: "Medicine Stock",
             axisLabelUseCanvas: true,
             axisLabelFontFamily: "verdana",
-            axisLabelFontSizePixels: 15,
+            axisLabelFontSizePixels: 20,
             axisLabelPadding: 18
         },
         selection: { mode: "x" }
