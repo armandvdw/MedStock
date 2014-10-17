@@ -6,6 +6,7 @@ function loadChart() {
         alert("No data Received");
     }
     prepareChart("ms-chart", data);
+    displayLowStockWarning(data);
 }
 
 function loadMap() {
@@ -15,6 +16,7 @@ function loadMap() {
         alert("No data Received");
     }
     prepareMap("ms-map", data);
+    displayLowStockWarning(data)
 }
 
 function loadGrid() {
@@ -24,6 +26,7 @@ function loadGrid() {
         alert("No data Received");
     }
     prepareGrid("table-data", data);
+    displayLowStockWarning(data);
 }
 
 //This checks if the Clinic object has stock levels less than 5
@@ -58,7 +61,7 @@ function prepareMap(divId, cd) {
             shadowAnchor: [11, 41]
         });
 
-        if (lowStockClinic(clinic) === false) {
+        if (lowStockClinic(clinic) === true) {
             icon = L.icon({
                 iconUrl: 'js/images/marker-icon-red.png',
                 shadowUrl: 'js/images/marker-shadow.png',
@@ -89,6 +92,7 @@ function prepareMap(divId, cd) {
 
 //This is the basic grid setup
 function prepareGrid(divId, cd) {
+
     var btnUpdate = $("#btn-update-clinic");
     var btnDelete = $("#btn-delete-clinic");
     btnUpdate.attr('disabled', 'disabled');
@@ -244,6 +248,75 @@ function prepareGrid(divId, cd) {
             map.invalidateSize();
         }, 300);
     });
+    //Validation on the input update/create form
+    $('#create-form').bootstrapValidator({
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            clinicName: {
+                validators: {
+                    notEmpty: {
+                        message: 'The username is required'
+                    }
+                }
+            },
+            countryName: {
+                validators: {
+                    notEmpty: {
+                        message: 'The country name is required'
+                    }
+                }
+            },
+            nevirapineStock: {
+                validators: {
+                    notEmpty: {
+                        message: 'The stock value is required'
+                    },
+                    numeric:{
+                        message: 'Must be a number'
+                    }
+                }
+            },
+            stavudineStock: {
+                validators: {
+                    notEmpty: {
+                        message: 'The stock value required'
+                    },
+                    numeric:{
+                        message: 'Must be a number'
+                    }
+                }
+            },
+            zidotabineStock: {
+                validators: {
+                    notEmpty: {
+                        message: 'The stock value required'
+                    },
+                    numeric:{
+                        message: 'Must be a number'
+                    }
+                }
+            },
+            latitude: {
+                validators: {
+                    notEmpty: {
+                        message: 'The latitude is required'
+                    }
+
+                }
+            },
+            longitude: {
+                validators: {
+                    notEmpty: {
+                        message: 'The latitude is required'
+                    }
+                }
+            }
+        }
+    });
 }
 
 //This is the chart setup
@@ -373,20 +446,27 @@ function displayLowStockWarning(clinics) {
         var zid = clinics[i]["zidotabineStock"];
         var clinName = clinics[i]["clinicName"];
         var cls = "\t•" + clinName + " is low on:";
-
+        var flag = 0;
         if (nev < 5) {
             cls += " Nevirapine;";
-        } else if (sta < 5) {
+            flag++;
+        }
+        if (sta < 5) {
             cls += " Stavudine;"
-        } else if (zid < 5) {
+            flag++;
+        }
+        if (zid < 5) {
             cls += " Zidotabine"
-        } else {
+            flag++;
+        }
+        if (flag == 0) {
             alertOutput += "";
             continue;
         }
         cls += "\n";
         alertOutput += cls;
     }
+    alert(alertOutput);
 }
 
 
