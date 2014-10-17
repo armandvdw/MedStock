@@ -96,6 +96,11 @@ public class MedStock {
         return list;
     }
 
+    /**
+     * Used to get all the log files in the db
+     *
+     * @return
+     */
     public ArrayList<ChangeLog> getAllLogs() {
         HibernateUtil.getCurrentSession().beginTransaction();
         ArrayList<ChangeLog> result = (ArrayList<ChangeLog>) HibernateUtil.getCurrentSession().createCriteria(ChangeLog.class).list();
@@ -103,6 +108,12 @@ public class MedStock {
         return result;
     }
 
+    /**
+     * Used to get log files for specific clinics
+     *
+     * @param clinicId
+     * @return
+     */
     public ArrayList<ChangeLog> getLogsForClinic(Integer clinicId) {
         HibernateUtil.getCurrentSession().beginTransaction();
         Query q = HibernateUtil.getCurrentSession().createQuery("FROM ChangeLog WHERE clinicId = : clinId");
@@ -112,6 +123,12 @@ public class MedStock {
         return result;
     }
 
+    /**
+     * This will get the requested user info from db
+     *
+     * @param userId
+     * @return
+     */
     public MedStockUser getUser(Integer userId) {
         HibernateUtil.getCurrentSession().beginTransaction();
         MedStockUser medStockUser = (MedStockUser) HibernateUtil.getCurrentSession().get(MedStockUser.class, userId);
@@ -136,13 +153,13 @@ public class MedStock {
         return new Clinic(1, name, country, nevirapine, stavudine, zidotabine, lat, lon);
     }
 
-    public MedStockUser mapRequestToUser(Request request) {
-        Integer userId = Integer.valueOf(request.queryParams("userId"));
-        String username = request.queryParams("userName");
-        String password = request.queryParams("password");
-        return new MedStockUser(userId, username, password);
-    }
-
+    /**
+     * This can be used to log events on the data to the db
+     *
+     * @param userid
+     * @param clin
+     * @param message
+     */
     public void logTransaction(Integer userid, Clinic clin, String message) {
         HibernateUtil.getCurrentSession().beginTransaction();
         Timestamp d = new Timestamp(System.currentTimeMillis());
@@ -151,6 +168,22 @@ public class MedStock {
         HibernateUtil.getCurrentSession().save(log);
         HibernateUtil.getCurrentSession().getTransaction().commit();
 
+    }
+
+    /**
+     * This will check the database if the user exists and then authenticates the user
+     * @param username
+     * @param password
+     * @return
+     */
+    public boolean authenticateUser(String username, String password) {
+        HibernateUtil.getCurrentSession().beginTransaction();
+        Query q = HibernateUtil.getCurrentSession().createQuery("FROM MedStockUser WHERE userName = :username AND userPassword = :password");
+        q.setParameter("username", username);
+        q.setParameter("password", password);
+        ArrayList<MedStockUser> result = (ArrayList<MedStockUser>) q.list();
+        HibernateUtil.getCurrentSession().getTransaction().commit();
+        return !result.isEmpty();
     }
 }
 

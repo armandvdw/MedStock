@@ -275,7 +275,7 @@ function prepareGrid(divId, cd) {
                     notEmpty: {
                         message: 'The stock value is required'
                     },
-                    numeric:{
+                    numeric: {
                         message: 'Must be a number'
                     }
                 }
@@ -285,7 +285,7 @@ function prepareGrid(divId, cd) {
                     notEmpty: {
                         message: 'The stock value required'
                     },
-                    numeric:{
+                    numeric: {
                         message: 'Must be a number'
                     }
                 }
@@ -295,7 +295,7 @@ function prepareGrid(divId, cd) {
                     notEmpty: {
                         message: 'The stock value required'
                     },
-                    numeric:{
+                    numeric: {
                         message: 'Must be a number'
                     }
                 }
@@ -305,7 +305,6 @@ function prepareGrid(divId, cd) {
                     notEmpty: {
                         message: 'The latitude is required'
                     }
-
                 }
             },
             longitude: {

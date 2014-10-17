@@ -6,13 +6,11 @@ import spark.Response;
 import spark.Route;
 import za.co.medstock.crud.HibernateUtil;
 import za.co.medstock.crud.MedStock;
-import za.co.medstock.entities.ChangeLog;
 import za.co.medstock.entities.Clinic;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Matcher;
@@ -80,7 +78,7 @@ public class MedStockService {
                 return medServ.render("/userinterface/pages/home.html", settings);
             }
         });
-
+        //This serves the reports page
         get("/reports", new Route() {
             @Override
             public Object handle(Request request, Response response) {
@@ -89,7 +87,7 @@ public class MedStockService {
                 return medServ.render("/userinterface/pages/reports.html", settings);
             }
         });
-
+        //Serves management page
         get("/management", new Route() {
             @Override
             public Object handle(Request request, Response response) {
@@ -98,7 +96,7 @@ public class MedStockService {
                 return medServ.render("/userinterface/pages/management.html", settings);
             }
         });
-
+        //Seves map page
         get("/map", new Route() {
             @Override
             public Object handle(Request request, Response response) {
@@ -112,7 +110,7 @@ public class MedStockService {
         get("/login", new Route() {
             @Override
             public Object handle(Request request, Response response) {
-                if (medServ.authenticate(request.queryParams("username"), request.queryParams("password"))) {
+                if (med.authenticateUser(request.queryParams("username"), request.queryParams("password"))) {
                     response.status(200);
                     return true;
                 } else {
@@ -156,7 +154,7 @@ public class MedStockService {
             }
         });
 
-        // Gets the book resource for the provided id
+        // Gets the clinic resource for the provided id
         get("/clinics/:id", new Route() {
             @Override
             public Object handle(Request request, Response response) {
@@ -167,30 +165,6 @@ public class MedStockService {
                 } else {
                     response.status(404); // 404 Not found
                     return "Clinic has not been found";
-                }
-            }
-        });
-
-        //Gets all the logs
-        get("/logs/all", new Route() {
-            @Override
-            public Object handle(Request request, Response response) {
-                response.status(200);
-                return gson.toJson(med.getAllLogs());
-            }
-        });
-
-        // Gets the book resource for the provided id
-        get("/logs/:id", new Route() {
-            @Override
-            public Object handle(Request request, Response response) {
-                String id = request.params(":id");
-                ArrayList<ChangeLog> log = med.getLogsForClinic(Integer.parseInt(id));
-                if (log != null) {
-                    return gson.toJson(log);
-                } else {
-                    response.status(404); // 404 Not found
-                    return "No logs for clinic has been found";
                 }
             }
         });
@@ -264,11 +238,6 @@ public class MedStockService {
         HashMap<String, Object> layout = new HashMap<String, Object>();
         layout.put("content", content);
         return parseFile(file, "@\\{(content)\\}", layout);
-    }
-
-    //TODO: remove this with proper checking
-    public boolean authenticate(String username, String password) {
-        return username.equals("demo") && password.equals("test");
     }
 }
 
