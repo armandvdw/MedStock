@@ -2,17 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="09ec59e3-e4c3-453d-9e44-aebea3d906ff" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/userinterface/images/bleep.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/userinterface/images/jumbotron.jpg" />
-      <change type="DELETED" beforePath="C:\Users\TheOnlyMonkey\Desktop\MedStock Final\MedStockApp\src\main\resources\userinterface\images\bg.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="C:\Users\TheOnlyMonkey\Desktop\MedStock Final\MedStockApp\src\main\resources\userinterface\images\background.jpg" afterPath="$PROJECT_DIR$/src/main/resources/userinterface/images/background.jpg" />
-      <change type="MODIFICATION" beforePath="C:\Users\TheOnlyMonkey\Desktop\MedStock Final\MedStockApp\src\main\resources\userinterface\css\bootstrap.min.css" afterPath="$PROJECT_DIR$/src/main/resources/userinterface/css/bootstrap.min.css" />
-      <change type="MODIFICATION" beforePath="C:\Users\TheOnlyMonkey\Desktop\MedStock Final\MedStockApp\src\main\resources\userinterface\pages\home.html" afterPath="$PROJECT_DIR$/src/main/resources/userinterface/pages/home.html" />
-      <change type="MODIFICATION" beforePath="C:\Users\TheOnlyMonkey\Desktop\MedStock Final\MedStockApp\src\main\resources\userinterface\css\main.css" afterPath="$PROJECT_DIR$/src/main/resources/userinterface/css/main.css" />
-      <change type="MODIFICATION" beforePath="C:\Users\TheOnlyMonkey\Desktop\MedStock Final\MedStockApp\src\main\resources\userinterface\js\main.js" afterPath="$PROJECT_DIR$/src/main/resources/userinterface/js/main.js" />
-      <change type="MODIFICATION" beforePath="C:\Users\TheOnlyMonkey\Desktop\MedStock Final\MedStockApp\src\main\resources\userinterface\pages\management.html" afterPath="$PROJECT_DIR$/src/main/resources/userinterface/pages/management.html" />
-      <change type="MODIFICATION" beforePath="C:\Users\TheOnlyMonkey\Desktop\MedStock Final\MedStockApp\src\main\resources\userinterface\pages\map.html" afterPath="$PROJECT_DIR$/src/main/resources/userinterface/pages/map.html" />
-      <change type="MODIFICATION" beforePath="C:\Users\TheOnlyMonkey\Desktop\MedStock Final\MedStockApp\src\main\resources\userinterface\pages\reports.html" afterPath="$PROJECT_DIR$/src/main/resources/userinterface/pages/reports.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MedStock.iws" />
@@ -24,7 +13,7 @@
     <file path="$USER_HOME$/.m2/settings.xml" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412286853738" ignored="false" />
     <file path="/Hibernate.cfg.xml" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1413493354555" ignored="false" />
     <file path="/Clinic.java" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1413408103484" ignored="false" />
-    <file path="/Dummy.txt" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1413395931394" ignored="false" />
+    <file path="/Dummy.txt" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1413514503749" ignored="false" />
     <file path="/Country.java" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412788272667" ignored="false" />
     <file path="/MedStock.java" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1413506765560" ignored="false" />
     <file path="/HibernateUtil.java" changelist="09ec59e3-e4c3-453d-9e44-aebea3d906ff" time="1412885554509" ignored="false" />
@@ -68,7 +57,6 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -106,6 +94,7 @@
       </breakpoint>
     </breakpoint_any>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -115,10 +104,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="home.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="home.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/pages/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="28" selection-start="875" selection-end="875" vertical-scroll-proportion="0.83417934">
+            <state line="29" column="28" selection-start="875" selection-end="875" vertical-scroll-proportion="-6.6538463">
               <folding />
             </state>
           </provider>
@@ -140,10 +129,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="0" selection-start="229" selection-end="229" vertical-scroll-proportion="0.0">
+            <state line="466" column="1" selection-start="13579" selection-end="13579" vertical-scroll-proportion="1.2549669">
               <folding />
             </state>
           </provider>
@@ -152,7 +141,7 @@
       <file leaf-file-name="management.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/pages/management.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="33" selection-start="866" selection-end="866" vertical-scroll-proportion="-13.730769">
+            <state line="21" column="33" selection-start="866" selection-end="866" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -161,7 +150,7 @@
       <file leaf-file-name="map.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/pages/map.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="33" selection-start="504" selection-end="504" vertical-scroll-proportion="-8.5">
+            <state line="13" column="33" selection-start="504" selection-end="504" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -170,7 +159,7 @@
       <file leaf-file-name="reports.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/pages/reports.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="55" column="11" selection-start="1816" selection-end="1816" vertical-scroll-proportion="-35.96154">
+            <state line="55" column="11" selection-start="1816" selection-end="1816" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -207,9 +196,9 @@
         <option value="$PROJECT_DIR$/src/main/resources/userinterface/pages/reports.html" />
         <option value="$PROJECT_DIR$/src/main/resources/userinterface/pages/map.html" />
         <option value="$PROJECT_DIR$/src/main/resources/userinterface/pages/management.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/userinterface/js/main.js" />
         <option value="$PROJECT_DIR$/src/main/resources/userinterface/css/main.css" />
         <option value="$PROJECT_DIR$/src/main/resources/userinterface/pages/home.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/userinterface/js/main.js" />
       </list>
     </option>
   </component>
@@ -364,6 +353,32 @@
               <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="userinterface" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MedStock" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MedStockApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -411,22 +426,25 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="Repository.Attach.Sources" value="false" />
-    <property name="FullScreen" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
+    <property name="FullScreen" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="Downloaded.Files.Path" value="C:\Dev\MedStock\lib" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="dynamic.classpath" value="false" />
+    <property name="Downloaded.Files.Path" value="C:\Dev\MedStock\lib" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\TheOnlyMonkey\Desktop\MedStock Final\MedStockApp\src\main\resources\userinterface" />
       <recent name="C:\Users\TheOnlyMonkey\Desktop\MedStock Final\MedStockApp\src\main\resources\userinterface\images" />
       <recent name="C:\Users\TheOnlyMonkey\Desktop\MedStock Final\MedStockApp\src\main\resources\userinterface\js\images" />
       <recent name="C:\Users\TheOnlyMonkey\Desktop\MedStock Final\MedStockApp\src\main\resources\userinterface\css" />
       <recent name="C:\Users\TheOnlyMonkey\Desktop\MedStock Final\MedStockApp\src\main\resources\userinterface\js" />
-      <recent name="C:\Users\TheOnlyMonkey\Desktop\MedStock Final\MedStockApp\src\main\resources\userinterface\pages" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\TheOnlyMonkey\Desktop\MedStock Final\MedStockApp\src\main\resources\userinterface\images" />
@@ -434,9 +452,6 @@
       <recent name="C:\Users\TheOnlyMonkey\Desktop\MedStock Final\MedStockApp\src\main\resources\userinterface\pages" />
       <recent name="C:\Dev\MedStock\src\main\resources\userinterface\js\images" />
       <recent name="C:\Dev\MedStock\src\main\resources\userinterface\js" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="" />
     </key>
   </component>
   <component name="RunManager" selected="Application.MedStockService">
@@ -585,6 +600,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -613,19 +641,6 @@
       <listeners />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" />
@@ -639,6 +654,13 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
       <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
       <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -660,13 +682,6 @@
       </option>
       <envs />
       <patterns />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
-      <JSDebuggerConfigurationSettings>
-        <option name="engineId" value="embedded" />
-        <option name="fileUrl" />
-      </JSDebuggerConfigurationSettings>
       <method />
     </configuration>
     <list size="4">
@@ -735,14 +750,13 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998884" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39130434" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -763,6 +777,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998884" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -842,23 +857,17 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/za/co/medstock/entities/Clinic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="13" selection-start="280" selection-end="280" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="15" column="13" selection-start="280" selection-end="280" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/za/co/medstock/crud/HibernateUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="49" selection-start="611" selection-end="611" vertical-scroll-proportion="-0.7443478">
-          <folding />
-        </state>
+        <state line="14" column="49" selection-start="611" selection-end="611" vertical-scroll-proportion="-0.7443478" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/za/co/medstock/entities/MedStockUser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="13" selection-start="396" selection-end="396" vertical-scroll-proportion="0.26608697">
-          <folding />
-        </state>
+        <state line="18" column="13" selection-start="396" selection-end="396" vertical-scroll-proportion="0.26608697" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/za/co/medstock/service/MedStockService.java">
@@ -892,16 +901,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/js/login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="20" selection-start="405" selection-end="405" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="14" column="20" selection-start="405" selection-end="405" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/css/bootstrap.min.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/images/bg2.jpg">
@@ -911,28 +916,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/pages/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="133" selection-start="638" selection-end="638" vertical-scroll-proportion="-11.115385">
-          <folding />
-        </state>
+        <state line="17" column="133" selection-start="638" selection-end="638" vertical-scroll-proportion="-11.115385" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/pages/management.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="33" selection-start="866" selection-end="866" vertical-scroll-proportion="-13.730769">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="229" selection-end="229" vertical-scroll-proportion="0.0">
+        <state line="21" column="33" selection-start="866" selection-end="866" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/pages/reports.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="11" selection-start="1816" selection-end="1816" vertical-scroll-proportion="-35.96154">
+        <state line="55" column="11" selection-start="1816" selection-end="1816" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -944,7 +940,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/pages/map.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="33" selection-start="504" selection-end="504" vertical-scroll-proportion="-8.5">
+        <state line="13" column="33" selection-start="504" selection-end="504" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -958,7 +954,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/pages/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="28" selection-start="875" selection-end="875" vertical-scroll-proportion="0.83417934">
+        <state line="29" column="28" selection-start="875" selection-end="875" vertical-scroll-proportion="-6.6538463">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/userinterface/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="466" column="1" selection-start="13579" selection-end="13579" vertical-scroll-proportion="1.2549669">
           <folding />
         </state>
       </provider>

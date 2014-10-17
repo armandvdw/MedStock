@@ -465,7 +465,3 @@ function displayLowStockWarning(clinics) {
     }
     alert(alertOutput);
 }
-
-
-
-
